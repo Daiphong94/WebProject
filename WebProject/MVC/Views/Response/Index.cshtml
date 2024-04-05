@@ -1,0 +1,41 @@
+﻿@model IEnumerable<Data.Models.Response>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Response List</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+
+            <th>SurveyID</th>
+            <th>Answers</th>
+            <th>SubmissionDate</th>
+            <th>Action</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var response in Model)
+        {
+            <tr>
+
+                <td>@response.SurveyID</td>
+                <td>@response.Answers</td>
+                <td>@response.SubmissionDate.ToString("HH:mm dd/MM/yyyy")</td>
+                
+                <td>
+                    <a asp-action="Edit" asp-route-id="@response.ResponseID">Edit</a> |
+                    <a asp-action="Delete" asp-route-id="@response.ResponseID">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+

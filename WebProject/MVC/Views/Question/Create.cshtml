@@ -1,0 +1,28 @@
+﻿@model Data.Models.Question
+@{
+    ViewData["Title"] = "Create";
+}
+
+
+<h2>Create New Question</h2>
+
+<form asp-action="Create" method="post">
+    <div class="form-group">
+        <label asp-for="CompetitionID"></label>
+        <input asp-for="CompetitionID" class="form-control" />
+        <span asp-validation-for="CompetitionID" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="File"></label>
+        <input asp-for="File" class="form-control" />
+        <span asp-validation-for="File" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Writing"></label>
+        <input asp-for="Writing" class="form-control" />
+        <span asp-validation-for="Writing" class="text-danger"></span>
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Create</button>
+</form>
+

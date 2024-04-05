@@ -1,0 +1,43 @@
+﻿@model IEnumerable<Data.Models.Question>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Question List</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+
+            <th>CompetitionID</th>
+            <th>File</th>
+            <th>Writing</th>
+            
+            <th>Action</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var question in Model)
+        {
+            <tr>
+
+                <td>@question.CompetitionID</td>
+                <td>@question.File</td>
+                <td>@question.Writing</td>
+               
+
+                <td>
+                    <a asp-action="Edit" asp-route-id="@question.QuestionID">Edit</a> |
+                    <a asp-action="Delete" asp-route-id="@question.QuestionID">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+

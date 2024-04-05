@@ -1,0 +1,44 @@
+﻿@model IEnumerable<Data.Models.Student>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Student List</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>StudentID</th>
+            <th>Full Name</th>
+            <th>Email</th>
+            <th>Faculty Number</th>
+            <th>Department</th>
+            <th>Joining Date</th>
+            <th>Action</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var student in Model)
+        {
+            <tr>
+                <td>@student.StudentID</td>
+                <td>@student.FullName</td>
+                <td>@student.Email</td>
+                <td>@student.StudentNumber</td>
+                <td>@student.Department</td>
+                <td>@student.AdmissionDate.ToString("HH:mm dd/MM/yyyy")</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@student.StudentID">Edit</a> |
+                    <a asp-action="Delete" asp-route-id="@student.StudentID">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+

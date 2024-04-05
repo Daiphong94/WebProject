@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Đăng ký tham gia cuộc thi</title>
+</head>
+<body>
+    <h1>Đăng ký tham gia cuộc thi</h1>
+
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger">@TempData["ErrorMessage"]</div>
+    }
+
+    <form asp-controller="SC" asp-action="JoinCompetition" method="post">
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email" />
+        <br />
+
+        <label for="competitionName">Chọn cuộc thi:</label>
+        <select id="competitionName" name="name">
+            @foreach (var competition in ViewBag.Competitions)
+            {
+                <option value="@competition.CompetitionName">@competition.CompetitionName</option>
+            }
+        </select>
+        <br />
+
+        <button type="submit">Đăng ký</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,23 @@
+﻿@model Data.Models.Competition
+@{
+    ViewData["Title"] = "Delete";
+}
+
+
+<h2>Delete Competition</h2>
+
+<h3>Are you sure you want to delete this Competition?</h3>
+<div>
+
+    <h4>Title: @Model.CompetitionName</h4>
+    <h4>Description: @Model.Description</h4>
+    <h4>Location: @Model.StartDate.ToString("HH:mm dd/MM/yyyy")</h4>
+    <h4>Participant Count: @Model.EndDate.ToString("HH:mm dd/MM/yyyy")</h4>
+    
+</div>
+<form asp-action="Delete" method="post">
+    <input type="hidden" asp-for="CompetitionID" />
+    <button type="submit" class="btn btn-danger">Delete</button> |
+    <a asp-action="Index">Back to List</a>
+</form>
+

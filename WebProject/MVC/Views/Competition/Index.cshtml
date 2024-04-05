@@ -1,0 +1,44 @@
+﻿@model IEnumerable<Data.Models.Competition>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Competition List</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+
+            <th>CompetitionName</th>
+            <th>Description</th>
+            <th>StartDate</th>
+            <th>EndDate</th>
+            
+            <th>Action</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var competition in Model)
+        {
+            <tr>
+
+                <td>@competition.CompetitionName</td>
+                <td>@competition.Description</td>
+                <td>@competition.StartDate.ToString("HH:mm dd/MM/yyyy")</td>
+                <td>@competition.EndDate.ToString("HH:mm dd/MM/yyyy")</td>
+
+                <td>
+                    <a asp-action="Edit" asp-route-id="@competition.CompetitionID">Edit</a> |
+                    <a asp-action="Delete" asp-route-id="@competition.CompetitionID">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+

@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Data.Models.Events>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Event List</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+
+            <th>Title</th>
+            <th>Description</th>
+            <th>Location</th>
+            <th>ParticipantCount</th>
+            <th>StartDate</th>
+            <th>Action</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var ev in Model)
+        {
+            <tr>
+
+                <td>@ev.Title</td>
+                <td>@ev.Description</td>
+                <td>@ev.Location</td>
+                <td>@ev.ParticipantCount</td>
+                <td>@ev.StartDate.ToString("HH:mm dd/MM/yyyy")</td>
+
+                <td>
+                    <a asp-action="Edit" asp-route-id="@ev.EventID">Edit</a> |
+                    <a asp-action="Delete" asp-route-id="@ev.EventID">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+

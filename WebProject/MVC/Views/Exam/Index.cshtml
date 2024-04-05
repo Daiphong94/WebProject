@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Data.Models.Exam>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Exam List</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+
+            <th>CompetitionID</th>
+            <th>StudentID</th>
+            <th>Score</th>
+            <th>Rank</th>
+            
+            <th>Action</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var exam in Model)
+        {
+            <tr>
+
+                <td>@exam.CompetitionID</td>
+                <td>@exam.StudentID</td>
+                <td>@exam.Score</td>
+                <td>@exam.Rank</td>
+                
+
+                <td>
+                    <a asp-action="Edit" asp-route-id="@exam.ExamID">Edit</a> |
+                    <a asp-action="Delete" asp-route-id="@exam.ExamID">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+

@@ -1,0 +1,35 @@
+﻿@model IEnumerable<Data.Models.StudentCompetition>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Student List</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Email</th>
+            <th>Competition</th>
+            <th>Joining Date</th>
+            
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var sc in Model)
+        {
+            <tr>
+                <td>@(sc.Student != null ? sc.Student.Email : "N/A")</td>
+                <td>@(sc.Competition != null ? sc.Competition.CompetitionName : "N/A")</td>
+                <td>@sc.JoinedDate.ToString("HH:mm dd/MM/yyyy")</td>
+                
+            </tr>
+        }
+    </tbody>
+</table>
+
+

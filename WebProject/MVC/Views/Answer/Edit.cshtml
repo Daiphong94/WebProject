@@ -1,0 +1,35 @@
+﻿@model Data.Models.Answer
+@{
+    ViewData["Title"] = "Edit";
+}
+
+
+<h2>Edit Answer</h2>
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="AnswerID" />
+    <div class="form-group">
+        <label asp-for="QuestionID"></label>
+        <input asp-for="QuestionID" class="form-control" />
+        <span asp-validation-for="QuestionID" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="StudentID"></label>
+        <input asp-for="StudentID" class="form-control" />
+        <span asp-validation-for="StudentID" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="File"></label>
+        <input asp-for="File" class="form-control" />
+        <span asp-validation-for="File" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Writing"></label>
+        <input asp-for="Writing" class="form-control" />
+        <span asp-validation-for="Writing" class="text-danger"></span>
+    </div>
+   
+    <button type="submit" class="btn btn-primary">Save</button>
+</form>
+

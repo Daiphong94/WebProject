@@ -1,0 +1,42 @@
+﻿@model IEnumerable<Data.Models.Admin>
+ 
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Admin List</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            
+            <th>Full Name</th>
+            <th>Email</th>
+            <th>Admin Number</th>
+            <th>Joining Date</th>
+            <th>Action</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var admin in Model)
+        {
+            <tr>
+               
+                <td>@admin.FullName</td>
+                <td>@admin.Email</td>
+                <td>@admin.AdminNumber</td>
+                <td>@admin.JoiningDate.ToString("HH:mm dd/MM/yyyy")</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@admin.AdminID">Edit</a> |
+                    <a asp-action="Delete" asp-route-id="@admin.AdminID">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
