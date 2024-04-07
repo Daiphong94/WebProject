@@ -3,80 +3,72 @@
   "WorkspaceRootPath": "C:\\Users\\Admin\\Project\\WebProject\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{DEAE8685-F820-4695-BE2A-F385DD4C089A}|MVC\\MVC.csproj|c:\\users\\admin\\project\\webproject\\mvc\\views\\student\\account.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DEAE8685-F820-4695-BE2A-F385DD4C089A}|MVC\\MVC.csproj|solutionrelative:mvc\\views\\student\\account.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEAE8685-F820-4695-BE2A-F385DD4C089A}|MVC\\MVC.csproj|c:\\users\\admin\\project\\webproject\\mvc\\views\\faculty\\account.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DEAE8685-F820-4695-BE2A-F385DD4C089A}|MVC\\MVC.csproj|solutionrelative:mvc\\views\\faculty\\account.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEAE8685-F820-4695-BE2A-F385DD4C089A}|MVC\\MVC.csproj|c:\\users\\admin\\project\\webproject\\mvc\\views\\admin\\account.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DEAE8685-F820-4695-BE2A-F385DD4C089A}|MVC\\MVC.csproj|solutionrelative:mvc\\views\\admin\\account.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEAE8685-F820-4695-BE2A-F385DD4C089A}|MVC\\MVC.csproj|c:\\users\\admin\\project\\webproject\\mvc\\controllers\\studentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DEAE8685-F820-4695-BE2A-F385DD4C089A}|MVC\\MVC.csproj|solutionrelative:mvc\\controllers\\studentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{DEAE8685-F820-4695-BE2A-F385DD4C089A}|MVC\\MVC.csproj|c:\\users\\admin\\project\\webproject\\mvc\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DEAE8685-F820-4695-BE2A-F385DD4C089A}|MVC\\MVC.csproj|solutionrelative:mvc\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{378D1BD1-A4B7-4C3F-880B-AC41F2FDF72B}|Data\\Data.csproj|c:\\users\\admin\\project\\webproject\\data\\repository\\registrationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{378D1BD1-A4B7-4C3F-880B-AC41F2FDF72B}|Data\\Data.csproj|solutionrelative:data\\repository\\registrationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DEAE8685-F820-4695-BE2A-F385DD4C089A}|MVC\\MVC.csproj|c:\\users\\admin\\project\\webproject\\mvc\\views\\student\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DEAE8685-F820-4695-BE2A-F385DD4C089A}|MVC\\MVC.csproj|solutionrelative:mvc\\views\\student\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DEAE8685-F820-4695-BE2A-F385DD4C089A}|MVC\\MVC.csproj|c:\\users\\admin\\project\\webproject\\mvc\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DEAE8685-F820-4695-BE2A-F385DD4C089A}|MVC\\MVC.csproj|solutionrelative:mvc\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DEAE8685-F820-4695-BE2A-F385DD4C089A}|MVC\\MVC.csproj|c:\\users\\admin\\project\\webproject\\mvc\\views\\student\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DEAE8685-F820-4695-BE2A-F385DD4C089A}|MVC\\MVC.csproj|solutionrelative:mvc\\views\\student\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{378D1BD1-A4B7-4C3F-880B-AC41F2FDF72B}|Data\\Data.csproj|c:\\users\\admin\\project\\webproject\\data\\interface\\registrationinterface.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{378D1BD1-A4B7-4C3F-880B-AC41F2FDF72B}|Data\\Data.csproj|solutionrelative:data\\interface\\registrationinterface.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{378D1BD1-A4B7-4C3F-880B-AC41F2FDF72B}|Data\\Data.csproj|c:\\users\\admin\\project\\webproject\\data\\models\\registration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{378D1BD1-A4B7-4C3F-880B-AC41F2FDF72B}|Data\\Data.csproj|solutionrelative:data\\models\\registration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{378D1BD1-A4B7-4C3F-880B-AC41F2FDF72B}|Data\\Data.csproj|c:\\users\\admin\\project\\webproject\\data\\interface\\userinterface.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{378D1BD1-A4B7-4C3F-880B-AC41F2FDF72B}|Data\\Data.csproj|solutionrelative:data\\interface\\userinterface.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DEAE8685-F820-4695-BE2A-F385DD4C089A}|MVC\\MVC.csproj|c:\\users\\admin\\project\\webproject\\mvc\\controllers\\facultycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DEAE8685-F820-4695-BE2A-F385DD4C089A}|MVC\\MVC.csproj|solutionrelative:mvc\\controllers\\facultycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DEAE8685-F820-4695-BE2A-F385DD4C089A}|MVC\\MVC.csproj|c:\\users\\admin\\project\\webproject\\mvc\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DEAE8685-F820-4695-BE2A-F385DD4C089A}|MVC\\MVC.csproj|solutionrelative:mvc\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{378D1BD1-A4B7-4C3F-880B-AC41F2FDF72B}|Data\\Data.csproj|c:\\users\\admin\\project\\webproject\\data\\repository\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{378D1BD1-A4B7-4C3F-880B-AC41F2FDF72B}|Data\\Data.csproj|solutionrelative:data\\repository\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DEAE8685-F820-4695-BE2A-F385DD4C089A}|MVC\\MVC.csproj|c:\\users\\admin\\project\\webproject\\mvc\\views\\student\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DEAE8685-F820-4695-BE2A-F385DD4C089A}|MVC\\MVC.csproj|solutionrelative:mvc\\views\\student\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{378D1BD1-A4B7-4C3F-880B-AC41F2FDF72B}|Data\\Data.csproj|c:\\users\\admin\\project\\webproject\\data\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{378D1BD1-A4B7-4C3F-880B-AC41F2FDF72B}|Data\\Data.csproj|solutionrelative:data\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{378D1BD1-A4B7-4C3F-880B-AC41F2FDF72B}|Data\\Data.csproj|c:\\users\\admin\\project\\webproject\\data\\models\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{378D1BD1-A4B7-4C3F-880B-AC41F2FDF72B}|Data\\Data.csproj|solutionrelative:data\\models\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DEAE8685-F820-4695-BE2A-F385DD4C089A}|MVC\\MVC.csproj|c:\\users\\admin\\project\\webproject\\mvc\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DEAE8685-F820-4695-BE2A-F385DD4C089A}|MVC\\MVC.csproj|solutionrelative:mvc\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DEAE8685-F820-4695-BE2A-F385DD4C089A}|MVC\\MVC.csproj|c:\\users\\admin\\project\\webproject\\mvc\\views\\faculty\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DEAE8685-F820-4695-BE2A-F385DD4C089A}|MVC\\MVC.csproj|solutionrelative:mvc\\views\\faculty\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DEAE8685-F820-4695-BE2A-F385DD4C089A}|MVC\\MVC.csproj|c:\\users\\admin\\project\\webproject\\mvc\\controllers\\faqcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DEAE8685-F820-4695-BE2A-F385DD4C089A}|MVC\\MVC.csproj|solutionrelative:mvc\\controllers\\faqcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DEAE8685-F820-4695-BE2A-F385DD4C089A}|MVC\\MVC.csproj|c:\\users\\admin\\project\\webproject\\mvc\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{DEAE8685-F820-4695-BE2A-F385DD4C089A}|MVC\\MVC.csproj|solutionrelative:mvc\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DEAE8685-F820-4695-BE2A-F385DD4C089A}|MVC\\MVC.csproj|c:\\users\\admin\\project\\webproject\\mvc\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{DEAE8685-F820-4695-BE2A-F385DD4C089A}|MVC\\MVC.csproj|solutionrelative:mvc\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DEAE8685-F820-4695-BE2A-F385DD4C089A}|MVC\\MVC.csproj|c:\\users\\admin\\project\\webproject\\mvc\\views\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{DEAE8685-F820-4695-BE2A-F385DD4C089A}|MVC\\MVC.csproj|solutionrelative:mvc\\views\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DEAE8685-F820-4695-BE2A-F385DD4C089A}|MVC\\MVC.csproj|c:\\users\\admin\\project\\webproject\\mvc\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{DEAE8685-F820-4695-BE2A-F385DD4C089A}|MVC\\MVC.csproj|solutionrelative:mvc\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DEAE8685-F820-4695-BE2A-F385DD4C089A}|MVC\\MVC.csproj|c:\\users\\admin\\project\\webproject\\mvc\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{DEAE8685-F820-4695-BE2A-F385DD4C089A}|MVC\\MVC.csproj|solutionrelative:mvc\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DEAE8685-F820-4695-BE2A-F385DD4C089A}|MVC\\MVC.csproj|c:\\users\\admin\\project\\webproject\\mvc\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{DEAE8685-F820-4695-BE2A-F385DD4C089A}|MVC\\MVC.csproj|solutionrelative:mvc\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DEAE8685-F820-4695-BE2A-F385DD4C089A}|MVC\\MVC.csproj|c:\\users\\admin\\project\\webproject\\mvc\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{DEAE8685-F820-4695-BE2A-F385DD4C089A}|MVC\\MVC.csproj|solutionrelative:mvc\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{DEAE8685-F820-4695-BE2A-F385DD4C089A}|MVC\\MVC.csproj|c:\\users\\admin\\project\\webproject\\mvc\\views\\admin\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DEAE8685-F820-4695-BE2A-F385DD4C089A}|MVC\\MVC.csproj|solutionrelative:mvc\\views\\admin\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DEAE8685-F820-4695-BE2A-F385DD4C089A}|MVC\\MVC.csproj|c:\\users\\admin\\project\\webproject\\mvc\\views\\user\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{DEAE8685-F820-4695-BE2A-F385DD4C089A}|MVC\\MVC.csproj|solutionrelative:mvc\\views\\user\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEAE8685-F820-4695-BE2A-F385DD4C089A}|MVC\\MVC.csproj|c:\\users\\admin\\project\\webproject\\mvc\\views\\user\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DEAE8685-F820-4695-BE2A-F385DD4C089A}|MVC\\MVC.csproj|solutionrelative:mvc\\views\\user\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DEAE8685-F820-4695-BE2A-F385DD4C089A}|MVC\\MVC.csproj|c:\\users\\admin\\project\\webproject\\mvc\\views\\registration\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DEAE8685-F820-4695-BE2A-F385DD4C089A}|MVC\\MVC.csproj|solutionrelative:mvc\\views\\registration\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{378D1BD1-A4B7-4C3F-880B-AC41F2FDF72B}|Data\\Data.csproj|c:\\users\\admin\\project\\webproject\\data\\interface\\userinterface.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{378D1BD1-A4B7-4C3F-880B-AC41F2FDF72B}|Data\\Data.csproj|solutionrelative:data\\interface\\userinterface.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -86,7 +78,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -98,249 +90,223 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "RegistrationInterface.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Project\\WebProject\\Data\\Interface\\RegistrationInterface.cs",
-              "RelativeDocumentMoniker": "Data\\Interface\\RegistrationInterface.cs",
-              "ToolTip": "C:\\Users\\Admin\\Project\\WebProject\\Data\\Interface\\RegistrationInterface.cs",
-              "RelativeToolTip": "Data\\Interface\\RegistrationInterface.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-05T16:24:33.099Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "_ValidationScriptsPartial.cshtml",
-              "DocumentMoniker": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
-              "RelativeDocumentMoniker": "MVC\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
-              "ToolTip": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
-              "RelativeToolTip": "MVC\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-05T15:41:34.385Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "RegistrationRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Project\\WebProject\\Data\\Repository\\RegistrationRepository.cs",
-              "RelativeDocumentMoniker": "Data\\Repository\\RegistrationRepository.cs",
-              "ToolTip": "C:\\Users\\Admin\\Project\\WebProject\\Data\\Repository\\RegistrationRepository.cs",
-              "RelativeToolTip": "Data\\Repository\\RegistrationRepository.cs",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAIwBUAAAAQAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-05T15:14:17.282Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\Program.cs",
-              "RelativeDocumentMoniker": "MVC\\Program.cs",
-              "ToolTip": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\Program.cs",
-              "RelativeToolTip": "MVC\\Program.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAABgAAAA4AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-05T16:16:40.517Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "UserController.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\Controllers\\UserController.cs",
-              "RelativeDocumentMoniker": "MVC\\Controllers\\UserController.cs",
-              "ToolTip": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\Controllers\\UserController.cs*",
-              "RelativeToolTip": "MVC\\Controllers\\UserController.cs*",
-              "ViewState": "AQIAACYAAAAAAAAAAAAgwDEAAAAzAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-05T15:27:38.706Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "Error.cshtml",
-              "DocumentMoniker": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\Views\\Shared\\Error.cshtml",
-              "RelativeDocumentMoniker": "MVC\\Views\\Shared\\Error.cshtml",
-              "ToolTip": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\Views\\Shared\\Error.cshtml",
-              "RelativeToolTip": "MVC\\Views\\Shared\\Error.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Title": "Account.cshtml",
+              "DocumentMoniker": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\Views\\Student\\Account.cshtml",
+              "RelativeDocumentMoniker": "MVC\\Views\\Student\\Account.cshtml",
+              "ToolTip": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\Views\\Student\\Account.cshtml",
+              "RelativeToolTip": "MVC\\Views\\Student\\Account.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAuAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-05T15:41:36.769Z",
+              "WhenOpened": "2024-04-07T16:40:41.996Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "AdminController.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\Controllers\\AdminController.cs",
-              "RelativeDocumentMoniker": "MVC\\Controllers\\AdminController.cs",
-              "ToolTip": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\Controllers\\AdminController.cs",
-              "RelativeToolTip": "MVC\\Controllers\\AdminController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-05T15:17:58.684Z",
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\Views\\Student\\Edit.cshtml",
+              "RelativeDocumentMoniker": "MVC\\Views\\Student\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\Views\\Student\\Edit.cshtml",
+              "RelativeToolTip": "MVC\\Views\\Student\\Edit.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-07T16:32:34.564Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "UserInterface.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Project\\WebProject\\Data\\Interface\\UserInterface.cs",
-              "RelativeDocumentMoniker": "Data\\Interface\\UserInterface.cs",
-              "ToolTip": "C:\\Users\\Admin\\Project\\WebProject\\Data\\Interface\\UserInterface.cs",
-              "RelativeToolTip": "Data\\Interface\\UserInterface.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAsAAAAIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-05T15:54:38.12Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Registration.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Project\\WebProject\\Data\\Models\\Registration.cs",
-              "RelativeDocumentMoniker": "Data\\Models\\Registration.cs",
-              "ToolTip": "C:\\Users\\Admin\\Project\\WebProject\\Data\\Models\\Registration.cs",
-              "RelativeToolTip": "Data\\Models\\Registration.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAdAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-05T15:10:13.97Z",
+              "DocumentIndex": 1,
+              "Title": "Account.cshtml",
+              "DocumentMoniker": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\Views\\Faculty\\Account.cshtml",
+              "RelativeDocumentMoniker": "MVC\\Views\\Faculty\\Account.cshtml",
+              "ToolTip": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\Views\\Faculty\\Account.cshtml",
+              "RelativeToolTip": "MVC\\Views\\Faculty\\Account.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-07T16:31:24.265Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "UserRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Project\\WebProject\\Data\\Repository\\UserRepository.cs",
-              "RelativeDocumentMoniker": "Data\\Repository\\UserRepository.cs",
-              "ToolTip": "C:\\Users\\Admin\\Project\\WebProject\\Data\\Repository\\UserRepository.cs",
-              "RelativeToolTip": "Data\\Repository\\UserRepository.cs",
-              "ViewState": "AQIAAD8AAAAAAAAAAAAIwEwAAAAWAAAA",
+              "Title": "FacultyController.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\Controllers\\FacultyController.cs",
+              "RelativeDocumentMoniker": "MVC\\Controllers\\FacultyController.cs",
+              "ToolTip": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\Controllers\\FacultyController.cs",
+              "RelativeToolTip": "MVC\\Controllers\\FacultyController.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAA8AAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-05T15:26:43.047Z",
+              "WhenOpened": "2024-04-07T16:31:12.214Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "_ViewImports.cshtml",
-              "DocumentMoniker": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\Views\\_ViewImports.cshtml",
-              "RelativeDocumentMoniker": "MVC\\Views\\_ViewImports.cshtml",
-              "ToolTip": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\Views\\_ViewImports.cshtml",
-              "RelativeToolTip": "MVC\\Views\\_ViewImports.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAARAAAA",
+              "DocumentIndex": 2,
+              "Title": "Account.cshtml",
+              "DocumentMoniker": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\Views\\Admin\\Account.cshtml",
+              "RelativeDocumentMoniker": "MVC\\Views\\Admin\\Account.cshtml",
+              "ToolTip": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\Views\\Admin\\Account.cshtml",
+              "RelativeToolTip": "MVC\\Views\\Admin\\Account.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAWAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-05T15:41:48.88Z",
+              "WhenOpened": "2024-04-07T16:30:33.399Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "_ViewStart.cshtml",
-              "DocumentMoniker": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\Views\\_ViewStart.cshtml",
-              "RelativeDocumentMoniker": "MVC\\Views\\_ViewStart.cshtml",
-              "ToolTip": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\Views\\_ViewStart.cshtml",
-              "RelativeToolTip": "MVC\\Views\\_ViewStart.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "DocumentIndex": 3,
+              "Title": "StudentController.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\Controllers\\StudentController.cs",
+              "RelativeDocumentMoniker": "MVC\\Controllers\\StudentController.cs",
+              "ToolTip": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\Controllers\\StudentController.cs",
+              "RelativeToolTip": "MVC\\Controllers\\StudentController.cs",
+              "ViewState": "AQIAAFYAAAAAAAAAAAAwwGYAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-07T15:35:43.061Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\Views\\Student\\Index.cshtml",
+              "RelativeDocumentMoniker": "MVC\\Views\\Student\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\Views\\Student\\Index.cshtml",
+              "RelativeToolTip": "MVC\\Views\\Student\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAgAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-05T15:41:58.873Z",
+              "WhenOpened": "2024-04-07T15:34:46.857Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "MVC\\Controllers\\HomeController.cs",
-              "ToolTip": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "MVC\\Controllers\\HomeController.cs",
-              "ViewState": "AQIAAAUAAAAAAAAAAAAiwCAAAAAAAAAA",
+              "DocumentIndex": 4,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "MVC\\Controllers\\UserController.cs",
+              "ToolTip": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\Controllers\\UserController.cs",
+              "RelativeToolTip": "MVC\\Controllers\\UserController.cs",
+              "ViewState": "AQIAAGUAAAAAAAAAAAAowHcAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-05T15:42:22.024Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "FAQController.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\Controllers\\FAQController.cs",
-              "RelativeDocumentMoniker": "MVC\\Controllers\\FAQController.cs",
-              "ToolTip": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\Controllers\\FAQController.cs",
-              "RelativeToolTip": "MVC\\Controllers\\FAQController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-05T15:43:22.859Z",
+              "WhenOpened": "2024-04-07T14:07:04.214Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Project\\WebProject\\Data\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "Data\\Controllers\\HomeController.cs",
-              "ToolTip": "C:\\Users\\Admin\\Project\\WebProject\\Data\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "Data\\Controllers\\HomeController.cs",
-              "ViewState": "AQIAAA8AAAAAAAAAAAA5wBQAAAAlAAAA",
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\Controllers\\AdminController.cs",
+              "RelativeDocumentMoniker": "MVC\\Controllers\\AdminController.cs",
+              "ToolTip": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\Controllers\\AdminController.cs",
+              "RelativeToolTip": "MVC\\Controllers\\AdminController.cs",
+              "ViewState": "AQIAABUAAAAAAAAAAAAowBkAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-05T15:44:23.312Z",
+              "WhenOpened": "2024-04-07T15:35:12.453Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\Views\\Admin\\Index.cshtml",
+              "RelativeDocumentMoniker": "MVC\\Views\\Admin\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\Views\\Admin\\Index.cshtml",
+              "RelativeToolTip": "MVC\\Views\\Admin\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-07T15:34:26.177Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\Views\\Faculty\\Index.cshtml",
+              "RelativeDocumentMoniker": "MVC\\Views\\Faculty\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\Views\\Faculty\\Index.cshtml",
+              "RelativeToolTip": "MVC\\Views\\Faculty\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-07T15:34:36.19Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\Views\\Student\\Create.cshtml",
+              "RelativeDocumentMoniker": "MVC\\Views\\Student\\Create.cshtml",
+              "ToolTip": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\Views\\Student\\Create.cshtml",
+              "RelativeToolTip": "MVC\\Views\\Student\\Create.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACwAAAAvAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-07T15:08:23.832Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Student.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Project\\WebProject\\Data\\Models\\Student.cs",
+              "RelativeDocumentMoniker": "Data\\Models\\Student.cs",
+              "ToolTip": "C:\\Users\\Admin\\Project\\WebProject\\Data\\Models\\Student.cs",
+              "RelativeToolTip": "Data\\Models\\Student.cs",
+              "ViewState": "AQIAAAIAAAAAAAAAAAAAAA4AAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-07T15:37:03.787Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\Views\\User\\Index.cshtml",
+              "RelativeDocumentMoniker": "MVC\\Views\\User\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\Views\\User\\Index.cshtml",
+              "RelativeToolTip": "MVC\\Views\\User\\Index.cshtml",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-07T15:08:17.638Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 15,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "MVC\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "MVC\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-05T15:41:28.033Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "Privacy.cshtml",
-              "DocumentMoniker": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\Views\\Home\\Privacy.cshtml",
-              "RelativeDocumentMoniker": "MVC\\Views\\Home\\Privacy.cshtml",
-              "ToolTip": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\Views\\Home\\Privacy.cshtml",
-              "RelativeToolTip": "MVC\\Views\\Home\\Privacy.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-05T15:41:18.824Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
               "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\Views\\Home\\Index.cshtml",
-              "RelativeDocumentMoniker": "MVC\\Views\\Home\\Index.cshtml",
-              "ToolTip": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\Views\\Home\\Index.cshtml",
-              "RelativeToolTip": "MVC\\Views\\Home\\Index.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "DocumentMoniker": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\Views\\Registration\\Index.cshtml",
+              "RelativeDocumentMoniker": "MVC\\Views\\Registration\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\Views\\Registration\\Index.cshtml",
+              "RelativeToolTip": "MVC\\Views\\Registration\\Index.cshtml",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAUwBsAAAB9AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-05T15:41:13.129Z",
+              "WhenOpened": "2024-04-07T14:25:31.538Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 13,
               "Title": "Register.cshtml",
               "DocumentMoniker": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\Views\\User\\Register.cshtml",
               "RelativeDocumentMoniker": "MVC\\Views\\User\\Register.cshtml",
               "ToolTip": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\Views\\User\\Register.cshtml",
               "RelativeToolTip": "MVC\\Views\\User\\Register.cshtml",
-              "ViewState": "AQIAAA0AAAAAAAAAAAAUwCAAAAAHAAAA",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAA0AAAAKAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-05T15:38:44.707Z",
+              "WhenOpened": "2024-04-07T14:16:34.769Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "UserInterface.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Project\\WebProject\\Data\\Interface\\UserInterface.cs",
+              "RelativeDocumentMoniker": "Data\\Interface\\UserInterface.cs",
+              "ToolTip": "C:\\Users\\Admin\\Project\\WebProject\\Data\\Interface\\UserInterface.cs",
+              "RelativeToolTip": "Data\\Interface\\UserInterface.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABMAAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-07T14:12:00.388Z",
               "EditorCaption": ""
             }
           ]

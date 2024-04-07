@@ -1,0 +1,42 @@
+﻿@model IEnumerable<Data.Models.Registration>
+
+<h2>Danh sách đăng ký chờ duyệt</h2>
+
+@if (Model.Any())
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>UserID</th>
+                <th>Role</th>
+                <th>Status</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var registration in Model)
+            {
+                <tr>
+                    <td>@registration.UserID</td>
+                    <td>@registration.Role</td>
+                    <td>@registration.Status</td>
+                    
+                    <td>
+                        <form asp-controller="Admin" asp-action="ApproveRegistration" method="post">
+                            <input type="hidden" name="registrationId" value="@registration.RegistrationID" />
+                            <button type="submit" class="btn btn-success">Approve</button>
+                        </form>
+                        <form asp-controller="Admin" asp-action="RejectRegistration" method="post">
+                            <input type="hidden" name="registrationId" value="@registration.RegistrationID" />
+                            <button type="submit" class="btn btn-danger">Reject</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>Không có đăng ký nào chờ duyệt.</p>
+}

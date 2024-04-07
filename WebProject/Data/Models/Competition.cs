@@ -4,6 +4,7 @@
     {
         public int CompetitionID { get; set; }
         public string CompetitionName { get; set; }
+        public string Photo {  get; set; }
         public string Description { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }

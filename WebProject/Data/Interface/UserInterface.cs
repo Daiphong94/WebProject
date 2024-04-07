@@ -15,7 +15,8 @@ namespace Data.Interface
         Task Add(User entity);
         Task Update(User entity);
         Task Delete(int id);
-        Task<User> GetByName(string username); 
+        Task<User> GetByName(string username);
+        Task<User> GetByEmail(string email);
         Task<bool> Exists(int id);
     }
 }

@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Data.Repository
 {
@@ -47,6 +48,11 @@ namespace Data.Repository
             return await _context.Users.ToListAsync();
         }
 
+        public async Task<User> GetByEmail(string email)
+        {
+            return await _context.Users.SingleOrDefaultAsync(u => u.Email == email);
+        }
+
         public async Task<User> GetById(int id)
         {
             return await _context.Users.FindAsync(id);
@@ -64,6 +70,7 @@ namespace Data.Repository
             _context.Users.Update(entity);
             await SaveChangesAsync();
         }
+
 
         private async Task SaveChangesAsync()
         {

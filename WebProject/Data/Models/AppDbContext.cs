@@ -29,6 +29,7 @@ namespace Data.Models
                 .WithMany(c => c.StudentCompetitions)
                 .HasForeignKey(sc => sc.CompetitionID)
                 .OnDelete(DeleteBehavior.Cascade);
+
             modelBuilder.Entity<StudentCompetition>()
                 .HasOne(sc => sc.Student)
                 .WithMany(s => s.StudentCompetitions)
@@ -99,6 +100,7 @@ namespace Data.Models
             {
                 entity.HasKey(u => u.UserID);
                 entity.Property(u => u.UserName).IsRequired().HasMaxLength(200);
+                entity.Property(u => u.Email).IsRequired().HasMaxLength(200);
                 entity.Property(u => u.Password).IsRequired().HasMaxLength(200);
                 entity.Property(u => u.Role).IsRequired().HasMaxLength(200);
 
@@ -171,6 +173,7 @@ namespace Data.Models
             {
                 entity.HasKey(e => e.CompetitionID);
                 entity.Property(e => e.CompetitionName).IsRequired().HasMaxLength(200);
+                entity.Property(u => u.Photo).IsRequired().HasMaxLength(200);
                 entity.Property(e => e.Description).IsRequired().HasColumnType("text");
                 entity.Property(e => e.StartDate).IsRequired().HasColumnType("datetime");
                 entity.Property(e => e.EndDate).IsRequired().HasColumnType("datetime");

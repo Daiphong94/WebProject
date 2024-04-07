@@ -1,16 +1,19 @@
 ﻿using Data.Models;
 using Data.Interface;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authentication;
 
 namespace MVC.Controllers
 {
     public class StudentController : Controller
     {
         private protected StudentInterface _studentInterface;
+        private protected UserInterface _userInterface;
         
-        public StudentController(StudentInterface studentInterface)
+        public StudentController(StudentInterface studentInterface,UserInterface userInterface)
         {
             _studentInterface = studentInterface;
+            _userInterface = userInterface;
             
         }
         public async Task<IActionResult> Index()
@@ -28,13 +31,20 @@ namespace MVC.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(Student model)
         {
-            await _studentInterface.AddStudent(model);
-            return RedirectToAction(nameof(Index));
-            /*if (ModelState.IsValid)
+            var user = await _userInterface.GetByName(User.Identity.Name);
+            if(user != null)
             {
-               
-            }*/
-            return View(model);
+                model.UserID = user.UserID;
+                model.Email = user.Email;
+
+                await _studentInterface.AddStudent(model);
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                return RedirectToAction("Index", "Home");
+            }
+            
         }
         public async Task<IActionResult> Edit(int id)
         {
@@ -64,6 +74,10 @@ namespace MVC.Controllers
         }
         public async Task<IActionResult> Delete(int id)
         {
+            if (!User.IsInRole("Admin"))
+            {
+
+            }
             var student = await _studentInterface.GetByIdStudent(id);
             if (student == null)
             {
@@ -78,6 +92,17 @@ namespace MVC.Controllers
         {
             await _studentInterface.DeleteStudent(id);
             return RedirectToAction(nameof(Index));
+        }
+
+        public IActionResult Account()
+        {
+            return View();
+        }
+        public async Task<IActionResult> Logout()
+        {
+            
+            await HttpContext.SignOutAsync();
+            return RedirectToAction("Index", "Home");
         }
     }
 }

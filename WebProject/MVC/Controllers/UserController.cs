@@ -11,8 +11,8 @@ namespace MVC.Controllers
         private readonly RegistrationInterface _registrationInterface;
         public UserController(UserInterface userInterface, RegistrationInterface registrationInterface)
         {
-           _userInterface = userInterface;
-           _registrationInterface = registrationInterface;
+            _userInterface = userInterface;
+            _registrationInterface = registrationInterface;
         }
 
         public ActionResult Register()
@@ -23,9 +23,9 @@ namespace MVC.Controllers
         [HttpPost]
         public async Task<IActionResult> Register(User user, string confirmPassword)
         {
-            if (string.IsNullOrEmpty(user.UserName) || string.IsNullOrEmpty(user.Password))
+            if (string.IsNullOrEmpty(user.UserName) || string.IsNullOrEmpty(user.Password) || string.IsNullOrEmpty(user.Email))
             {
-                ModelState.AddModelError("","UserName hoặc Password là bắt buộc nhập");
+                ModelState.AddModelError("", "Không được để trống");
                 return View(user);
             }
 
@@ -33,6 +33,12 @@ namespace MVC.Controllers
             if (existingUser != null)
             {
                 ModelState.AddModelError("Username", "Tên đăng nhập đã tồn tại");
+                return View(user);
+            }
+            var email = await _userInterface.GetByEmail(user.Email);
+            if (email != null)
+            {
+                ModelState.AddModelError("Email", "Email đã tồn tại");
                 return View(user);
             }
             if (user.Password != confirmPassword)
@@ -45,38 +51,73 @@ namespace MVC.Controllers
 
             var registration = new Registration { UserID = user.UserID, Role = user.Role, Status = "Cho duyet" };
 
-            // Gọi phương thức RegisterUserAsync để thêm mới đăng ký
+
             await _registrationInterface.RegisterUserAsync(registration);
             return RedirectToAction(nameof(Index));
         }
 
-      /*  public IActionResult UserAction()
+
+        public async Task<IActionResult> Index()
         {
-            
-            var user = _userInterface.GetUser();
+            var user = await _userInterface.GetAll();
+            return View(user);
+        }
 
-            if(user != null)
+        public async Task<IActionResult> Delete(int id)
+        {
+            var ev = await _userInterface.GetById(id);
+            if (ev == null)
             {
-                if(user.Role =="Admin")
-                {
-                    return View("ViewAdmin");
-                }
-                else if(user.Role == "Faculty")
-                {
-                    return View("ViewFaculty");
-                }
-                else if(user.Role == "Student")
-                {
-                    return View("ViewStudent");
-                }
+                return NotFound();
             }
-            return NotFound();
-        }*/
+            return View(ev);
+        }
 
-       
-        public IActionResult Index()
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(int id)
+        {
+            await _userInterface.Delete(id);
+            return RedirectToAction(nameof(Index));
+        }
+
+        public IActionResult Login()
         {
             return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Login(string username, string password)
+        {
+            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
+            {
+                ModelState.AddModelError("", "Tên đăng nhập và mật khẩu không được để trống");
+                return View();
+            }
+            var user = await _userInterface.GetByName(username);
+            if ( user.Password != password)
+            {
+                ModelState.AddModelError("", "Tên đăng nhập hoặc mật khẩu không chính xác");
+                return View();
+            }
+            
+            if(user.Role == "Admin")
+            {
+                return RedirectToAction("Account", "Admin");
+            }
+            else if (user.Role == "Faculty")
+            {
+                return RedirectToAction("Account", "Faculty");
+            }
+            else if (user.Role == "Student")
+            {
+                return RedirectToAction("Account", "Student");
+            }
+            else
+            {
+                
+                return RedirectToAction("Index", "Home");
+            }
         }
     }
 }

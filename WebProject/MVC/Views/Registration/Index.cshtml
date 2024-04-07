@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Data.Models.Registration>
+
+<h2>Danh sách đăng ký chờ duyệt</h2>
+
+@if (Model.Any())
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>UserName</th>
+                <th>Role</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var registration in Model)
+            {
+                <tr>
+                    <td>@(registration.User != null ? registration.User.UserName : "N/A")</td>
+                    <td>@registration.Role</td>
+                    <td>@registration.Status</td>
+                    <td>
+
+                        <form asp-action="DeleteRegis" asp-route-id="@registration.RegistrationID" method="post">
+                            <button type="submit" class="btn btn-primary">Chấp nhận</button>
+                        </form>
+                        <a asp-action="Delete" asp-route-id="@registration.RegistrationID" class="btn btn-danger">Từ chối</a>
+                    </td>
+                    
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>Không có đăng ký nào chờ duyệt.</p>
+}
