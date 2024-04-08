@@ -2,6 +2,10 @@
 using Data.Interface;
 using Data.Repository;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Identity;
+using System.Security.Claims;
 
 namespace MVC.Controllers
 {
@@ -9,10 +13,13 @@ namespace MVC.Controllers
     {
         private readonly UserInterface _userInterface;
         private readonly RegistrationInterface _registrationInterface;
-        public UserController(UserInterface userInterface, RegistrationInterface registrationInterface)
+        
+    
+        public UserController(UserInterface userInterface, RegistrationInterface registrationInterface )
         {
             _userInterface = userInterface;
             _registrationInterface = registrationInterface;
+            
         }
 
         public ActionResult Register()
@@ -87,37 +94,66 @@ namespace MVC.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Login(string username, string password)
+        public async Task<IActionResult> Login(User user)
         {
-            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
+            var login = await _userInterface.NameAndPassword(user.UserName,user.Password);
+            if(login != null)
             {
-                ModelState.AddModelError("", "Tên đăng nhập và mật khẩu không được để trống");
-                return View();
+                HttpContext.Session.SetString("UserID", login.UserID.ToString());
+                HttpContext.Session.SetString("UserName", login.UserName);
+                HttpContext.Session.SetString("Email", login.Email);
+                HttpContext.Session.SetString("Role", login.Role);
+
+                if (login.Role == "Admin")
+                {
+                    return RedirectToAction("Account", "Admin");
+                }
+                else if (login.Role == "Faculty")
+                {
+                    return RedirectToAction("Account", "Faculty");
+                }
+                else if (login.Role == "Student")
+                {
+                    return RedirectToAction("Account", "Student");
+                }
             }
-            var user = await _userInterface.GetByName(username);
-            if ( user.Password != password)
+
+            ViewBag.Error = "Tên người dùng hoặc mật khẩu không chính xác!";
+            return View();
+        }
+
+        public IActionResult Profile()
+        {
+            var userid = HttpContext.Session.GetString("UserID");
+            if (!string.IsNullOrEmpty(userid) && int.TryParse(userid, out int userId))
             {
-                ModelState.AddModelError("", "Tên đăng nhập hoặc mật khẩu không chính xác");
-                return View();
-            }
-            
-            if(user.Role == "Admin")
-            {
-                return RedirectToAction("Account", "Admin");
-            }
-            else if (user.Role == "Faculty")
-            {
-                return RedirectToAction("Account", "Faculty");
-            }
-            else if (user.Role == "Student")
-            {
-                return RedirectToAction("Account", "Student");
+                var userName = HttpContext.Session.GetString("UserName");
+                var email = HttpContext.Session.GetString("Email");
+                var role = HttpContext.Session.GetString("Role");
+
+                var user = new User
+                {
+                    UserID = userId,
+                    UserName = userName,
+                    Email = email,
+                    Role = role
+                };
+
+                return View(user);
             }
             else
-            {
-                
-                return RedirectToAction("Index", "Home");
-            }
+            { return RedirectToAction("Login", "User"); }
+        }
+
+        public  IActionResult Logout()
+
+        {
+
+            HttpContext.Session.Remove("UserID");
+            HttpContext.Session.Remove("Email");
+            HttpContext.Session.Remove("Role");
+
+            return RedirectToAction("Index", "Home");
         }
     }
 }

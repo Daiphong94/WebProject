@@ -60,10 +60,15 @@ namespace Data.Repository
 
         public async Task<User> GetByName(string username)
         {
-            return await _context.Users.SingleOrDefaultAsync(u => u.UserName == username);
+            var user = await _context.Users.SingleOrDefaultAsync(u => u.UserName == username);
+            return user;
         }
 
-       
+        public async Task<User> NameAndPassword(string username, string password)
+        {
+            var user = await _context.Users.SingleOrDefaultAsync(u => u.UserName == username && u.Password == password);
+            return user;
+        }
 
         public async Task Update(User entity)
         {

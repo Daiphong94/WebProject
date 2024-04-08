@@ -24,6 +24,8 @@ namespace MVC.Controllers
 
         public IActionResult Create()
         {
+            ViewBag.UserID = HttpContext.Session.GetString("UserID");
+            ViewBag.Email = HttpContext.Session.GetString("Email");
             return View();
         }
 
@@ -31,20 +33,27 @@ namespace MVC.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(Student model)
         {
-            var user = await _userInterface.GetByName(User.Identity.Name);
-            if(user != null)
+            var userIdString = HttpContext.Session.GetString("UserID");
+            if (!string.IsNullOrEmpty(userIdString) && int.TryParse(userIdString, out int userId))
             {
-                model.UserID = user.UserID;
-                model.Email = user.Email;
+                
+                var email = HttpContext.Session.GetString("Email");
 
+                
+                model.UserID = userId;
+                model.Email = email;
+
+                model.AdmissionDate = DateTime.Now;
+                
                 await _studentInterface.AddStudent(model);
+
                 return RedirectToAction("Index");
             }
             else
             {
-                return RedirectToAction("Index", "Home");
+               
+                return RedirectToAction("Login", "User");
             }
-            
         }
         public async Task<IActionResult> Edit(int id)
         {
@@ -93,16 +102,9 @@ namespace MVC.Controllers
             await _studentInterface.DeleteStudent(id);
             return RedirectToAction(nameof(Index));
         }
-
         public IActionResult Account()
         {
             return View();
-        }
-        public async Task<IActionResult> Logout()
-        {
-            
-            await HttpContext.SignOutAsync();
-            return RedirectToAction("Index", "Home");
-        }
+        }        
     }
 }

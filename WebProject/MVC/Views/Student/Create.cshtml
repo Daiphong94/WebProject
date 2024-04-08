@@ -8,19 +8,20 @@
 <form asp-action="Create" method="post">
     <div class="form-group">
         <label asp-for="UserID"></label>
-        <input asp-for="UserID" class="form-control" />
+        <input asp-for="UserID" class="form-control" readonly value="@ViewBag.UserID" />
         <span asp-validation-for="UserID" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Email"></label>
+        <input asp-for="Email" class="form-control" readonly value="@ViewBag.Email" />
+        <span asp-validation-for="Email" class="text-danger"></span>
     </div>
     <div class="form-group">
         <label asp-for="FullName"></label>
         <input asp-for="FullName" class="form-control" />
         <span asp-validation-for="FullName" class="text-danger"></span>
     </div>
-    <div class="form-group">
-        <label asp-for="Email"></label>
-        <input asp-for="Email" class="form-control" />
-        <span asp-validation-for="Email" class="text-danger"></span>
-    </div>
+    
     <div class="form-group">
         <label asp-for="School"></label>
         <input asp-for="School" class="form-control" />
@@ -43,7 +44,7 @@
     </div>
     <div class="form-group">
         <label asp-for="AdmissionDate"></label>
-        <input asp-for="AdmissionDate" type="datetime-local" class="form-control" />
+        <input asp-for="AdmissionDate" class="form-control" readonly value="@DateTime.Now.ToString("yyyy-MM-ddTHH:mm")" />
         <span asp-validation-for="AdmissionDate" class="text-danger"></span>
     </div>
     <button type="submit" class="btn btn-primary">Create</button>

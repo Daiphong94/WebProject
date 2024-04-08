@@ -24,19 +24,35 @@ namespace MVC.Controllers
 
         public IActionResult Create()
         {
+            ViewBag.UserID = HttpContext.Session.GetString("UserID");
+            ViewBag.Email = HttpContext.Session.GetString("Email");
             return View();
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(Admin admin)
+        public async Task<IActionResult> Create(Admin model)
         {
-            if (ModelState.IsValid)
+            var userIdString = HttpContext.Session.GetString("UserID");
+            if (!string.IsNullOrEmpty(userIdString) && int.TryParse(userIdString, out int userId))
             {
-                await _adminInterface.AddAdmin(admin);
-                return RedirectToAction(nameof(Index));
+
+                var email = HttpContext.Session.GetString("Email");
+
+
+                model.UserID = userId;
+                model.Email = email;
+                model.JoiningDate = DateTime.Now;
+
+                await _adminInterface.AddAdmin(model);
+
+                return RedirectToAction("Index");
             }
-            return View(admin);
+            else
+            {
+
+                return RedirectToAction("Login", "User");
+            }
         }
 
         public async Task<IActionResult> Edit(int id)
@@ -118,7 +134,10 @@ namespace MVC.Controllers
             var pendingRegistrations = await _registrationInterface.GetAll();
             return View(pendingRegistrations);
         }
+        public IActionResult Account()
+        {
+            return View();
+        }
 
-       
     }
 }

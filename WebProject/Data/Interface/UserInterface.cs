@@ -16,6 +16,7 @@ namespace Data.Interface
         Task Update(User entity);
         Task Delete(int id);
         Task<User> GetByName(string username);
+        Task<User> NameAndPassword(string username, string password);
         Task<User> GetByEmail(string email);
         Task<bool> Exists(int id);
     }

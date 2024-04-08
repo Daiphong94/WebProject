@@ -1,6 +1,7 @@
 using Data.Interface;
 using Data.Models;
 using Data.Repository;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 using System;
 
@@ -25,6 +26,17 @@ builder.Services.AddScoped<ExamInterface, ExamRepository>();
 builder.Services.AddScoped<SCInterface, SCRepository>();
 builder.Services.AddScoped<UserInterface, UserRepository>();
 builder.Services.AddScoped<RegistrationInterface, RegistrationRepository>();
+
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromMinutes(120);
+    options.Cookie.HttpOnly = true;
+    options.Cookie.IsEssential = true;
+});
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(option =>
+{
+    option.Cookie.Name = "Cookie";
+});
 builder.Services.AddHttpContextAccessor();
 
 var app = builder.Build();
@@ -36,7 +48,7 @@ if (!app.Environment.IsDevelopment())
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
-
+app.UseSession();
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 

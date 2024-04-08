@@ -20,6 +20,8 @@ namespace MVC.Controllers
 
         public IActionResult Create()
         {
+            ViewBag.UserID = HttpContext.Session.GetString("UserID");
+            ViewBag.Email = HttpContext.Session.GetString("Email");
             return View();
         }
 
@@ -27,12 +29,26 @@ namespace MVC.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(Faculty model)
         {
-            if (ModelState.IsValid)
+            var userIdString = HttpContext.Session.GetString("UserID");
+            if (!string.IsNullOrEmpty(userIdString) && int.TryParse(userIdString, out int userId))
             {
+
+                var email = HttpContext.Session.GetString("Email");
+
+
+                model.UserID = userId;
+                model.Email = email;
+                model.JoiningDate = DateTime.Now;
+
                 await _facultyInterface.AddFaculty(model);
-                return RedirectToAction(nameof(Index));
+
+                return RedirectToAction("Index");
             }
-            return View(model);
+            else
+            {
+
+                return RedirectToAction("Login", "User");
+            }
         }
 
         public async Task<IActionResult> Edit(int id)
@@ -77,6 +93,10 @@ namespace MVC.Controllers
         {
             await _facultyInterface.DeleteFaculty(id);
             return RedirectToAction(nameof(Index));
+        }
+        public IActionResult Account()
+        {
+            return View();
         }
     }
 }

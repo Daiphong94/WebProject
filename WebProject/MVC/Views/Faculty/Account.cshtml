@@ -2,3 +2,11 @@
 
 
 <h4>Account Faculty</h4>
+<p>
+    <a asp-controller="Faculty" asp-action="Create">Create New</a>
+</p>
+<a asp-controller="User" asp-action="Logout" asp-route-returnUrl="@Url.Content("~/")">Logout</a>
+
+<p>
+    <a asp-controller="User" asp-action="Profile">Thông tin</a>
+</p>
