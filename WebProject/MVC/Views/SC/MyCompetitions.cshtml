@@ -1,0 +1,25 @@
+﻿@model IEnumerable<Data.Models.Competition>
+
+<h2>My Competitions</h2>
+
+@if (!Model.Any())
+{
+    <p>No competitions found.</p>
+}
+else
+{
+    <ul>
+        @foreach (var competition in Model)
+        {
+            <li>
+                @competition.CompetitionName
+                <form asp-controller="Answer" asp-action="MyAnswer" method="get">
+                    <input type="hidden" name="competitionId" value="@competition.CompetitionID" />
+                    <button type="submit" class="competition-item">My Answer</button>
+                </form>
+            </li>
+        }
+    </ul>
+
+   
+}

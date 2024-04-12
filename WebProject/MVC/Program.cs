@@ -33,10 +33,25 @@ builder.Services.AddSession(options =>
     options.Cookie.HttpOnly = true;
     options.Cookie.IsEssential = true;
 });
-builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(option =>
+builder.Services.AddAuthentication(options =>
 {
-    option.Cookie.Name = "Cookie";
+    options.DefaultAuthenticateScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+    options.DefaultSignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+}).AddCookie(option =>
+{
+    option.LoginPath = "/User/Login";
+    option.AccessDeniedPath = "/Home/Index";
 });
+
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("Admin", policy => policy.RequireRole("Admin"));
+    options.AddPolicy("Faculty", policy => policy.RequireRole("Faculty"));
+    options.AddPolicy("AdminFaculty", policy => policy.RequireRole("Admin", "Faculty"));
+    options.AddPolicy("Student", policy => policy.RequireRole("Student"));
+});
+
 builder.Services.AddHttpContextAccessor();
 
 var app = builder.Build();
@@ -48,6 +63,8 @@ if (!app.Environment.IsDevelopment())
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
+app.UseAuthentication();
+app.UseAuthorization();
 app.UseSession();
 app.UseHttpsRedirection();
 app.UseStaticFiles();

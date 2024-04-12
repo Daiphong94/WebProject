@@ -47,6 +47,11 @@ namespace Data.Repository
             return await _context.Students.FindAsync(id);
         }
 
+        public async Task<Student> GetByUserId(int userId)
+        {
+            return await _context.Students.SingleOrDefaultAsync(u => u.UserID == userId);
+        }
+
         public Task<IEnumerable<Competition>> GetRegisteredCompetitions(int studentId)
         {
             throw new NotImplementedException();

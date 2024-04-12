@@ -200,14 +200,14 @@ namespace Data.Models
             modelBuilder.Entity<Answer>(entity =>
             {
                 entity.HasKey(e => e.AnswerID);
-                entity.Property(e => e.File).IsRequired().HasMaxLength(200);
+                entity.Property(e => e.File).IsRequired(false).HasMaxLength(200);
                 entity.Property(e => e.Writing).IsRequired(false).HasColumnType("text");
             });
 
             modelBuilder.Entity<Exam>(entity =>
             {
                 entity.HasKey(e => e.ExamID);
-                entity.Property(e => e.Score).IsRequired();
+                entity.Property(e => e.Score).IsRequired().HasDefaultValue(0.00f);
                 entity.Property(e => e.Rank).IsRequired();
             });
         }

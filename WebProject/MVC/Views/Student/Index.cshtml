@@ -12,7 +12,8 @@
 <table class="table">
     <thead>
         <tr>
-            
+            <th>Student</th>
+            <th>User</th>
             <th>Full Name</th>
             <th>Email</th>
             <th>Faculty Number</th>
@@ -26,7 +27,8 @@
         @foreach (var student in Model)
         {
             <tr>
-                
+                <td>@student.StudentID</td>
+                <td>@student.UserID</td>
                 <td>@student.FullName</td>
                 <td>@student.Email</td>
                 <td>@student.StudentNumber</td>

@@ -35,7 +35,12 @@ namespace Data.Repository
 
         public async Task<IEnumerable<Question>> GetAll()
         {
-            return await _context.Questions.ToListAsync();
+            return await _context.Questions.Include(q => q.Competition).ToListAsync();
+        }
+
+        public async Task<List<Question>> GetByCompetitionID(int Id)
+        {
+            return await _context.Questions.Where(q => q.CompetitionID == Id).ToListAsync();
         }
 
         public async Task<Question> GetById(int id)
@@ -43,7 +48,16 @@ namespace Data.Repository
             return await _context.Questions.FindAsync(id);
         }
 
-        public async Task Update(Question entity)
+        public async Task<int> GetQuestionIdByCompetitionId(int id)
+        {
+            var questionId = await _context.Questions
+       .Where(q => q.CompetitionID == id)
+       .Select(q => q.QuestionID)
+       .FirstOrDefaultAsync();
+
+            return questionId;
+        }
+            public async Task Update(Question entity)
         {
             _context.Questions.Update(entity);
             await _context.SaveChangesAsync();

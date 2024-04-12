@@ -8,6 +8,10 @@
 
 <form asp-action="Create" method="post">
     <div class="form-group">
+        <label>@ViewData["CompetitionName"]</label>
+        <input type="text" class="form-control" value="@ViewData["CompetitionName"]" readonly />
+    </div>
+    <div class="form-group">
         <label asp-for="CompetitionID"></label>
         <input asp-for="CompetitionID" class="form-control" />
         <span asp-validation-for="CompetitionID" class="text-danger"></span>

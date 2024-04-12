@@ -2,9 +2,11 @@
 using Data.Interface;
 using Data.Repository;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 
 namespace MVC.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class AdminController : Controller
     {
         private readonly AdminInterface _adminInterface;
@@ -21,14 +23,14 @@ namespace MVC.Controllers
             var admins = await _adminInterface.GetAllAdmin();
             return View(admins);
         }
-
+        
         public IActionResult Create()
         {
             ViewBag.UserID = HttpContext.Session.GetString("UserID");
             ViewBag.Email = HttpContext.Session.GetString("Email");
             return View();
         }
-
+        
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(Admin model)

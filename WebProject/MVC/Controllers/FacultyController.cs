@@ -1,9 +1,11 @@
 ﻿using Data.Models;
 using Data.Interface;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 
 namespace MVC.Controllers
 {
+    [Authorize(Roles = "Faculty")]
     public class FacultyController : Controller
     {
         private readonly FacultyInterface _facultyInterface;

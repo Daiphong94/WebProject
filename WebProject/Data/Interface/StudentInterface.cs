@@ -9,6 +9,7 @@ namespace Data.Interface
 {
     public interface StudentInterface
     {
+        Task<Student> GetByUserId(int userId);
         Task<Student> GetByIdStudent(int id);
         Task<IEnumerable<Student>> GetAllStudent();
         Task AddStudent(Student entity);

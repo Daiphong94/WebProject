@@ -2,9 +2,11 @@
 using Data.Interface;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authorization;
 
 namespace MVC.Controllers
 {
+    [Authorize(Roles = "Student")]
     public class StudentController : Controller
     {
         private protected StudentInterface _studentInterface;

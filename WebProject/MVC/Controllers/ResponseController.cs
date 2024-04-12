@@ -27,11 +27,7 @@ namespace MVC.Controllers
         {
             await _ResponseInterface.AddResponse(model);
             return RedirectToAction(nameof(Index));
-            /*if (ModelState.IsValid)
-            {
-               
-            }*/
-            return View(model);
+           
         }
         public async Task<IActionResult> Edit(int id)
         {

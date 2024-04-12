@@ -5,14 +5,11 @@
 
 <h2>Question List</h2>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
 
 <table class="table">
     <thead>
         <tr>
-
+            <th>CompetitionName</th>
             <th>CompetitionID</th>
             <th>File</th>
             <th>Writing</th>
@@ -25,7 +22,7 @@
         @foreach (var question in Model)
         {
             <tr>
-
+                <td>@(question.Competition != null ? question.Competition.CompetitionName : "N/A")</td>
                 <td>@question.CompetitionID</td>
                 <td>@question.File</td>
                 <td>@question.Writing</td>

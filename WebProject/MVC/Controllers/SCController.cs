@@ -1,6 +1,7 @@
 ﻿using Data.Models;
 using Data.Interface;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 
 namespace MVC.Controllers
 {
@@ -9,11 +10,13 @@ namespace MVC.Controllers
         private readonly SCInterface _scInterface;
         private readonly StudentInterface _studentInterface;
         private readonly CompetitionInterface _competitionInterface;
-        public SCController(SCInterface scInterface, StudentInterface studentInterface, CompetitionInterface competitionInterface)
+        private readonly UserInterface _userInterface;
+        public SCController(SCInterface scInterface, StudentInterface studentInterface, CompetitionInterface competitionInterface, UserInterface userInterface)
         {
             _scInterface = scInterface;
             _studentInterface = studentInterface;
             _competitionInterface = competitionInterface;
+            _userInterface = userInterface;
         }
 
         public async Task<IActionResult> Index()
@@ -23,43 +26,90 @@ namespace MVC.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> JoinCompetition()
+        public async Task<IActionResult> JoinCompetition(int competitionId)
         {
-            var competitions = await _competitionInterface.GetAll();
-            ViewBag.Competitions = competitions;
-            return View();
+            var userid = HttpContext.Session.GetString("UserID");
+            if (!string.IsNullOrEmpty(userid) && int.TryParse(userid, out int userId))
+            {
+                var student = await _studentInterface.GetByUserId(userId);
+                var competition = await _competitionInterface.GetById(competitionId);
+
+                if (student != null && competition != null)
+                {
+                    ViewData["Student"] = student;
+                    ViewData["Competition"] = competition;
+
+                    return View();
+                }
+                else
+                {
+                    
+                    return RedirectToAction("Error", "SC");
+                }
+            }
+            else
+            { return RedirectToAction("Login", "User"); }
+
+            
         }
         [HttpPost]
-        public async Task<ActionResult> JoinCompetition(string name, string email)
+        public async Task<ActionResult> JoinCompetition(StudentCompetition model)
         {
-           var student = await _studentInterface.GetByEmail(email);
-            if (string.IsNullOrEmpty(email) || !IsValidEmail(email))
+            var userIdString = HttpContext.Session.GetString("UserID");
+            if (string.IsNullOrEmpty(userIdString) || !int.TryParse(userIdString, out int userId))
             {
-                ModelState.AddModelError("email", "Vui lòng nhập một địa chỉ email hợp lệ.");
-                var competitions = await _competitionInterface.GetAll();
-                ViewBag.Competitions = competitions;
-                return View();
+                return RedirectToAction("Login", "User");
             }
-            
+
+            var student = await _studentInterface.GetByUserId(userId);
             if (student == null)
             {
-                ViewBag.ErrorMessage = "Không tìm thấy sinh viên với email đã nhập.";
-                var competitions = await _competitionInterface.GetAll();
-                ViewBag.Competitions = competitions;
-                return View();
+                return RedirectToAction("Error", "SC");
             }
-            var competition = await _competitionInterface.GetByName(name);
-            
 
-            var studentCompetition = new StudentCompetition
+            var competition = await _competitionInterface.GetById(model.CompetitionID);
+            if (competition == null)
+            {
+                return RedirectToAction("Error", "SC");
+            }
+
+            var existingRegistration = await _scInterface.GetByStudentAndCompetition(student.StudentID, model.CompetitionID);
+            if (existingRegistration != null)
+            {
+                
+                return RedirectToAction("Error", "SC");
+            }
+
+            var scmodel = new StudentCompetition
             {
                 StudentID = student.StudentID,
-                CompetitionID = competition.CompetitionID,
-                JoinedDate = DateTime.Now
+                CompetitionID = model.CompetitionID,
+                JoinedDate = DateTime.Now,
             };
-            await _scInterface.Add(studentCompetition);
-            return View("Success");
+
+            await _scInterface.Add(scmodel);
+
+            return RedirectToAction(nameof(Index));
         }
+
+        public async Task<IActionResult> MyCompetitions()
+        {
+            var userIdString = HttpContext.Session.GetString("UserID");
+            if (string.IsNullOrEmpty(userIdString) || !int.TryParse(userIdString, out int userId))
+            {
+                return RedirectToAction("Login", "User");
+            }
+
+            var student = await _studentInterface.GetByUserId(userId);
+            if (student == null)
+            {
+                return RedirectToAction("Error", "SC");
+            }
+
+            var myCompetitions = await _scInterface.GetCompetitionsById(student.StudentID);
+            return View(myCompetitions);
+        }
+
         public IActionResult Success()
         {
             return View("Success");

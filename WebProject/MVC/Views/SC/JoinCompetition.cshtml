@@ -1,31 +1,37 @@
-﻿<!DOCTYPE html>
-<html>
-<head>
-    <title>Đăng ký tham gia cuộc thi</title>
-</head>
-<body>
-    <h1>Đăng ký tham gia cuộc thi</h1>
+﻿@using Data.Models
 
-    @if (TempData["ErrorMessage"] != null)
-    {
-        <div class="alert alert-danger">@TempData["ErrorMessage"]</div>
-    }
+@{
+    var student = ViewData["Student"] as Data.Models.Student;
+    var competition = ViewData["Competition"] as Data.Models.Competition;
+}
 
-    <form asp-controller="SC" asp-action="JoinCompetition" method="post">
-        <label for="email">Email:</label>
-        <input type="text" id="email" name="email" />
-        <br />
+<h1>Join Competition</h1>
+<form method="post" action="/SC/JoinCompetition">
+    <div>
+        <label for="Email">Email:</label>
+        <input type="text" id="Email" name="Email" value="@student?.Email" readonly>
+    </div>
 
-        <label for="competitionName">Chọn cuộc thi:</label>
-        <select id="competitionName" name="name">
-            @foreach (var competition in ViewBag.Competitions)
-            {
-                <option value="@competition.CompetitionName">@competition.CompetitionName</option>
-            }
-        </select>
-        <br />
+    <div>
+        <label for="CompetitionName">Competition Name:</label>
+        <input type="text" id="CompetitionName" name="CompetitionName" value="@competition?.CompetitionName" readonly>
+    </div>
 
-        <button type="submit">Đăng ký</button>
-    </form>
-</body>
-</html>
+    <!-- Trường ẩn để lưu trữ StudentID và CompetitionID -->
+    <input type="hidden" id="StudentID" name="StudentID" value="@student?.StudentID">
+    <input type="hidden" id="CompetitionID" name="CompetitionID" value="@competition?.CompetitionID">
+
+    <div>
+        <label for="JoinedDate">Joined Date:</label>
+        <input type="text" id="JoinedDate" name="JoinedDate" value="@DateTime.Now" readonly>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Create</button>
+   
+</form>
+<a href="/">Quay lại trang chính</a>
+
+<script>
+    // Set joined date to current date
+    document.getElementById("JoinedDate").value = new Date().toISOString().slice(0, 10);
+</script>

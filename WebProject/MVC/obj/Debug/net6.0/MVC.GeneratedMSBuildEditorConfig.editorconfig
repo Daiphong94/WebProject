@@ -58,12 +58,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQW5zd2VyXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Admin/Project/WebProject/MVC/Views/Answer/MyAnswer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQW5zd2VyXE15QW5zd2VyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Admin/Project/WebProject/MVC/Views/Competition/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcGV0aXRpb25cQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Admin/Project/WebProject/MVC/Views/Competition/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcGV0aXRpb25cRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Project/WebProject/MVC/Views/Competition/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tcGV0aXRpb25cRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Admin/Project/WebProject/MVC/Views/Competition/Edit.cshtml]
@@ -200,6 +208,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Admin/Project/WebProject/MVC/Views/SC/JoinCompetition.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU0NcSm9pbkNvbXBldGl0aW9uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Project/WebProject/MVC/Views/SC/MyCompetitions.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU0NcTXlDb21wZXRpdGlvbnMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Admin/Project/WebProject/MVC/Views/SC/Success.cshtml]

@@ -1,8 +1,26 @@
-﻿@{
+﻿@model IEnumerable<Data.Models.Competition>
+
+@{
     ViewData["Title"] = "Home Page";
 }
+
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
+
+<h2>Danh sách cuộc thi</h2>
+
+@foreach (var competition in Model)
+{
+    <a href="@Url.Action("JoinCompetition", "SC", new { competitionId  = competition.CompetitionID })" class="competition-item">
+        <div>
+            <h3>@competition.CompetitionName</h3>
+            <p>@competition.Description</p>
+            <p>Start Date: @competition.StartDate.ToString("dd/MM/yyyy")</p>
+            <p>End Date: @competition.EndDate.ToString("dd/MM/yyyy")</p>
+            <img src="@competition.Photo" alt="Competition Photo" />
+        </div>
+    </a>
+}

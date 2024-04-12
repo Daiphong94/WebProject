@@ -43,6 +43,11 @@ namespace Data.Repository
             return await _context.Answers.FindAsync(id);
         }
 
+        public async Task<Answer> GetByStudentAndQuestion(int studentId, int questionId)
+        {
+            return await _context.Answers.FirstOrDefaultAsync(sc => sc.StudentID == studentId && sc.QuestionID == questionId);
+        }
+
         public Task SubmitAnswer(Answer answer)
         {
             throw new NotImplementedException();

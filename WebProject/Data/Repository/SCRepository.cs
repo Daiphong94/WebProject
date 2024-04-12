@@ -46,6 +46,19 @@ namespace Data.Repository
             return await _context.StudentCompetitions.FindAsync(id);
         }
 
+        public async Task<StudentCompetition> GetByStudentAndCompetition(int studentId, int competitionId)
+        {
+            return await _context.StudentCompetitions.FirstOrDefaultAsync(sc => sc.StudentID == studentId && sc.CompetitionID == competitionId);
+        }
+
+        public async Task<IEnumerable<Competition>> GetCompetitionsById(int studentId)
+        {
+            return await _context.StudentCompetitions
+        .Where(sc => sc.StudentID == studentId)
+        .Select(sc => sc.Competition)
+        .ToListAsync();
+        }
+
         public async Task Update(StudentCompetition entity)
         {
             _context.StudentCompetitions.Update(entity);

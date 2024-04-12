@@ -67,7 +67,6 @@ namespace Data.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("AnswerID"), 1L, 1);
 
                     b.Property<string>("File")
-                        .IsRequired()
                         .HasMaxLength(200)
                         .HasColumnType("nvarchar(200)");
 
@@ -170,8 +169,10 @@ namespace Data.Migrations
                     b.Property<int>("Rank")
                         .HasColumnType("int");
 
-                    b.Property<int>("Score")
-                        .HasColumnType("int");
+                    b.Property<float>("Score")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("real")
+                        .HasDefaultValue(0f);
 
                     b.Property<int>("StudentID")
                         .HasColumnType("int");

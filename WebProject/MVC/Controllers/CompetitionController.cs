@@ -1,9 +1,11 @@
 ﻿using Data.Models;
 using Data.Interface;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 
 namespace MVC.Controllers
 {
+    [Authorize(Roles = "Faculty")]
     public class CompetitionController : Controller
     {
         private readonly CompetitionInterface _competitionInterface;
@@ -25,13 +27,15 @@ namespace MVC.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(Competition model)
         {
+            if (string.IsNullOrEmpty(model.CompetitionName) || string.IsNullOrEmpty(model.Description))
+            {
+                
+                ModelState.AddModelError("", "CompetitionName và Description không được để trống");
+                return View(model); 
+            }
+
             await _competitionInterface.Add(model);
             return RedirectToAction(nameof(Index));
-            /*if (ModelState.IsValid)
-            {
-               
-            }*/
-            return View(model);
         }
         public async Task<IActionResult> Edit(int id)
         {
@@ -76,6 +80,16 @@ namespace MVC.Controllers
         {
             await _competitionInterface.Delete(id);
             return RedirectToAction(nameof(Index));
+        }
+
+        public async Task<IActionResult> Details(int id)
+        {
+            var competition = await _competitionInterface.GetById(id);
+            if (competition == null)
+            {
+                return NotFound();
+            }
+            return View(competition);
         }
     }
 }
