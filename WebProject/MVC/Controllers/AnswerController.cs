@@ -12,19 +12,23 @@ namespace MVC.Controllers
         private readonly QuestionInterface _questionInterface;
         private readonly AnswerInterface _answerInterface;
         private readonly CompetitionInterface _competitionInterface;
-        public AnswerController(AnswerInterface answerInterface, UserInterface userInterface, StudentInterface studentInterface, QuestionInterface questionInterface, CompetitionInterface competitionInterface)
+        private readonly SCInterface _scInterface;
+        public AnswerController(AnswerInterface answerInterface,
+            UserInterface userInterface, StudentInterface studentInterface, 
+            QuestionInterface questionInterface, CompetitionInterface competitionInterface, SCInterface scInterface)
         {
             _answerInterface = answerInterface;
             _userInterface = userInterface;
             _studentInterface = studentInterface;
             _questionInterface = questionInterface;
             _competitionInterface = competitionInterface;
+            _scInterface = scInterface;
         }
 
         public async Task<IActionResult> Index()
         {
-            var answer = await _answerInterface.GetAll();
-            return View(answer);
+            var answers = await _answerInterface.GetAllWithCompetition();
+            return View(answers);
         }
         public IActionResult Create()
         {
@@ -126,7 +130,32 @@ namespace MVC.Controllers
             model.StudentID = student.StudentID;
 
             await _answerInterface.Add(model);
-            return RedirectToAction(nameof(Index));
+            if (model.Question == null || model.Question.CompetitionID == 0)
+            {
+                return RedirectToAction("MyCompetitions", "SC");
+            }
+            var competitionId = model.Question.CompetitionID;
+            await _scInterface.DeleteCompetition(competitionId, student.StudentID);
+            return RedirectToAction("MyCompetitions", "SC");
+        }
+
+        public async Task<IActionResult> Details(int id)
+        {
+            var answer = await _answerInterface.GetById(id);
+            if (answer == null)
+            {
+                return NotFound();
+            }
+            var question = await _questionInterface.GetById(answer.QuestionID);
+            if (question == null)
+            {
+                return NotFound();
+            }
+
+            ViewBag.StudentID = answer.StudentID;
+            ViewBag.Question = question;
+
+            return View(answer);
         }
     }
 }

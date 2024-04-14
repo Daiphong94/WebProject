@@ -9,12 +9,16 @@ namespace Data.Interface
 {
     public interface SCInterface
     {
-        Task<StudentCompetition> GetById(int id);
+        Task<StudentCompetition> GetById(int studentId, int competitionId);
         Task<IEnumerable<StudentCompetition>> GetAll();
         Task Add(StudentCompetition entity);
         Task Update(StudentCompetition entity);
-        Task Delete(int id);
+        Task Delete(int studentId, int competitionId);
         Task<StudentCompetition> GetByStudentAndCompetition(int studentId, int competitionId);
-        Task<IEnumerable<Competition>> GetCompetitionsById(int studentId);
+        
+        Task<int> GetStudentCompetitionIdByAnswerId(int answerId);
+        Task DeleteCompetition(int studentId, int competitionId);
+        Task<StudentCompetition> GetStudentCompetitionById(int studentId, int competitionId);
+        Task<IEnumerable<StudentCompetition>> GetCompetitionsById(int studentId);
     }
 }

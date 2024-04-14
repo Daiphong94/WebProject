@@ -16,5 +16,6 @@ namespace Data.Interface
         Task Update(Question entity);
         Task Delete(int id);
         Task<int> GetQuestionIdByCompetitionId(int id);
+        Task<String> GetCompetitionByQuestionIdAsync(int questionId);
     }
 }

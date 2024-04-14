@@ -28,13 +28,13 @@ namespace Data.Models
                 .HasOne(sc => sc.Competition)
                 .WithMany(c => c.StudentCompetitions)
                 .HasForeignKey(sc => sc.CompetitionID)
-                .OnDelete(DeleteBehavior.Cascade);
+                .OnDelete(DeleteBehavior.Restrict);
 
             modelBuilder.Entity<StudentCompetition>()
                 .HasOne(sc => sc.Student)
                 .WithMany(s => s.StudentCompetitions)
                 .HasForeignKey(sc => sc.StudentID)
-                .OnDelete(DeleteBehavior.Cascade);
+                .OnDelete(DeleteBehavior.Restrict);
 
             modelBuilder.Entity<Question>()
                 .HasOne(q => q.Competition)

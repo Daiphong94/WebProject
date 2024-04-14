@@ -577,13 +577,13 @@ namespace Data.Migrations
                     b.HasOne("Data.Models.Competition", "Competition")
                         .WithMany("StudentCompetitions")
                         .HasForeignKey("CompetitionID")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("Data.Models.Student", "Student")
                         .WithMany("StudentCompetitions")
                         .HasForeignKey("StudentID")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Competition");

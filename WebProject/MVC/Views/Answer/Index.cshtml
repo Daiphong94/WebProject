@@ -1,45 +1,41 @@
-﻿@model IEnumerable<Data.Models.Answer>
-@{
-    ViewData["Title"] = "Index";
-}
+﻿    @model IEnumerable<Data.Models.Answer>
+    @{
+        ViewData["Title"] = "Index";
+    }
 
-<h2>Answer List</h2>
+    <h2>Answer List</h2>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
 
-<table class="table">
-    <thead>
-        <tr>
 
-            <th>QuestionID</th>
-            <th>StudentID</th>
-            <th>File</th>
-            <th>Writing</th>
+    <table class="table">
+        <thead>
+
+            <tr>
             
-            <th>Action</th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
+                <th>CompetitionName</th>
+                <th>Email</th>
+                <th>File</th>
+                <th>Writing</th>
+            
+                <th>Action</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
         @foreach (var answer in Model)
         {
             <tr>
-
-                <td>@answer.QuestionID</td>
-                <td>@answer.StudentID</td>
+                <td>@(answer.Question != null ? answer.Question.Competition.CompetitionName : "N/A")</td>
+                <td>@(answer.Student != null ? answer.Student.Email : "N/A")</td>
                 <td>@answer.File</td>
                 <td>@answer.Writing</td>
-                
-
                 <td>
-                    <a asp-action="Edit" asp-route-id="@answer.AnswerID">Edit</a> |
+                    <a asp-controller="Answer" asp-action="Details" asp-route-id="@answer.AnswerID">Details</a> |
                     <a asp-action="Delete" asp-route-id="@answer.AnswerID">Delete</a>
                 </td>
             </tr>
         }
-    </tbody>
-</table>
+        </tbody>
+    </table>
 
 

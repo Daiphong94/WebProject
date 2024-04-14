@@ -44,7 +44,7 @@ namespace MVC.Controllers
                 else
                 {
                     
-                    return RedirectToAction("Error", "SC");
+                    return RedirectToAction("Create", "Student");
                 }
             }
             else
@@ -89,7 +89,7 @@ namespace MVC.Controllers
 
             await _scInterface.Add(scmodel);
 
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction("Account", "Student");
         }
 
         public async Task<IActionResult> MyCompetitions()
@@ -103,11 +103,14 @@ namespace MVC.Controllers
             var student = await _studentInterface.GetByUserId(userId);
             if (student == null)
             {
-                return RedirectToAction("Error", "SC");
+                return RedirectToAction("Create", "Student");
             }
 
+
             var myCompetitions = await _scInterface.GetCompetitionsById(student.StudentID);
-            return View(myCompetitions);
+            
+            var studentCompetitions = myCompetitions.ToList();
+            return View(studentCompetitions);
         }
 
         public IActionResult Success()
@@ -131,6 +134,56 @@ namespace MVC.Controllers
             {
                 return false;
             }
+        }
+
+        public async Task<IActionResult> Delete(int studentId, int competitionId)
+        {
+            var sc = await _scInterface.GetStudentCompetitionById(studentId, competitionId);
+            if (sc == null)
+            {
+                return NotFound();
+            }
+            return View(sc);
+        }
+
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(int studentId, int competitionId)
+        {
+            var userIdString = HttpContext.Session.GetString("UserID");
+
+            // Kiểm tra xem UserID có tồn tại và hợp lệ không
+            if (string.IsNullOrEmpty(userIdString) || !int.TryParse(userIdString, out int userId))
+            {
+                // Nếu không hợp lệ, chuyển hướng người dùng đến trang đăng nhập
+                return RedirectToAction("Login", "User");
+            }
+
+            // Lấy thông tin sinh viên từ UserID
+            var student = await _studentInterface.GetByUserId(userId);
+
+            // Kiểm tra xem thông tin sinh viên có tồn tại không
+            if (student == null)
+            {
+                // Nếu không tồn tại, chuyển hướng người dùng đến trang lỗi
+                return RedirectToAction("Error", "SC");
+            }
+
+            // Lấy thông tin cuộc thi từ CompetitionID
+            var competition = await _competitionInterface.GetById(competitionId);
+
+            // Kiểm tra xem thông tin cuộc thi có tồn tại không
+            if (competition == null)
+            {
+                // Nếu không tồn tại, chuyển hướng người dùng đến trang lỗi
+                return RedirectToAction("Error", "SC");
+            }
+
+            // Gọi phương thức Delete từ _scInterface để xóa StudentCompetition
+            await _scInterface.Delete(studentId, competitionId);
+
+            // Sau khi xóa thành công, chuyển hướng người dùng đến trang Index hoặc trang khác phù hợp
+            return RedirectToAction("");
         }
     }
 }

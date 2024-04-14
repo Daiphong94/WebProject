@@ -35,7 +35,17 @@ namespace Data.Repository
 
         public async Task<IEnumerable<Answer>> GetAll()
         {
-            return await _context.Answers.ToListAsync();
+            return await _context.Answers
+       .Include(a => a.Student) 
+       .ToListAsync();
+        }
+
+        public async Task<IEnumerable<Answer>> GetAllWithCompetition()
+        {
+            return await _context.Answers
+                         .Include(a => a.Student)
+                         .Include(a => a.Question).ThenInclude(q => q.Competition)
+                         .ToListAsync();
         }
 
         public async Task<Answer> GetById(int id)
@@ -46,6 +56,14 @@ namespace Data.Repository
         public async Task<Answer> GetByStudentAndQuestion(int studentId, int questionId)
         {
             return await _context.Answers.FirstOrDefaultAsync(sc => sc.StudentID == studentId && sc.QuestionID == questionId);
+        }
+
+        public async Task<Competition> GetCompetitionFromAnswerAsync(int answerId)
+        {
+            return await _context.Answers
+                             .Where(a => a.AnswerID == answerId)
+                             .Select(a => a.Question.Competition)
+                             .FirstOrDefaultAsync();
         }
 
         public Task SubmitAnswer(Answer answer)

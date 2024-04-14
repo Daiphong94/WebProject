@@ -48,6 +48,16 @@ namespace Data.Repository
             return await _context.Questions.FindAsync(id);
         }
 
+        public async Task<string> GetCompetitionByQuestionIdAsync(int questionId)
+        {
+            var competitionName = await _context.Competitions
+        .Where(c => c.Questions.Any(q => q.QuestionID == questionId))
+        .Select(c => c.CompetitionName)
+        .SingleOrDefaultAsync();
+
+            return competitionName;
+        }
+
         public async Task<int> GetQuestionIdByCompetitionId(int id)
         {
             var questionId = await _context.Questions

@@ -23,6 +23,37 @@ namespace Data.Repository
             await _context.SaveChangesAsync();
         }
 
+        public async Task<int> CalculateRank(int competitionId, float score)
+        {
+            var examScores = await _context.Exams
+       .Where(e => e.CompetitionID == competitionId)
+       .Select(e => e.Score)
+       .ToListAsync();
+
+            if (examScores.Any())
+            {
+                var sortedScores = examScores.OrderBy(e => e).ToList();
+                var rank = sortedScores.IndexOf(score) + 1;
+
+                var sameScoreCount = sortedScores.Count(s => s == score);
+                if (sameScoreCount > 1)
+                {
+                    var totalRank = 0;
+                    for (int i = 0; i < sameScoreCount; i++)
+                    {
+                        totalRank += rank + i;
+                    }
+                    return totalRank / sameScoreCount;
+                }
+
+                return sortedScores.Count - rank + 1;
+            }
+            else
+            {
+                return -1;
+            }
+        }
+
         public async Task Delete(int id)
         {
             var exam = await GetById(id);
@@ -35,7 +66,10 @@ namespace Data.Repository
 
         public async Task<IEnumerable<Exam>> GetAll()
         {
-            return await _context.Exams.ToListAsync();
+            return await  _context.Exams
+                .Include(e => e.Competition)
+                .Include(e => e.Student)
+                .ToListAsync();
         }
 
         public async Task<Exam> GetById(int id)
@@ -45,8 +79,24 @@ namespace Data.Repository
 
         public async Task Update(Exam entity)
         {
-            _context.Exams.Update(entity);
-            await _context.AddRangeAsync();
+            var existingExam = await _context.Exams.FindAsync(entity.ExamID);
+            if (existingExam == null)
+            {
+                
+                throw new Exception("Not Found");
+            }
+
+            
+            existingExam.Score = entity.Score;
+            existingExam.Rank = entity.Rank; 
+
+            
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task<IEnumerable<Exam>> GetExamsByCompetitionId(int competitionId)
+        {
+            return await _context.Exams.Where(e => e.CompetitionID == competitionId).ToListAsync();
         }
     }
 }

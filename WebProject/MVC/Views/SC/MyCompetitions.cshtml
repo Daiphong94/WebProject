@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Data.Models.Competition>
+﻿@model IEnumerable<Data.Models.StudentCompetition>
 
 <h2>My Competitions</h2>
 
@@ -12,10 +12,12 @@ else
         @foreach (var competition in Model)
         {
             <li>
-                @competition.CompetitionName
+                @competition.Competition.CompetitionName
                 <form asp-controller="Answer" asp-action="MyAnswer" method="get">
                     <input type="hidden" name="competitionId" value="@competition.CompetitionID" />
                     <button type="submit" class="competition-item">My Answer</button>
+                    <a asp-action="Delete" asp-asp-controller="SC" asp-route-studentId="@competition.StudentID" asp-route-competitionId="@competition.CompetitionID">Delete</a>
+                   
                 </form>
             </li>
         }

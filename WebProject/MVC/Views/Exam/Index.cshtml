@@ -5,19 +5,25 @@
 
 <h2>Exam List</h2>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
+<div>
+    <form asp-action="Index" method="get">
+        <div class="input-group mb-3">
+            <input type="text" name="searchText" class="form-control" placeholder="Search by competition name...">
+            <div class="input-group-append">
+                <button class="btn btn-outline-secondary" type="submit">Search</button>
+            </div>
+        </div>
+    </form>
+</div>
 
 <table class="table">
     <thead>
         <tr>
 
-            <th>CompetitionID</th>
-            <th>StudentID</th>
+            <th>Competition</th>
+            <th>Email</th>
             <th>Score</th>
             <th>Rank</th>
-            
             <th>Action</th>
             <th></th>
         </tr>
@@ -27,8 +33,8 @@
         {
             <tr>
 
-                <td>@exam.CompetitionID</td>
-                <td>@exam.StudentID</td>
+                <td>@(exam.Competition != null ? exam.Competition.CompetitionName : "N/A")</td>
+                <td>@(exam.Student != null ? exam.Student.Email : "N/A")</td>
                 <td>@exam.Score</td>
                 <td>@exam.Rank</td>
                 

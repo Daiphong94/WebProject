@@ -1,0 +1,24 @@
+﻿@model Data.Models.Answer
+
+<div>
+    <h2>Question:</h2>
+   
+    <p>File: @ViewBag.Question.File</p>
+    <p>Writing: @ViewBag.Question.Writing</p>
+</div>
+
+<hr />
+
+<h2>Answer Details</h2>
+
+<div>
+   
+    <h4>File: @Model.File</h4>
+    <p>Writing: @Model.Writing</p>
+</div>
+
+<td>
+    <a asp-controller="Exam" asp-action="Create" asp-route-competitionId="@Model.Question.CompetitionID"
+    asp-route-studentId="@Model.StudentID">Create Exam</a>
+    
+</td>

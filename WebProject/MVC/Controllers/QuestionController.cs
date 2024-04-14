@@ -67,11 +67,7 @@ namespace MVC.Controllers
 
             await _questionInterface.Update(model);
             return RedirectToAction(nameof(Index));
-            /* if (ModelState.IsValid)
-             {
-
-             }*/
-            return View(model);
+            
         }
         public async Task<IActionResult> Delete(int id)
         {

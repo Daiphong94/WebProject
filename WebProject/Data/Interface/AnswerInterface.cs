@@ -16,5 +16,7 @@ namespace Data.Interface
         Task Delete(int id);
         Task SubmitAnswer(Answer answer);
         Task<Answer> GetByStudentAndQuestion(int studentId, int questionId);
+        Task<Competition> GetCompetitionFromAnswerAsync(int answerId);
+        Task<IEnumerable<Answer>> GetAllWithCompetition();
     }
 }

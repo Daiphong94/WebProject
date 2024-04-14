@@ -1,0 +1,14 @@
+﻿@model Data.Models.StudentCompetition
+
+<h2>Delete</h2>
+
+<div>
+    <p>Student ID: @Model.StudentID</p>
+    <p>Competition ID: @Model.CompetitionID</p>
+</div>
+
+<form asp-controller="SC" asp-action="Delete" method="post">
+    <input type="hidden" name="studentId" value="@Model.StudentID" />
+    <input type="hidden" name="competitionId" value="@Model.CompetitionID" />
+    <button type="submit" class="btn btn-danger">Delete</button>
+</form>

@@ -49,7 +49,7 @@ namespace MVC.Controllers
                 
                 await _studentInterface.AddStudent(model);
 
-                return RedirectToAction("Index");
+                return RedirectToAction("Account ", "Student");
             }
             else
             {

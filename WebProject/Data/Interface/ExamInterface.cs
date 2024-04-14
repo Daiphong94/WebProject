@@ -14,5 +14,7 @@ namespace Data.Interface
         Task Add(Exam entity);
         Task Update(Exam entity);
         Task Delete(int id);
+        Task<int> CalculateRank(int competitionId, float score);
+        Task<IEnumerable<Exam>> GetExamsByCompetitionId(int competitionId);
     }
 }
