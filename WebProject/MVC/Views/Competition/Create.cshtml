@@ -6,31 +6,31 @@
 
 <h2>Create New Competition</h2>
 
-<form asp-action="Create" method="post">
+<form asp-action="Create" method="post" enctype="multipart/form-data">
     <div class="form-group">
-        <label asp-for="CompetitionName"></label>
-        <input asp-for="CompetitionName" class="form-control" />
-        <span asp-validation-for="CompetitionName" class="text-danger"></span>
+        <label for="CompetitionName">Competition Name</label>
+        <input id="CompetitionName" name="CompetitionName" type="text" class="form-control" />
+        <span class="text-danger"></span>
     </div>
     <div class="form-group">
-        <label asp-for="Photo"></label>
-        <input asp-for="Photo" class="form-control" />
-        <span asp-validation-for="Photo" class="text-danger"></span>
+        <label for="Photo">Photo</label>
+        <input id="Photo" name="imageFile" type="file" class="form-control-file" />
+        <span class="text-danger"></span>
     </div>
     <div class="form-group">
-        <label asp-for="Description"></label>
-        <input asp-for="Description" class="form-control" />
-        <span asp-validation-for="Description" class="text-danger"></span>
+        <label for="Description">Description</label>
+        <input id="Description" name="Description" type="text" class="form-control" />
+        <span class="text-danger"></span>
     </div>
     <div class="form-group">
-        <label asp-for="StartDate"></label>
-        <input asp-for="StartDate" class="form-control" />
-        <span asp-validation-for="StartDate" class="text-danger"></span>
+        <label for="StartDate">Start Date</label>
+        <input id="StartDate" name="StartDate" type="date" class="form-control" />
+        <span class="text-danger"></span>
     </div>
     <div class="form-group">
-        <label asp-for="EndDate"></label>
-        <input asp-for="EndDate" class="form-control" />
-        <span asp-validation-for="EndDate" class="text-danger"></span>
+        <label for="EndDate">End Date</label>
+        <input id="EndDate" name="EndDate" type="date" class="form-control" />
+        <span class="text-danger"></span>
     </div>
     
     <button type="submit" class="btn btn-primary">Create</button>

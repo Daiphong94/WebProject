@@ -15,8 +15,7 @@ options.UseSqlServer(builder.Configuration.GetConnectionString("ConnectString"))
 builder.Services.AddScoped<AdminInterface, AdminRepository>();
 builder.Services.AddScoped<FacultyInterface, FacultyRepository>();
 builder.Services.AddScoped<StudentInterface, StudentRepisitory>();
-builder.Services.AddScoped<SurveyInterface, SurveyRepository>();
-builder.Services.AddScoped<ResponseInterface, ResponseRepository>();
+
 builder.Services.AddScoped<FAQInterface, FAQRepository>();
 builder.Services.AddScoped<EventInterface, EventRepository>();
 builder.Services.AddScoped<AnswerInterface, AnswerRepository>();

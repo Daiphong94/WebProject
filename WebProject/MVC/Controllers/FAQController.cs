@@ -7,9 +7,11 @@ namespace MVC.Controllers
     public class FAQController : Controller
     {
         private readonly FAQInterface _faqinterface;
-        public FAQController(FAQInterface faqinterface)
+        private readonly IWebHostEnvironment _webHostEnvironment;
+        public FAQController(FAQInterface faqinterface, IWebHostEnvironment webHostEnvironment)
         {
             _faqinterface = faqinterface;
+            _webHostEnvironment = webHostEnvironment;
         }
         public async Task<IActionResult> Index()
         {
@@ -22,15 +24,20 @@ namespace MVC.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(FAQ model)
+        public async Task<IActionResult> Create(FAQ model, IFormFile imageFile)
         {
+            if (imageFile != null && imageFile.Length > 0)
+            {
+                var imagePath = Path.Combine(_webHostEnvironment.WebRootPath, "img/photo", imageFile.FileName);
+                using (var stream = new FileStream(imagePath, FileMode.Create))
+                {
+                    imageFile.CopyTo(stream);
+                }
+                model.Photo = "/img/photo/" + imageFile.FileName;
+            }
             await _faqinterface.AddFAQ(model);
             return RedirectToAction(nameof(Index));
-            /*if (ModelState.IsValid)
-            {
-               
-            }*/
-            return View(model);
+            
         }
         public async Task<IActionResult> Edit(int id)
         {

@@ -3,44 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\Admin\\Project\\WebProject\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DEAE8685-F820-4695-BE2A-F385DD4C089A}|MVC\\MVC.csproj|c:\\users\\admin\\project\\webproject\\mvc\\views\\sc\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{DEAE8685-F820-4695-BE2A-F385DD4C089A}|MVC\\MVC.csproj|solutionrelative:mvc\\views\\sc\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{DEAE8685-F820-4695-BE2A-F385DD4C089A}|MVC\\MVC.csproj|c:\\users\\admin\\project\\webproject\\mvc\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DEAE8685-F820-4695-BE2A-F385DD4C089A}|MVC\\MVC.csproj|solutionrelative:mvc\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DEAE8685-F820-4695-BE2A-F385DD4C089A}|MVC\\MVC.csproj|c:\\users\\admin\\project\\webproject\\mvc\\controllers\\sccontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DEAE8685-F820-4695-BE2A-F385DD4C089A}|MVC\\MVC.csproj|solutionrelative:mvc\\controllers\\sccontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DEAE8685-F820-4695-BE2A-F385DD4C089A}|MVC\\MVC.csproj|c:\\users\\admin\\project\\webproject\\mvc\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DEAE8685-F820-4695-BE2A-F385DD4C089A}|MVC\\MVC.csproj|solutionrelative:mvc\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{378D1BD1-A4B7-4C3F-880B-AC41F2FDF72B}|Data\\Data.csproj|c:\\users\\admin\\project\\webproject\\data\\repository\\screpository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{378D1BD1-A4B7-4C3F-880B-AC41F2FDF72B}|Data\\Data.csproj|solutionrelative:data\\repository\\screpository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DEAE8685-F820-4695-BE2A-F385DD4C089A}|MVC\\MVC.csproj|c:\\users\\admin\\project\\webproject\\mvc\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{DEAE8685-F820-4695-BE2A-F385DD4C089A}|MVC\\MVC.csproj|solutionrelative:mvc\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{378D1BD1-A4B7-4C3F-880B-AC41F2FDF72B}|Data\\Data.csproj|c:\\users\\admin\\project\\webproject\\data\\models\\studentcompetition.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{378D1BD1-A4B7-4C3F-880B-AC41F2FDF72B}|Data\\Data.csproj|solutionrelative:data\\models\\studentcompetition.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{378D1BD1-A4B7-4C3F-880B-AC41F2FDF72B}|Data\\Data.csproj|c:\\users\\admin\\project\\webproject\\data\\repository\\competitionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{378D1BD1-A4B7-4C3F-880B-AC41F2FDF72B}|Data\\Data.csproj|solutionrelative:data\\repository\\competitionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{378D1BD1-A4B7-4C3F-880B-AC41F2FDF72B}|Data\\Data.csproj|c:\\users\\admin\\project\\webproject\\data\\interface\\scinterface.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{378D1BD1-A4B7-4C3F-880B-AC41F2FDF72B}|Data\\Data.csproj|solutionrelative:data\\interface\\scinterface.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{378D1BD1-A4B7-4C3F-880B-AC41F2FDF72B}|Data\\Data.csproj|c:\\users\\admin\\project\\webproject\\data\\models\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{378D1BD1-A4B7-4C3F-880B-AC41F2FDF72B}|Data\\Data.csproj|solutionrelative:data\\models\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DEAE8685-F820-4695-BE2A-F385DD4C089A}|MVC\\MVC.csproj|c:\\users\\admin\\project\\webproject\\mvc\\views\\sc\\mycompetitions.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{DEAE8685-F820-4695-BE2A-F385DD4C089A}|MVC\\MVC.csproj|solutionrelative:mvc\\views\\sc\\mycompetitions.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DEAE8685-F820-4695-BE2A-F385DD4C089A}|MVC\\MVC.csproj|c:\\users\\admin\\project\\webproject\\mvc\\views\\sc\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{DEAE8685-F820-4695-BE2A-F385DD4C089A}|MVC\\MVC.csproj|solutionrelative:mvc\\views\\sc\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DEAE8685-F820-4695-BE2A-F385DD4C089A}|MVC\\MVC.csproj|c:\\users\\admin\\project\\webproject\\mvc\\controllers\\answercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DEAE8685-F820-4695-BE2A-F385DD4C089A}|MVC\\MVC.csproj|solutionrelative:mvc\\controllers\\answercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DEAE8685-F820-4695-BE2A-F385DD4C089A}|MVC\\MVC.csproj|c:\\users\\admin\\project\\webproject\\mvc\\views\\faq\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DEAE8685-F820-4695-BE2A-F385DD4C089A}|MVC\\MVC.csproj|solutionrelative:mvc\\views\\faq\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -50,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -62,132 +38,54 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "CompetitionRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Project\\WebProject\\Data\\Repository\\CompetitionRepository.cs",
-              "RelativeDocumentMoniker": "Data\\Repository\\CompetitionRepository.cs",
-              "ToolTip": "C:\\Users\\Admin\\Project\\WebProject\\Data\\Repository\\CompetitionRepository.cs",
-              "RelativeToolTip": "Data\\Repository\\CompetitionRepository.cs",
-              "ViewState": "AQIAABoAAAAAAAAAAAA9wCoAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-14T08:56:31.509Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Delete.cshtml",
-              "DocumentMoniker": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\Views\\SC\\Delete.cshtml",
-              "RelativeDocumentMoniker": "MVC\\Views\\SC\\Delete.cshtml",
-              "ToolTip": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\Views\\SC\\Delete.cshtml*",
-              "RelativeToolTip": "MVC\\Views\\SC\\Delete.cshtml*",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAsAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-14T08:45:00.135Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "SCRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Project\\WebProject\\Data\\Repository\\SCRepository.cs",
-              "RelativeDocumentMoniker": "Data\\Repository\\SCRepository.cs",
-              "ToolTip": "C:\\Users\\Admin\\Project\\WebProject\\Data\\Repository\\SCRepository.cs",
-              "RelativeToolTip": "Data\\Repository\\SCRepository.cs",
-              "ViewState": "AQIAAD8AAAAAAAAAAAAmwD0AAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-14T08:01:17.898Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "StudentCompetition.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Project\\WebProject\\Data\\Models\\StudentCompetition.cs",
-              "RelativeDocumentMoniker": "Data\\Models\\StudentCompetition.cs",
-              "ToolTip": "C:\\Users\\Admin\\Project\\WebProject\\Data\\Models\\StudentCompetition.cs",
-              "RelativeToolTip": "Data\\Models\\StudentCompetition.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-14T07:49:42.634Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Student.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Project\\WebProject\\Data\\Models\\Student.cs",
-              "RelativeDocumentMoniker": "Data\\Models\\Student.cs",
-              "ToolTip": "C:\\Users\\Admin\\Project\\WebProject\\Data\\Models\\Student.cs",
-              "RelativeToolTip": "Data\\Models\\Student.cs",
-              "ViewState": "AQIAAAgAAAAAAAAAAAAwwBgAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-14T07:48:27.446Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
               "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\Views\\SC\\Index.cshtml",
-              "RelativeDocumentMoniker": "MVC\\Views\\SC\\Index.cshtml",
-              "ToolTip": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\Views\\SC\\Index.cshtml",
-              "RelativeToolTip": "MVC\\Views\\SC\\Index.cshtml",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAABsAAAAQAAAA",
+              "DocumentMoniker": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "MVC\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\Views\\Home\\Index.cshtml*",
+              "RelativeToolTip": "MVC\\Views\\Home\\Index.cshtml*",
+              "ViewState": "AQIAAGUBAAAAAAAAAAAkwKgAAAAYAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-14T07:43:23.831Z",
+              "WhenOpened": "2024-04-16T16:38:51.027Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "SCController.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\Controllers\\SCController.cs",
-              "RelativeDocumentMoniker": "MVC\\Controllers\\SCController.cs",
-              "ToolTip": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\Controllers\\SCController.cs*",
-              "RelativeToolTip": "MVC\\Controllers\\SCController.cs*",
-              "ViewState": "AQIAAK0AAAAAAAAAAAAowLkAAAAlAAAA",
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "MVC\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "MVC\\Controllers\\HomeController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-14T07:16:35.882Z",
+              "WhenOpened": "2024-04-16T16:37:08.641Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "SCInterface.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Project\\WebProject\\Data\\Interface\\SCInterface.cs",
-              "RelativeDocumentMoniker": "Data\\Interface\\SCInterface.cs",
-              "ToolTip": "C:\\Users\\Admin\\Project\\WebProject\\Data\\Interface\\SCInterface.cs",
-              "RelativeToolTip": "Data\\Interface\\SCInterface.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAAA8AAAA1AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-14T08:02:47.44Z",
+              "DocumentIndex": 2,
+              "Title": "site.css",
+              "DocumentMoniker": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\wwwroot\\css\\site.css",
+              "RelativeDocumentMoniker": "MVC\\wwwroot\\css\\site.css",
+              "ToolTip": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\wwwroot\\css\\site.css",
+              "RelativeToolTip": "MVC\\wwwroot\\css\\site.css",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAADcAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-04-16T16:34:38.869Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "MyCompetitions.cshtml",
-              "DocumentMoniker": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\Views\\SC\\MyCompetitions.cshtml",
-              "RelativeDocumentMoniker": "MVC\\Views\\SC\\MyCompetitions.cshtml",
-              "ToolTip": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\Views\\SC\\MyCompetitions.cshtml",
-              "RelativeToolTip": "MVC\\Views\\SC\\MyCompetitions.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABgAAAAAAAAA",
+              "DocumentIndex": 3,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\Views\\FAQ\\Index.cshtml",
+              "RelativeDocumentMoniker": "MVC\\Views\\FAQ\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\Views\\FAQ\\Index.cshtml",
+              "RelativeToolTip": "MVC\\Views\\FAQ\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAdAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-14T07:43:46.591Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "AnswerController.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\Controllers\\AnswerController.cs",
-              "RelativeDocumentMoniker": "MVC\\Controllers\\AnswerController.cs",
-              "ToolTip": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\Controllers\\AnswerController.cs",
-              "RelativeToolTip": "MVC\\Controllers\\AnswerController.cs",
-              "ViewState": "AQIAAFsAAAAAAAAAAAAYwIkAAAA+AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-14T07:16:33.681Z",
+              "WhenOpened": "2024-04-16T16:23:31.789Z",
               "EditorCaption": ""
             }
           ]

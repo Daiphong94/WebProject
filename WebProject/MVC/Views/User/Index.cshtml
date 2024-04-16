@@ -1,6 +1,6 @@
 ﻿@model IEnumerable<Data.Models.User>
 
-<h2>Danh sách đăng ký chờ duyệt</h2>
+<h2>User List</h2>
 
 @if (Model.Any())
 {
@@ -23,7 +23,8 @@
                     <td>@user.Password</td>
                     <td>@user.Role</td>
                     <td>
-                        <a asp-action="Delete" asp-route-id="@user.UserID">Delete</a>
+                        <button onclick="window.location.href='/User/Delete?id=@user.UserID'" class="btn btn-danger">Delete</button>
+
                     </td>
 
                 </tr>

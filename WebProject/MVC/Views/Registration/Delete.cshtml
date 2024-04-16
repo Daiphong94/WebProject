@@ -4,13 +4,13 @@
 }
 
 
-<h2>Từ chối đăng ký</h2>
+
 
 <h3>Xác nhận từ chối</h3>
 
 
-<form asp-action="Delete" method="post">
-    <input type="hidden" asp-for="RegistrationID" />
-    <button type="submit" class="btn btn-danger">Delete</button> |
-    <a asp-action="Index">Back to List</a>
+<form action="/Registration/Delete" method="post">
+    <input type="hidden" name="id" value="@Model.RegistrationID" />
+    <button type="submit" class="btn btn-danger">Delete</button> 
+    <a href="/Registration/Index">Back to List</a>
 </form>

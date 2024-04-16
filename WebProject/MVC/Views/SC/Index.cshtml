@@ -25,7 +25,10 @@
                 <td>@(sc.Student != null ? sc.Student.Email : "N/A")</td>
                 <td>@(sc.Competition != null ? sc.Competition.CompetitionName : "N/A")</td>
                 <td>@sc.JoinedDate.ToString("HH:mm dd/MM/yyyy")</td>
-                
+                <td>
+
+                    <a asp-action="Delete" asp-route-id="@sc.StudentID" asp-route-competitionId="@sc.CompetitionID">Delete</a>
+                </td>
             </tr>
         }
     </tbody>

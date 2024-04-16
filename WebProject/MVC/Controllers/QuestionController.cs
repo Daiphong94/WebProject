@@ -8,10 +8,12 @@ namespace MVC.Controllers
     {
         private readonly QuestionInterface _questionInterface;
         private readonly CompetitionInterface _competitionInterface;
-        public QuestionController(QuestionInterface questionInterface, CompetitionInterface competitionInterface)
+        private readonly IWebHostEnvironment _webHostEnvironment;
+        public QuestionController(QuestionInterface questionInterface, CompetitionInterface competitionInterface, IWebHostEnvironment webHostEnvironment)
         {
             _questionInterface = questionInterface;
             _competitionInterface = competitionInterface;
+            _webHostEnvironment = webHostEnvironment;
         }
 
         public async Task<IActionResult> Index()
@@ -39,9 +41,18 @@ namespace MVC.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(Question model)
+        public async Task<IActionResult> Create(Question model, IFormFile imageFile)
         {
             model.CompetitionID = model.CompetitionID;
+            if (imageFile != null && imageFile.Length > 0)
+            {
+                var imagePath = Path.Combine(_webHostEnvironment.WebRootPath, "img/photo", imageFile.FileName);
+                using (var stream = new FileStream(imagePath, FileMode.Create))
+                {
+                    imageFile.CopyTo(stream);
+                }
+                model.File = "/img/photo/" + imageFile.FileName;
+            }
             await _questionInterface.Add(model);
             return RedirectToAction(nameof(Index));
             

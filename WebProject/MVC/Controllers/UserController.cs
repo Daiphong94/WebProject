@@ -32,32 +32,33 @@ namespace MVC.Controllers
         {
             if (string.IsNullOrEmpty(user.UserName) || string.IsNullOrEmpty(user.Password) || string.IsNullOrEmpty(user.Email))
             {
-                ModelState.AddModelError("", "Cannot be left blank");
+                ViewBag.ErrorMessage = "Tên người dùng, mật khẩu và email không được để trống.";
                 return View(user);
             }
 
             var existingUser = await _userInterface.GetByName(user.UserName);
             if (existingUser != null)
             {
-                ModelState.AddModelError("Username", "Username available");
+                ViewBag.ErrorMessage = "Tên người dùng đã tồn tại.";
                 return View(user);
             }
+
             var email = await _userInterface.GetByEmail(user.Email);
             if (email != null)
             {
-                ModelState.AddModelError("Email", "Email already exists");
+                ViewBag.ErrorMessage = "Email đã tồn tại.";
                 return View(user);
             }
+
             if (user.Password != confirmPassword)
             {
-                ModelState.AddModelError("ConfirmPassword", "Confirmation password does not match");
+                ViewBag.ErrorMessage = "Mật khẩu xác nhận không khớp.";
                 return View(user);
             }
 
             await _userInterface.Add(user);
 
             var registration = new Registration { UserID = user.UserID, Role = user.Role, Status = "Pending" };
-
 
             await _registrationInterface.RegisterUserAsync(registration);
             return RedirectToAction("Index", "Home");
@@ -99,22 +100,19 @@ namespace MVC.Controllers
 
             if (string.IsNullOrEmpty(user.UserName) || string.IsNullOrEmpty(user.Password))
             {
-                
                 ModelState.AddModelError("", "Username and Password are required.");
-                
                 return View(user);
             }
 
-            var login = await _userInterface.NameAndPassword(user.UserName,user.Password);
-            if(login != null)
+            var login = await _userInterface.NameAndPassword(user.UserName, user.Password);
+            if (login != null)
             {
                 HttpContext.Session.SetString("UserID", login.UserID.ToString());
                 HttpContext.Session.SetString("UserName", login.UserName);
                 HttpContext.Session.SetString("Email", login.Email);
                 HttpContext.Session.SetString("Role", login.Role);
-   
-            }
-            var claims = new List<Claim>
+
+                var claims = new List<Claim>
         {
             new Claim(ClaimTypes.NameIdentifier, login.UserID.ToString()),
             new Claim(ClaimTypes.Name, login.UserName),
@@ -122,33 +120,31 @@ namespace MVC.Controllers
             new Claim(ClaimTypes.Role, login.Role)
         };
 
+                var claimsIdentity = new ClaimsIdentity(
+                    claims, CookieAuthenticationDefaults.AuthenticationScheme);
 
-            var claimsIdentity = new ClaimsIdentity(
-           claims, CookieAuthenticationDefaults.AuthenticationScheme);
+                var authProperties = new AuthenticationProperties();
 
-            var authProperties = new AuthenticationProperties
-            {
-                
-            };
+                await HttpContext.SignInAsync(
+                    CookieAuthenticationDefaults.AuthenticationScheme,
+                    new ClaimsPrincipal(claimsIdentity),
+                    authProperties);
 
-            await HttpContext.SignInAsync(
-                CookieAuthenticationDefaults.AuthenticationScheme,
-                new ClaimsPrincipal(claimsIdentity),
-                authProperties);
-
-            if (login.Role == "Admin")
-            {
-                return RedirectToAction("Account", "Admin");
-            }
-            else if (login.Role == "Faculty")
-            {
-                return RedirectToAction("Account", "Faculty");
-            }
-            else if (login.Role == "Student")
-            {
-                return RedirectToAction("Account", "Student");
+                if (login.Role == "Admin")
+                {
+                    return RedirectToAction("Account", "Admin");
+                }
+                else if (login.Role == "Faculty")
+                {
+                    return RedirectToAction("Account", "Faculty");
+                }
+                else if (login.Role == "Student")
+                {
+                    return RedirectToAction("Account", "Student");
+                }
             }
 
+            
             ViewBag.Error = "Username or password is incorrect!";
             return View();
         }
@@ -169,7 +165,7 @@ namespace MVC.Controllers
                     Email = email,
                     Role = role
                 };
-
+                ViewBag.InvalidLogin = true;
                 return View(user);
             }
             else

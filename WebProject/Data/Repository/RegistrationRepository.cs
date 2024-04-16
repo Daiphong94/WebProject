@@ -62,7 +62,7 @@ namespace Data.Repository
         public async Task<IEnumerable<Registration>> GetAll()
         {
             return await _context.Registrations
-           .Where(r => r.Status == "Cho duyet")
+           
            .Include(r => r.User)
            .ToListAsync();
         }

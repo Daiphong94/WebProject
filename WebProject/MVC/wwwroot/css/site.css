@@ -16,3 +16,40 @@ html {
 body {
   margin-bottom: 60px;
 }
+.image-link {
+    display: inline-block;
+    position: relative;
+}
+
+    .image-link:hover::after {
+        content: 'Xem chi ti?t';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgba(0, 0, 0, 0.5);
+        color: #fff;
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-size: 12px;
+        opacity: 0;
+        transition: opacity 0.3s;
+    }
+
+    .image-link:hover::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+        opacity: 0;
+        transition: opacity 0.3s;
+    }
+
+    .image-link:hover::after,
+    .image-link:hover::before {
+        opacity: 1;
+    }

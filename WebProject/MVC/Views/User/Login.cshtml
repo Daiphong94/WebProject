@@ -4,6 +4,13 @@
 
 <h2>@ViewData["Title"]</h2>
 
+@if (!string.IsNullOrEmpty(ViewBag.Error))
+{
+    <div class="alert alert-danger" role="alert">
+        @ViewBag.Error
+    </div>
+}
+
 @using (Html.BeginForm("Login", "User", FormMethod.Post))
 {
     <div asp-validation-summary="ModelOnly" class="text-danger"></div>

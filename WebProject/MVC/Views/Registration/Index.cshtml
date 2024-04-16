@@ -21,11 +21,12 @@
                     <td>@registration.Role</td>
                     <td>@registration.Status</td>
                     <td>
-
-                        <form asp-action="DeleteRegis" asp-route-id="@registration.RegistrationID" method="post">
+                        <form action="/Registration/DeleteRegis" method="post">
+                            <input type="hidden" name="id" value="@registration.RegistrationID" />
                             <button type="submit" class="btn btn-primary">Chấp nhận</button>
                         </form>
-                        <a asp-action="Delete" asp-route-id="@registration.RegistrationID" class="btn btn-danger">Từ chối</a>
+
+                        <a href="/Registration/Delete?id=@registration.RegistrationID" class="btn btn-danger">Từ chối</a>
                     </td>
                     
                 </tr>

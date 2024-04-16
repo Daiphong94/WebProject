@@ -27,7 +27,7 @@
             <tr>
                 <td>@(answer.Question != null ? answer.Question.Competition.CompetitionName : "N/A")</td>
                 <td>@(answer.Student != null ? answer.Student.Email : "N/A")</td>
-                <td>@answer.File</td>
+                <td><img src="@answer.File" alt="Competition Image" width="80" height="50" /></td>
                 <td>@answer.Writing</td>
                 <td>
                     <a asp-controller="Answer" asp-action="Details" asp-route-id="@answer.AnswerID">Details</a> |

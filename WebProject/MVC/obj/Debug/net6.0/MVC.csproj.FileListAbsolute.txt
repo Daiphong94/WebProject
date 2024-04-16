@@ -65,12 +65,12 @@ C:\Users\Admin\Project\WebProject\MVC\obj\Debug\net6.0\staticwebassets\msbuild.b
 C:\Users\Admin\Project\WebProject\MVC\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.MVC.props
 C:\Users\Admin\Project\WebProject\MVC\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.MVC.props
 C:\Users\Admin\Project\WebProject\MVC\obj\Debug\net6.0\staticwebassets.pack.json
-C:\Users\Admin\Project\WebProject\MVC\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 C:\Users\Admin\Project\WebProject\MVC\obj\Debug\net6.0\scopedcss\bundle\MVC.styles.css
-C:\Users\Admin\Project\WebProject\MVC\obj\Debug\net6.0\scopedcss\projectbundle\MVC.bundle.scp.css
 C:\Users\Admin\Project\WebProject\MVC\obj\Debug\net6.0\MVC.csproj.Up2Date
 C:\Users\Admin\Project\WebProject\MVC\obj\Debug\net6.0\MVC.dll
 C:\Users\Admin\Project\WebProject\MVC\obj\Debug\net6.0\refint\MVC.dll
 C:\Users\Admin\Project\WebProject\MVC\obj\Debug\net6.0\MVC.pdb
 C:\Users\Admin\Project\WebProject\MVC\obj\Debug\net6.0\MVC.genruntimeconfig.cache
 C:\Users\Admin\Project\WebProject\MVC\obj\Debug\net6.0\ref\MVC.dll
+C:\Users\Admin\Project\WebProject\MVC\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\Admin\Project\WebProject\MVC\obj\Debug\net6.0\scopedcss\projectbundle\MVC.bundle.scp.css

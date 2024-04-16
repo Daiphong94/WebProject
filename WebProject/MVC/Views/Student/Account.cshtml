@@ -1,16 +1,13 @@
 ﻿
 
 <h4>Account Student</h4>
-<p>
-    <a asp-controller="Student" asp-action="Create">Create New</a>
-</p>
-<a asp-controller="User" asp-action="Logout" asp-route-returnUrl="@Url.Content("~/")">Logout</a>
-
-<p>
-    <a asp-controller="User" asp-action="Profile">Thông tin</a>
-</p>
-<p>
-    <a asp-controller="SC" asp-action="MyCompetitions">My Competition</a>
-</p>
+<a href="@Url.Action("Create", "Student")">Create New</a>
+<br>
+<a href="@Url.Action("Logout", "User", new { returnUrl = Url.Content("~/") })">Logout</a>
+<br>
+<a href="@Url.Action("Profile", "User")">Thông tin</a>
+<br>
+<a href="@Url.Action("MyCompetitions", "SC")">My Competition</a>
+<br>
 
 <a href="/">Quay lại trang chính</a>

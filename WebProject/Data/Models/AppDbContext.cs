@@ -165,6 +165,7 @@ namespace Data.Models
             {
                 entity.HasKey(e => e.FAQID);
                 entity.Property(e => e.Email).IsRequired().HasMaxLength(200);
+                entity.Property(e => e.Photo).IsRequired().HasMaxLength(200);
                 entity.Property(e => e.Question).IsRequired().HasColumnType("text");
                 entity.Property(e => e.Answer).IsRequired().HasColumnType("text");
             });

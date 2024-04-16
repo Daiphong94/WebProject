@@ -13,9 +13,10 @@ namespace MVC.Controllers
         private readonly AnswerInterface _answerInterface;
         private readonly CompetitionInterface _competitionInterface;
         private readonly SCInterface _scInterface;
+        private readonly IWebHostEnvironment _webHostEnvironment;
         public AnswerController(AnswerInterface answerInterface,
             UserInterface userInterface, StudentInterface studentInterface, 
-            QuestionInterface questionInterface, CompetitionInterface competitionInterface, SCInterface scInterface)
+            QuestionInterface questionInterface, CompetitionInterface competitionInterface, SCInterface scInterface, IWebHostEnvironment webHostEnvironment)
         {
             _answerInterface = answerInterface;
             _userInterface = userInterface;
@@ -23,6 +24,7 @@ namespace MVC.Controllers
             _questionInterface = questionInterface;
             _competitionInterface = competitionInterface;
             _scInterface = scInterface;
+            _webHostEnvironment = webHostEnvironment;
         }
 
         public async Task<IActionResult> Index()
@@ -37,8 +39,17 @@ namespace MVC.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(Answer model)
+        public async Task<IActionResult> Create(Answer model, IFormFile imageFile)
         {
+            if (imageFile != null && imageFile.Length > 0)
+            {
+                var imagePath = Path.Combine(_webHostEnvironment.WebRootPath, "img/photo", imageFile.FileName);
+                using (var stream = new FileStream(imagePath, FileMode.Create))
+                {
+                    imageFile.CopyTo(stream);
+                }
+                model.File = "/img/photo/" + imageFile.FileName;
+            }
             await _answerInterface.Add(model);
             return RedirectToAction(nameof(Index));
             

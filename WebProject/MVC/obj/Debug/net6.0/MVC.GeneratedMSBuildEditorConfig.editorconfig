@@ -158,10 +158,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Admin/Project/WebProject/MVC/Views/Home/Privacy.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/Admin/Project/WebProject/MVC/Views/Question/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVlc3Rpb25cQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -184,22 +180,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Admin/Project/WebProject/MVC/Views/Registration/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVnaXN0cmF0aW9uXEluZGV4LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Admin/Project/WebProject/MVC/Views/Response/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzcG9uc2VcQ3JlYXRlLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Admin/Project/WebProject/MVC/Views/Response/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzcG9uc2VcRGVsZXRlLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Admin/Project/WebProject/MVC/Views/Response/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzcG9uc2VcRWRpdC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Admin/Project/WebProject/MVC/Views/Response/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzcG9uc2VcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Admin/Project/WebProject/MVC/Views/SC/Delete.cshtml]
@@ -252,22 +232,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Admin/Project/WebProject/MVC/Views/Student/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxJbmRleC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Admin/Project/WebProject/MVC/Views/Survey/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3VydmV5XENyZWF0ZS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Admin/Project/WebProject/MVC/Views/Survey/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3VydmV5XERlbGV0ZS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Admin/Project/WebProject/MVC/Views/Survey/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3VydmV5XEVkaXQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Admin/Project/WebProject/MVC/Views/Survey/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3VydmV5XEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Admin/Project/WebProject/MVC/Views/User/Delete.cshtml]

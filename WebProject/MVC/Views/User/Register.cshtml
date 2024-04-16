@@ -5,30 +5,40 @@
 }
 <h2>Register</h2>
 
-<form asp-controller="User" asp-action="Register" method="post">
-    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-    <div class="form-group">
-        <label asp-for="UserName">User Name</label>
-        <input asp-for="UserName" class="form-control" />
-        <span asp-validation-for="UserName" class="text-danger"></span>
+<form action="/User/Register" method="post">
+    <div class="text-danger">
+        
+        @Html.ValidationSummary(false)
     </div>
     <div class="form-group">
-        <label asp-for="Email">Email</label>
-        <input asp-for="Email" class="form-control" />
-        <span asp-validation-for="Email" class="text-danger"></span>
+        <label for="UserName">User Name</label>
+        <input id="UserName" name="UserName" type="text" class="form-control" />
+        <span class="text-danger">
+            
+            @Html.ValidationMessageFor(model => model.UserName)
+        </span>
     </div>
     <div class="form-group">
-        <label asp-for="Password">Password</label>
-        <input asp-for="Password" type="password" class="form-control" />
-        <span asp-validation-for="Password" class="text-danger"></span>
+        <label for="Email">Email</label>
+        <input id="Email" name="Email" type="email" class="form-control" />
+        <span class="text-danger">
+            @Html.ValidationMessageFor(model => model.Email)
+        </span>
     </div>
     <div class="form-group">
-        <label> Nhập lại mật khẩu:</label>
-        <input name="ConfirmPassword" type="password" class="form-control" />
+        <label for="Password">Password</label>
+        <input id="Password" name="Password" type="password" class="form-control" />
+        <span class="text-danger">
+            @Html.ValidationMessageFor(model => model.Password)
+        </span>
     </div>
     <div class="form-group">
-        <label>Chọn vai trò:</label>
-        <select asp-for="Role" class="form-control">
+        <label for="ConfirmPassword">Nhập lại mật khẩu:</label>
+        <input id="ConfirmPassword" name="ConfirmPassword" type="password" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label for="Role">Chọn vai trò:</label>
+        <select id="Role" name="Role" class="form-control">
             <option value="Admin">Admin</option>
             <option value="Faculty">Faculty</option>
             <option value="Student">Student</option>
