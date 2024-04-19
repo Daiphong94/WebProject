@@ -3,6 +3,13 @@
     ViewData["Title"] = "Create";
 }
 
+<h3>Question</h3>
+<div>
+    <a href="@ViewBag.Question.File" target="_blank" class="image-link">
+        <img src="@ViewBag.Question.File" alt="Question Image" width="80" height="50" />
+    </a>
+</div>
+<p>Content: @ViewBag.Question.Writing</p>
 
 <h2>Create New Answer</h2>
 

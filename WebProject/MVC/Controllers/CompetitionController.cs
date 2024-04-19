@@ -9,7 +9,7 @@ using Microsoft.Extensions.Hosting;
 
 namespace MVC.Controllers
 {
-    [Authorize(Roles = "Faculty")]
+    
     public class CompetitionController : Controller
     {
         private readonly CompetitionInterface _competitionInterface;

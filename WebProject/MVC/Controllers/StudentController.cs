@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace MVC.Controllers
 {
-    [Authorize(Roles = "Student")]
+    
     public class StudentController : Controller
     {
         private protected StudentInterface _studentInterface;
@@ -40,8 +40,14 @@ namespace MVC.Controllers
             {
                 
                 var email = HttpContext.Session.GetString("Email");
+                var existingStudent = await _studentInterface.GetByEmail(email);
+                if (existingStudent != null)
+                {
+                    // Email đã tồn tại, không thể tạo sinh viên mới
+                    ModelState.AddModelError(string.Empty, "Email đã tồn tại trong hệ thống.");
+                    return View(model); // Trả về view để hiển thị thông báo lỗi
+                }
 
-                
                 model.UserID = userId;
                 model.Email = email;
 
@@ -106,7 +112,25 @@ namespace MVC.Controllers
         }
         public IActionResult Account()
         {
-            return View();
+            var userid = HttpContext.Session.GetString("UserID");
+            if (!string.IsNullOrEmpty(userid) && int.TryParse(userid, out int userId))
+            {
+                var userName = HttpContext.Session.GetString("UserName");
+                var email = HttpContext.Session.GetString("Email");
+                var role = HttpContext.Session.GetString("Role");
+
+                var user = new User
+                {
+                    UserID = userId,
+                    UserName = userName,
+                    Email = email,
+                    Role = role
+                };
+                ViewBag.InvalidLogin = true;
+                return View(user);
+            }
+            else
+            { return RedirectToAction("Login", "User"); }
         }        
     }
 }

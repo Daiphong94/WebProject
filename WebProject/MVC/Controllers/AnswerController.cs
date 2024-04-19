@@ -32,9 +32,13 @@ namespace MVC.Controllers
             var answers = await _answerInterface.GetAllWithCompetition();
             return View(answers);
         }
-        public IActionResult Create()
+        public async Task<IActionResult> Create()
         {
             var model = new Answer();
+            
+            ViewBag.QuestionID = model.QuestionID;
+            var question = await _questionInterface.GetById(model.QuestionID);
+            ViewBag.Question = question;
             return View(model);
         }
         [HttpPost]
@@ -118,12 +122,14 @@ namespace MVC.Controllers
                 QuestionID = questionId,
                 StudentID = student.StudentID,
             };
-
+            ViewBag.QuestionID = model.QuestionID;
+            var question = await _questionInterface.GetById(model.QuestionID);
+            ViewBag.Question = question;
             return View(model);
         }   
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> MyAnswer( Answer model)
+        public async Task<IActionResult> MyAnswer( Answer model, IFormFile imageFile)
         {
              var userIdString = HttpContext.Session.GetString("UserID");
             if (string.IsNullOrEmpty(userIdString) || !int.TryParse(userIdString, out int userId))
@@ -137,7 +143,15 @@ namespace MVC.Controllers
                 
                 return RedirectToAction("Error", "SC");
             }
-
+            if (imageFile != null && imageFile.Length > 0)
+            {
+                var imagePath = Path.Combine(_webHostEnvironment.WebRootPath, "img/photo", imageFile.FileName);
+                using (var stream = new FileStream(imagePath, FileMode.Create))
+                {
+                    imageFile.CopyTo(stream);
+                }
+                model.File = "/img/photo/" + imageFile.FileName;
+            }
             model.StudentID = student.StudentID;
 
             await _answerInterface.Add(model);

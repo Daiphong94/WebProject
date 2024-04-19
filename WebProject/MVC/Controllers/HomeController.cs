@@ -9,16 +9,25 @@ namespace MVC.Controllers
     {
         private readonly FAQInterface _FAQInterface;
         private readonly CompetitionInterface _competitionInterface;
-        public HomeController(FAQInterface FAQInterface, CompetitionInterface competitionInterface)
+        private readonly EventInterface _eventInterface;
+        public HomeController(FAQInterface FAQInterface, CompetitionInterface competitionInterface, EventInterface eventInterface)
         {
             _FAQInterface = FAQInterface;
             _competitionInterface = competitionInterface;
+            _eventInterface = eventInterface;
         }
 
         public async Task<IActionResult> Index()
         {
-            var competition = await _competitionInterface.GetAll();
-            return  View(competition);
+            var viewmodel = new ViewModelHome
+            {
+                Competition = await _competitionInterface.GetAll(),
+                FAQ = await _FAQInterface.GetAllFAQ(),
+                Events = await _eventInterface.GetAll()
+                
+            };
+            
+            return  View(viewmodel);
         }
     }
 }

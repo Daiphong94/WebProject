@@ -1,0 +1,17 @@
+﻿@model Data.Models.Events
+
+
+<h2>Evnet Detail</h2>
+
+
+
+<p>Title: @Model.Title</p>
+<td>
+    <a href="@Model.Photo" target="_blank" class="image-link">
+        <img src="@Model.Photo" alt="Competition Image" width="120" height="120" />
+    </a>
+</td>
+<p>Description: @Model.Description</p>
+<p>Location: @Model.Location</p>
+<p>ParticipantCount: @Model.ParticipantCount</p>
+<p>Date: @Model.StartDate</p>

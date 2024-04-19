@@ -9,13 +9,15 @@ namespace MVC.Controllers
     [Authorize(Roles = "Admin")]
     public class AdminController : Controller
     {
+        private readonly UserInterface _userInterface;
         private readonly AdminInterface _adminInterface;
         private readonly RegistrationInterface _registrationInterface;
 
-        public AdminController(AdminInterface adminInterface, RegistrationInterface registrationInterface)
+        public AdminController(AdminInterface adminInterface, RegistrationInterface registrationInterface, UserInterface userInterface)
         {
             _adminInterface = adminInterface;
             _registrationInterface = registrationInterface;
+            _userInterface = userInterface;
         }
 
         public async Task<IActionResult> Index()
@@ -138,8 +140,27 @@ namespace MVC.Controllers
         }
         public IActionResult Account()
         {
-            return View();
+            var userid = HttpContext.Session.GetString("UserID");
+            if (!string.IsNullOrEmpty(userid) && int.TryParse(userid, out int userId))
+            {
+                var userName = HttpContext.Session.GetString("UserName");
+                var email = HttpContext.Session.GetString("Email");
+                var role = HttpContext.Session.GetString("Role");
+
+                var user = new User
+                {
+                    UserID = userId,
+                    UserName = userName,
+                    Email = email,
+                    Role = role
+                };
+                ViewBag.InvalidLogin = true;
+                return View(user);
+            }
+            else
+            { return RedirectToAction("Login", "User"); }
         }
+    
 
     }
 }

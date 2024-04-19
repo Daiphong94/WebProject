@@ -34,7 +34,7 @@ namespace Data.Repository
 
         public async Task<IEnumerable<Student>> GetAllStudent()
         {
-            return await _context.Students.ToListAsync();
+            return await _context.Students.Include(s => s.User).ToListAsync();
         }
 
         public async Task<Student> GetByEmail(string email)

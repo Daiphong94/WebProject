@@ -9,16 +9,8 @@
 <h2> Exam</h2>
 
 <form asp-action="Create" method="post">
-    <div class="form-group">
-        <label asp-for="CompetitionID"></label>
-        <input asp-for="CompetitionID" class="form-control" />
-        <span asp-validation-for="CompetitionID" class="text-danger"></span>
-    </div>
-    <div class="form-group">
-        <label asp-for="StudentID"></label>
-        <input asp-for="StudentID" class="form-control" />
-        <span asp-validation-for="StudentID" class="text-danger"></span>
-    </div>
+    <input type="hidden" asp-for="CompetitionID" />
+    <input type="hidden" asp-for="StudentID" />
     <div class="form-group">
         <label asp-for="Score"></label>
         <input asp-for="Score" class="form-control" />

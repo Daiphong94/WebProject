@@ -1,4 +1,4 @@
-﻿
+﻿@model MVC.Models.ViewModelHome
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -28,7 +28,7 @@
     <!-- page-wrapper start -->
     <div class="page-wrapper">
         <!-- header start -->
-        <header class="header1">
+        <header class="header1"> 
             <nav class="navbar nav-solid mb-0">
                 <div class="container-fluid">
                     <div class="navbar-header">
@@ -77,14 +77,44 @@
                                 <a href="contact.html">contact</a>
                             </li>
                         </ul>
-                        <ul class="nav navbar-nav f1 mainMenu text-capitalize navbar-right">
-                            <li>
-                                <a href="@Url.Action("Login","User")" >Login</a>
-                            </li>
-                            <li>
-                                <a href="@Url.Action("Register","User")">Register</a>
-                            </li>
-                        </ul>
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <ul class="nav navbar-nav f1 mainMenu text-capitalize navbar-right">
+                                
+                                @if (User.IsInRole("Admin"))
+                                {
+                                    <li>
+                                        <a href="@Url.Action("Account", "Admin")">Hello, @User.Identity.Name!</a>
+                                    </li>
+                                }
+                                else if (User.IsInRole("Faculty"))
+                                {
+                                    <li>
+                                        <a href="@Url.Action("Account", "Faculty")">Hello, @User.Identity.Name!</a>
+                                    </li>
+                                }
+                                else if (User.IsInRole("Student"))
+                                {
+                                    <li>
+                                        <a href="@Url.Action("Account", "Student")">Hello, @User.Identity.Name!</a>
+                                    </li>
+                                }
+                                <li>
+                                    <a asp-controller="User" asp-action="Logout" asp-route-returnUrl="@Url.Content("~/")">Log out</a>
+                                 </li>
+                            </ul>
+                        }
+                        else
+                        {
+                            <ul class="nav navbar-nav f1 mainMenu text-capitalize navbar-right">
+                                <li>
+                                    <a href="@Url.Action("Login","User")">Login</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("Register","User")">Register</a>
+                                </li>
+                            </ul>
+                        }
                     </div>
                 </div>
             </nav>
@@ -145,7 +175,7 @@
                             <h2 class="f2 c1">welcome to novio</h2>
                             <h1 class="f1 fw-7 c4">Bài kiểm tra</h1>
                         </div>
-                         @foreach (var competition in Model)
+                         @foreach (var competition in Model.Competition)
                         {
                             <div class="col-md-4 col-sm-6 col-sm-offset-3 col-md-offset-0 col-xs-offset-0 mb-sm-50">
                                 <div class="item">
@@ -297,20 +327,27 @@
                     </div>
                     <div class="project-blocks">
                         <div class="row">
-                            <div class="col-lg-4 col-md-6 col-sm-6 mt-30">
-                                <div class="item clearfix">
-                                    <img src="~/img/companies/02.jpg" alt="">
-                                    <div class="item-content tnz bg2 cw f1">
-                                        <h2 class="fw-7">
-                                            <a href="project-single.html">Energy Preservation</a>
-                                        </h2>
-                                        <p class="fw-4">Quisque egestas justo nec hendrerit feugiat duide turpis ase porttitor sapien egestas sollicitudin.</p>
-                                        <a href="project-single.html" class="rdm">
-                                            <i class="fa fa-angle-right c2"></i>
+                            @foreach (var ev in Model.Events)
+                            {
+                                <div class="col-lg-4 col-md-6 col-sm-6 mt-30">
+                                    <div class="item clearfix">
+                                        <a asp-controller="Event" asp-action="Detail" asp-route-id="@ev.EventID">
+                                            <img src="@ev.Photo" alt="Event Photo" width="100%" height="100%" />
                                         </a>
+                                        <div class="item-content tnz bg2 cw f1">
+                                            <h2 class="fw-7">
+                                                <a asp-controller="Event" asp-action="Detail" asp-route-id="@ev.EventID" class="competition-item">@ev.Title</a>
+                                                
+                                            </h2>
+                                            <p class="fw-4">@ev.Description</p>
+                                            <a asp-controller="Event" asp-action="Detail" asp-route-id="@ev.EventID" class="rdm">
+                                            
+                                                <i class="fa fa-angle-right c2"></i>
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                            }
                             <div class="col-lg-4 col-md-6 col-sm-6 mt-30">
                                 <div class="item clearfix">
                                     <img src="img/companies/03.jpg" alt="">
@@ -347,41 +384,31 @@
                 <div class="container">
                     <div class="section-header text-center">
                         <h2 class="f2 c1">testimonials</h2>
-                        <h1 class="f1 fw-7 c4">What customers says</h1>
+                        <h1 class="f1 fw-7 c4">What Students says</h1>
                     </div>
                     <div class="row">
+                       
                         <div class="col-md-8 col-md-offset-2 col-sm-offset-0 col-xs-offset-0">
                             <div class="testimonial owl-carousel">
-                                <div class="pw-item f1 text-center">
-                                    <p class="name fw-7 c1">Nguyễn Nhật Trường</p>
-                                    <img src="img/testimony/01.png" alt="">
-                                    <p>Mô tả 1</p>
-
-                                </div>
-                                <div class="pw-item f1 text-center">
-                                    <p class="name fw-7 c1">Nguyễn Minh Khánh</p>
-                                    <img src="img/testimony/02.png" alt="">
-                                    <p>Mô tả 2</p>
-
-                                </div>
-                                <div class="pw-item f1 text-center">
-                                    <p class="name fw-7 c1">Nguyễn Hữu Dũng</p>
-                                    <img src="img/testimony/03.png" alt="">
-                                    <p>Mô tả 3</p>
-
-                                </div>
-                                <div class="pw-item f1 text-center">
-                                    <p class="name fw-7 c1">Đại Phong</p>
-                                    <img src="img/testimony/03.png" alt="">
-                                    <p>Mô tả 4</p>
-
-                                </div>
+                                
+                                @foreach (var faq in Model.FAQ)
+                                {
+                                    <div class="pw-item f1 text-center">
+                                        <p class="name fw-7 c1">@faq.Email</p>
+                                           <img src="@faq.Photo" alt="Competition Image" width="100" height="100" />
+                                        
+                                        <p style="font-size: 14px;">@faq.Answer</p>
+                                    </div>
+                                }   
+                   
+                                
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+       
         <div class="blog">
             <div class="container">
                 <div class="section-header text-center">

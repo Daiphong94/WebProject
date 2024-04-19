@@ -13,8 +13,20 @@
       "PackagePath": "staticwebassets\\css\\bootstrap.min.css"
     },
     {
+      "Id": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\wwwroot\\css\\bootstrap2.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap2.min.css"
+    },
+    {
       "Id": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\wwwroot\\css\\brands.css",
       "PackagePath": "staticwebassets\\css\\brands.css"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\wwwroot\\css\\custom.css",
+      "PackagePath": "staticwebassets\\css\\custom.css"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\wwwroot\\css\\custom2.css",
+      "PackagePath": "staticwebassets\\css\\custom2.css"
     },
     {
       "Id": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\wwwroot\\css\\effect.css",
@@ -27,6 +39,238 @@
     {
       "Id": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\wwwroot\\css\\icon.css",
       "PackagePath": "staticwebassets\\css\\icon.css"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\wwwroot\\css\\icon_fonts2\\font\\ElegantIcons.eot",
+      "PackagePath": "staticwebassets\\css\\icon_fonts2\\font\\ElegantIcons.eot"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\wwwroot\\css\\icon_fonts2\\font\\ElegantIcons.svg",
+      "PackagePath": "staticwebassets\\css\\icon_fonts2\\font\\ElegantIcons.svg"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\wwwroot\\css\\icon_fonts2\\font\\ElegantIcons.ttf",
+      "PackagePath": "staticwebassets\\css\\icon_fonts2\\font\\ElegantIcons.ttf"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\wwwroot\\css\\icon_fonts2\\font\\ElegantIcons.woff",
+      "PackagePath": "staticwebassets\\css\\icon_fonts2\\font\\ElegantIcons.woff"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\wwwroot\\css\\icon_fonts2\\font\\ElegantIconsd41d.eot",
+      "PackagePath": "staticwebassets\\css\\icon_fonts2\\font\\ElegantIconsd41d.eot"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\wwwroot\\css\\icon_fonts2\\font\\Glyphter.eot",
+      "PackagePath": "staticwebassets\\css\\icon_fonts2\\font\\Glyphter.eot"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\wwwroot\\css\\icon_fonts2\\font\\Glyphter.svg",
+      "PackagePath": "staticwebassets\\css\\icon_fonts2\\font\\Glyphter.svg"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\wwwroot\\css\\icon_fonts2\\font\\Glyphter.ttf",
+      "PackagePath": "staticwebassets\\css\\icon_fonts2\\font\\Glyphter.ttf"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\wwwroot\\css\\icon_fonts2\\font\\Glyphter.woff",
+      "PackagePath": "staticwebassets\\css\\icon_fonts2\\font\\Glyphter.woff"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\wwwroot\\css\\icon_fonts2\\font\\Glyphterd41d.eot",
+      "PackagePath": "staticwebassets\\css\\icon_fonts2\\font\\Glyphterd41d.eot"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\wwwroot\\css\\icon_fonts2\\font\\Pe-icon-7-strokebb1d.eot",
+      "PackagePath": "staticwebassets\\css\\icon_fonts2\\font\\Pe-icon-7-strokebb1d.eot"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\wwwroot\\css\\icon_fonts2\\font\\Pe-icon-7-strokebb1d.svg",
+      "PackagePath": "staticwebassets\\css\\icon_fonts2\\font\\Pe-icon-7-strokebb1d.svg"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\wwwroot\\css\\icon_fonts2\\font\\Pe-icon-7-strokebb1d.ttf",
+      "PackagePath": "staticwebassets\\css\\icon_fonts2\\font\\Pe-icon-7-strokebb1d.ttf"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\wwwroot\\css\\icon_fonts2\\font\\Pe-icon-7-strokebb1d.woff",
+      "PackagePath": "staticwebassets\\css\\icon_fonts2\\font\\Pe-icon-7-strokebb1d.woff"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\wwwroot\\css\\icon_fonts2\\font\\Pe-icon-7-stroked41d.eot",
+      "PackagePath": "staticwebassets\\css\\icon_fonts2\\font\\Pe-icon-7-stroked41d.eot"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\wwwroot\\css\\icon_fonts2\\font\\fontello4508.eot",
+      "PackagePath": "staticwebassets\\css\\icon_fonts2\\font\\fontello4508.eot"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\wwwroot\\css\\icon_fonts2\\font\\fontello4508.svg",
+      "PackagePath": "staticwebassets\\css\\icon_fonts2\\font\\fontello4508.svg"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\wwwroot\\css\\icon_fonts2\\font\\fontello4508.ttf",
+      "PackagePath": "staticwebassets\\css\\icon_fonts2\\font\\fontello4508.ttf"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\wwwroot\\css\\icon_fonts2\\font\\fontello4508.woff",
+      "PackagePath": "staticwebassets\\css\\icon_fonts2\\font\\fontello4508.woff"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\wwwroot\\css\\icon_fonts2\\font\\smiles.eot",
+      "PackagePath": "staticwebassets\\css\\icon_fonts2\\font\\smiles.eot"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\wwwroot\\css\\icon_fonts2\\font\\smiles.svg",
+      "PackagePath": "staticwebassets\\css\\icon_fonts2\\font\\smiles.svg"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\wwwroot\\css\\icon_fonts2\\font\\smiles.ttf",
+      "PackagePath": "staticwebassets\\css\\icon_fonts2\\font\\smiles.ttf"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\wwwroot\\css\\icon_fonts2\\font\\smiles.woff",
+      "PackagePath": "staticwebassets\\css\\icon_fonts2\\font\\smiles.woff"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\wwwroot\\css\\icon_fonts2\\font\\smilesd41d.eot",
+      "PackagePath": "staticwebassets\\css\\icon_fonts2\\font\\smilesd41d.eot"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\wwwroot\\css\\icon_fonts2\\font\\themify9f24.eot",
+      "PackagePath": "staticwebassets\\css\\icon_fonts2\\font\\themify9f24.eot"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\wwwroot\\css\\icon_fonts2\\font\\themify9f24.svg",
+      "PackagePath": "staticwebassets\\css\\icon_fonts2\\font\\themify9f24.svg"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\wwwroot\\css\\icon_fonts2\\font\\themify9f24.ttf",
+      "PackagePath": "staticwebassets\\css\\icon_fonts2\\font\\themify9f24.ttf"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\wwwroot\\css\\icon_fonts2\\font\\themify9f24.woff",
+      "PackagePath": "staticwebassets\\css\\icon_fonts2\\font\\themify9f24.woff"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\wwwroot\\css\\icon_fonts2\\font\\themifyd41d.eot",
+      "PackagePath": "staticwebassets\\css\\icon_fonts2\\font\\themifyd41d.eot"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\wwwroot\\css\\icon_fonts\\font\\ElegantIcons.eot",
+      "PackagePath": "staticwebassets\\css\\icon_fonts\\font\\ElegantIcons.eot"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\wwwroot\\css\\icon_fonts\\font\\ElegantIcons.svg",
+      "PackagePath": "staticwebassets\\css\\icon_fonts\\font\\ElegantIcons.svg"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\wwwroot\\css\\icon_fonts\\font\\ElegantIcons.ttf",
+      "PackagePath": "staticwebassets\\css\\icon_fonts\\font\\ElegantIcons.ttf"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\wwwroot\\css\\icon_fonts\\font\\ElegantIcons.woff",
+      "PackagePath": "staticwebassets\\css\\icon_fonts\\font\\ElegantIcons.woff"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\wwwroot\\css\\icon_fonts\\font\\ElegantIconsd41d.eot",
+      "PackagePath": "staticwebassets\\css\\icon_fonts\\font\\ElegantIconsd41d.eot"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\wwwroot\\css\\icon_fonts\\font\\Glyphter.eot",
+      "PackagePath": "staticwebassets\\css\\icon_fonts\\font\\Glyphter.eot"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\wwwroot\\css\\icon_fonts\\font\\Glyphter.svg",
+      "PackagePath": "staticwebassets\\css\\icon_fonts\\font\\Glyphter.svg"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\wwwroot\\css\\icon_fonts\\font\\Glyphter.ttf",
+      "PackagePath": "staticwebassets\\css\\icon_fonts\\font\\Glyphter.ttf"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\wwwroot\\css\\icon_fonts\\font\\Glyphter.woff",
+      "PackagePath": "staticwebassets\\css\\icon_fonts\\font\\Glyphter.woff"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\wwwroot\\css\\icon_fonts\\font\\Glyphterd41d.eot",
+      "PackagePath": "staticwebassets\\css\\icon_fonts\\font\\Glyphterd41d.eot"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\wwwroot\\css\\icon_fonts\\font\\Pe-icon-7-strokebb1d.eot",
+      "PackagePath": "staticwebassets\\css\\icon_fonts\\font\\Pe-icon-7-strokebb1d.eot"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\wwwroot\\css\\icon_fonts\\font\\Pe-icon-7-strokebb1d.svg",
+      "PackagePath": "staticwebassets\\css\\icon_fonts\\font\\Pe-icon-7-strokebb1d.svg"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\wwwroot\\css\\icon_fonts\\font\\Pe-icon-7-strokebb1d.ttf",
+      "PackagePath": "staticwebassets\\css\\icon_fonts\\font\\Pe-icon-7-strokebb1d.ttf"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\wwwroot\\css\\icon_fonts\\font\\Pe-icon-7-strokebb1d.woff",
+      "PackagePath": "staticwebassets\\css\\icon_fonts\\font\\Pe-icon-7-strokebb1d.woff"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\wwwroot\\css\\icon_fonts\\font\\Pe-icon-7-stroked41d.eot",
+      "PackagePath": "staticwebassets\\css\\icon_fonts\\font\\Pe-icon-7-stroked41d.eot"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\wwwroot\\css\\icon_fonts\\font\\fontello4508.eot",
+      "PackagePath": "staticwebassets\\css\\icon_fonts\\font\\fontello4508.eot"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\wwwroot\\css\\icon_fonts\\font\\fontello4508.svg",
+      "PackagePath": "staticwebassets\\css\\icon_fonts\\font\\fontello4508.svg"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\wwwroot\\css\\icon_fonts\\font\\fontello4508.ttf",
+      "PackagePath": "staticwebassets\\css\\icon_fonts\\font\\fontello4508.ttf"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\wwwroot\\css\\icon_fonts\\font\\fontello4508.woff",
+      "PackagePath": "staticwebassets\\css\\icon_fonts\\font\\fontello4508.woff"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\wwwroot\\css\\icon_fonts\\font\\smiles.eot",
+      "PackagePath": "staticwebassets\\css\\icon_fonts\\font\\smiles.eot"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\wwwroot\\css\\icon_fonts\\font\\smiles.svg",
+      "PackagePath": "staticwebassets\\css\\icon_fonts\\font\\smiles.svg"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\wwwroot\\css\\icon_fonts\\font\\smiles.ttf",
+      "PackagePath": "staticwebassets\\css\\icon_fonts\\font\\smiles.ttf"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\wwwroot\\css\\icon_fonts\\font\\smiles.woff",
+      "PackagePath": "staticwebassets\\css\\icon_fonts\\font\\smiles.woff"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\wwwroot\\css\\icon_fonts\\font\\smilesd41d.eot",
+      "PackagePath": "staticwebassets\\css\\icon_fonts\\font\\smilesd41d.eot"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\wwwroot\\css\\icon_fonts\\font\\themify9f24.eot",
+      "PackagePath": "staticwebassets\\css\\icon_fonts\\font\\themify9f24.eot"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\wwwroot\\css\\icon_fonts\\font\\themify9f24.svg",
+      "PackagePath": "staticwebassets\\css\\icon_fonts\\font\\themify9f24.svg"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\wwwroot\\css\\icon_fonts\\font\\themify9f24.ttf",
+      "PackagePath": "staticwebassets\\css\\icon_fonts\\font\\themify9f24.ttf"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\wwwroot\\css\\icon_fonts\\font\\themify9f24.woff",
+      "PackagePath": "staticwebassets\\css\\icon_fonts\\font\\themify9f24.woff"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\wwwroot\\css\\icon_fonts\\font\\themifyd41d.eot",
+      "PackagePath": "staticwebassets\\css\\icon_fonts\\font\\themifyd41d.eot"
     },
     {
       "Id": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\wwwroot\\css\\magnific-popup.css",
@@ -55,6 +299,22 @@
     {
       "Id": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\wwwroot\\css\\style.css",
       "PackagePath": "staticwebassets\\css\\style.css"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\wwwroot\\css\\style2.css",
+      "PackagePath": "staticwebassets\\css\\style2.css"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\wwwroot\\css\\templatemo-style.css",
+      "PackagePath": "staticwebassets\\css\\templatemo-style.css"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\wwwroot\\css\\vendors.css",
+      "PackagePath": "staticwebassets\\css\\vendors.css"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\wwwroot\\css\\vendors2.css",
+      "PackagePath": "staticwebassets\\css\\vendors2.css"
     },
     {
       "Id": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\wwwroot\\favicon.ico",
@@ -429,6 +689,42 @@
       "PackagePath": "staticwebassets\\img\\photo\\2.jpg"
     },
     {
+      "Id": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\wwwroot\\img\\photo\\bicycle.jpg",
+      "PackagePath": "staticwebassets\\img\\photo\\bicycle.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\wwwroot\\img\\photo\\checkbox-radio-sheet (1).png",
+      "PackagePath": "staticwebassets\\img\\photo\\checkbox-radio-sheet (1).png"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\wwwroot\\img\\photo\\checkbox-radio-sheet.png",
+      "PackagePath": "staticwebassets\\img\\photo\\checkbox-radio-sheet.png"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\wwwroot\\img\\photo\\div class.docx",
+      "PackagePath": "staticwebassets\\img\\photo\\div class.docx"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\wwwroot\\img\\photo\\person.jpg",
+      "PackagePath": "staticwebassets\\img\\photo\\person.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\wwwroot\\img\\photo\\profile-photo.png",
+      "PackagePath": "staticwebassets\\img\\photo\\profile-photo.png"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\wwwroot\\img\\photo\\sunset-big.jpg",
+      "PackagePath": "staticwebassets\\img\\photo\\sunset-big.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\wwwroot\\img\\photo\\sunset.jpg",
+      "PackagePath": "staticwebassets\\img\\photo\\sunset.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\wwwroot\\img\\photo\\user.jpg",
+      "PackagePath": "staticwebassets\\img\\photo\\user.jpg"
+    },
+    {
       "Id": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\wwwroot\\img\\process\\01.jpg",
       "PackagePath": "staticwebassets\\img\\process\\01.jpg"
     },
@@ -545,6 +841,14 @@
       "PackagePath": "staticwebassets\\js\\bootstrap.min.js"
     },
     {
+      "Id": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\wwwroot\\js\\common_scripts.min.js",
+      "PackagePath": "staticwebassets\\js\\common_scripts.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\wwwroot\\js\\functions.js",
+      "PackagePath": "staticwebassets\\js\\functions.js"
+    },
+    {
       "Id": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\wwwroot\\js\\gmaps.min.js",
       "PackagePath": "staticwebassets\\js\\gmaps.min.js"
     },
@@ -557,8 +861,16 @@
       "PackagePath": "staticwebassets\\js\\isotope.js"
     },
     {
+      "Id": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\wwwroot\\js\\jquery-1.11.2.min.js",
+      "PackagePath": "staticwebassets\\js\\jquery-1.11.2.min.js"
+    },
+    {
       "Id": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\wwwroot\\js\\jquery-1.12.4.min.js",
       "PackagePath": "staticwebassets\\js\\jquery-1.12.4.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\wwwroot\\js\\jquery-3.7.1.min.js",
+      "PackagePath": "staticwebassets\\js\\jquery-3.7.1.min.js"
     },
     {
       "Id": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\wwwroot\\js\\jquery.countdown.min.js",
@@ -593,8 +905,24 @@
       "PackagePath": "staticwebassets\\js\\site.js"
     },
     {
+      "Id": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\wwwroot\\js\\survey_func.js",
+      "PackagePath": "staticwebassets\\js\\survey_func.js"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\wwwroot\\js\\templatemo-script.js",
+      "PackagePath": "staticwebassets\\js\\templatemo-script.js"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\wwwroot\\script1.js",
+      "PackagePath": "staticwebassets\\script1.js"
+    },
+    {
       "Id": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\wwwroot\\style.css",
       "PackagePath": "staticwebassets\\style.css"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\wwwroot\\style1.css",
+      "PackagePath": "staticwebassets\\style1.css"
     },
     {
       "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.MVC.Microsoft.AspNetCore.StaticWebAssets.props",

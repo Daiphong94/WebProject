@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace MVC.Controllers
 {
-    [Authorize(Roles = "Faculty")]
+    
     public class FacultyController : Controller
     {
         private readonly FacultyInterface _facultyInterface;
@@ -98,7 +98,25 @@ namespace MVC.Controllers
         }
         public IActionResult Account()
         {
-            return View();
+            var userid = HttpContext.Session.GetString("UserID");
+            if (!string.IsNullOrEmpty(userid) && int.TryParse(userid, out int userId))
+            {
+                var userName = HttpContext.Session.GetString("UserName");
+                var email = HttpContext.Session.GetString("Email");
+                var role = HttpContext.Session.GetString("Role");
+
+                var user = new User
+                {
+                    UserID = userId,
+                    UserName = userName,
+                    Email = email,
+                    Role = role
+                };
+                ViewBag.InvalidLogin = true;
+                return View(user);
+            }
+            else
+            { return RedirectToAction("Login", "User"); }
         }
     }
 }

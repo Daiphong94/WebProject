@@ -148,37 +148,18 @@ namespace MVC.Controllers
             ViewBag.Error = "Username or password is incorrect!";
             return View();
         }
-        // Profile
-        public IActionResult Profile()
-        {
-            var userid = HttpContext.Session.GetString("UserID");
-            if (!string.IsNullOrEmpty(userid) && int.TryParse(userid, out int userId))
-            {
-                var userName = HttpContext.Session.GetString("UserName");
-                var email = HttpContext.Session.GetString("Email");
-                var role = HttpContext.Session.GetString("Role");
-
-                var user = new User
-                {
-                    UserID = userId,
-                    UserName = userName,
-                    Email = email,
-                    Role = role
-                };
-                ViewBag.InvalidLogin = true;
-                return View(user);
-            }
-            else
-            { return RedirectToAction("Login", "User"); }
-        }
+        
         // Log Out
-        public  IActionResult Logout()
+        public async Task<IActionResult> Logout()
 
         {
 
             HttpContext.Session.Remove("UserID");
+            HttpContext.Session.Remove("UserName");
             HttpContext.Session.Remove("Email");
             HttpContext.Session.Remove("Role");
+
+            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
 
             return RedirectToAction("Index", "Home");
         }

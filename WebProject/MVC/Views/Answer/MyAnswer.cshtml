@@ -3,24 +3,125 @@
     ViewData["Title"] = "My Answer";
 }
 
-<h2>My Answer</h2>
 
-<form asp-action="MyAnswer" method="post">
-    @Html.AntiForgeryToken()
-    <input type="hidden" asp-for="QuestionID" />
-    <input type="hidden" asp-for="StudentID" />
-   
-    <div class="form-group">
-        <label asp-for="File" class="control-label">File:</label>
-        <input asp-for="File" class="form-control" />
-        <span asp-validation-for="File" class="text-danger"></span>
-    </div>
 
-    <div class="form-group">
-        <label asp-for="Writing" class="control-label">Writing:</label>
-        <textarea asp-for="Writing" class="form-control" rows="6"></textarea>
-        <span asp-validation-for="Writing" class="text-danger"></span>
-    </div>
+<!DOCTYPE html>
+<html lang="en">
 
-    <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Satisfaction Survey form Wizard by Ansonika.">
+	<meta name="author" content="Ansonika">
+	<title>Satisfyc | Satisfaction Survey form Wizard</title>
+
+	<!-- Favicons-->
+	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" type="image/x-icon" href="img/apple-touch-icon-57x57-precomposed.png">
+	<link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="img/apple-touch-icon-72x72-precomposed.png">
+	<link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="/img/apple-touch-icon-114x114-precomposed.png">
+	<link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="~/img/apple-touch-icon-144x144-precomposed.png">
+
+	<!-- GOOGLE WEB FONT -->
+	<link href="https://fonts.googleapis.com/css?family=Caveat|Poppins:300,400,500,600,700&amp;display=swap" rel="stylesheet">
+
+	<!-- BASE CSS -->
+	<link href="/css/bootstrap2.min.css" rel="stylesheet">
+	<link href="/css/style2.css" rel="stylesheet">
+	<link href="/css/vendors2.css" rel="stylesheet">
+	<link href="/css/site.css" rel="stylesheet" />
+	<!-- YOUR CUSTOM CSS -->
+	<link href="/css/custom2.css" rel="stylesheet">
+
+</head>
+
+<body class="style_2">
+
+	<div id="preloader">
+		<div data-loader="circle-side"></div>
+	</div><!-- /Preload -->
+
+	<div id="loader_form">
+		<div data-loader="circle-side-2"></div>
+	</div><!-- /loader_form -->
+
+	<header>
+		<div class="container-fluid">
+			<div class="row">
+			</div>
+			<!-- /row -->
+		</div>
+		<!-- /container -->
+	</header>
+	<!-- /header -->
+
+	<div class="wrapper_centering">
+		<div class="container_centering">
+			<div class="container">
+				<div class="row justify-content-between">
+					<div class="col-xl-6 col-lg-6 d-flex align-items-center">
+						<div class="main_title_1">
+							<h3>Question</h3>
+							<td>
+								<a href="@ViewBag.Question.File" target="_blank" class="image-link">
+									<img src="@ViewBag.Question.File" alt="Question Image" width="150" height="150" />
+								</a>
+							</td>
+							<p> @ViewBag.Question.Writing</p>
+						</div>
+					</div>
+					<!-- /col -->
+					<div class="col-xl-5 col-lg-5">
+						<div id="wizard_container">
+							<div id="top-wizard">
+								<div id="progressbar"></div>
+							</div>
+
+							<h3>Answer</h3>
+							<form asp-action="MyAnswer" method="post" enctype="multipart/form-data">
+								@Html.AntiForgeryToken()
+								<input type="hidden" asp-for="QuestionID" />
+								<input type="hidden" asp-for="StudentID" />
+
+								<div class="form-group">
+									<label asp-for="File" class="control-label">File:</label>
+									<input id="File" name="imageFile" type="file" class="form-control-file" />
+									<span asp-validation-for="File" class="text-danger"></span>
+								</div>
+
+								<div class="form-group">
+									<label asp-for="Writing" class="control-label">Writing:</label>
+									<textarea asp-for="Writing" class="form-control" rows="6"></textarea>
+									<span asp-validation-for="Writing" class="text-danger"></span>
+								</div>
+
+								<button type="submit" class="btn btn-primary">Submit</button>
+							</form>
+
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- /footer -->
+		<footer>
+		</footer>
+
+	</div>
+
+
+	<!-- COMMON SCRIPTS -->
+	<script src="/js/jquery-3.7.1.min.js"></script>
+	<script src="/js/common_scripts.min.js"></script>
+	<script src="/js/functions.js"></script>
+
+	<!-- Wizard script -->
+	<script src="/js/survey_func.js"></script>
+
+</body>
+
+<!-- Mirrored from www.ansonika.com/satisfyc/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 17 Apr 2024 13:24:55 GMT -->
+</html>

@@ -185,6 +185,7 @@ namespace Data.Models
                 entity.HasKey(e => e.EventID);
                 entity.Property(e => e.Title).IsRequired().HasMaxLength(200);
                 entity.Property(e => e.Description).IsRequired().HasColumnType("text");
+                entity.Property(e => e.Photo).IsRequired(false).HasMaxLength(200);
                 entity.Property(e => e.Location).IsRequired().HasMaxLength(200);
                 entity.Property(e => e.ParticipantCount).IsRequired();
                 entity.Property(e => e.StartDate).IsRequired().HasColumnType("datetime");

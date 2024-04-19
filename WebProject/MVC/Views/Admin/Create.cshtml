@@ -2,37 +2,86 @@
 @{
     ViewData["Title"] = "Create";
 }
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+<style>
+    .form-group {
+        margin-bottom: 20px;
+    }
 
+    label {
+        font-weight: bold;
+    }
 
-<h2>Create New Admin</h2>
+    .input-group {
+        position: relative;
+    }
 
-<form asp-action="Create" method="post">
-    <div class="form-group">
-        <label asp-for="UserID"></label>
-        <input asp-for="UserID" class="form-control" readonly value="@ViewBag.UserID" />
-        <span asp-validation-for="UserID" class="text-danger"></span>
-    </div>
-    <div class="form-group">
-        <label asp-for="Email"></label>
-        <input asp-for="Email" class="form-control" readonly value="@ViewBag.Email" />
-        <span asp-validation-for="Email" class="text-danger"></span>
-    </div>
-    <div class="form-group">
-        <label asp-for="FullName"></label>
-        <input asp-for="FullName" class="form-control" />
-        <span asp-validation-for="FullName" class="text-danger"></span>
-    </div>
-   
-    <div class="form-group">
-        <label asp-for="AdminNumber"></label>
-        <input asp-for="AdminNumber" class="form-control" />
-        <span asp-validation-for="AdminNumber" class="text-danger"></span>
-    </div>
-    <div class="form-group">
-        <label asp-for="JoiningDate"></label>
-        <input asp-for="JoiningDate" class="form-control" readonly value="@DateTime.Now.ToString("yyyy-MM-ddTHH:mm")" />
-        <span asp-validation-for="JoiningDate" class="text-danger"></span>
-    </div>
-    <button type="submit" class="btn btn-primary">Create</button>
-</form>
+    .input-group-addon {
+        background-color: #f8f9fa;
+        border: 1px solid #ced4da;
+        border-radius: .25rem;
+        padding: .375rem .75rem;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
 
+    .input-group input.form-control {
+        padding-right: 30px; /* Adjust based on the width of your input-group-addon */
+    }
+
+    .text-danger {
+        color: #dc3545;
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+    }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+</style>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <form asp-action="Create" method="post">
+                <div class="form-group">
+                    <label for="UserID">UserID</label>
+                    <input asp-for="UserID" class="form-control" readonly value="@ViewBag.UserID" />
+                    <span asp-validation-for="UserID" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label for="Email">Email</label>
+                    <input asp-for="Email" class="form-control" readonly value="@ViewBag.Email" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label for="FullName">Full Name</label>
+                    <input asp-for="FullName" class="form-control" />
+                    <span asp-validation-for="FullName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label for="AdminNumber">Admin Number</label>
+                    <input asp-for="AdminNumber" class="form-control" />
+                    <span asp-validation-for="AdminNumber" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label for="JoiningDate">Joining Date</label>
+                    <input asp-for="JoiningDate" class="form-control" readonly value="@DateTime.Now.ToString("yyyy-MM-ddTHH:mm")" />
+                    <span asp-validation-for="JoiningDate" class="text-danger"></span>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary">Create</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
