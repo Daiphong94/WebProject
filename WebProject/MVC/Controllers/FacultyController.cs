@@ -44,7 +44,7 @@ namespace MVC.Controllers
 
                 await _facultyInterface.AddFaculty(model);
 
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "Home");
             }
             else
             {
@@ -75,7 +75,7 @@ namespace MVC.Controllers
             if (ModelState.IsValid)
             {
                 await _facultyInterface.UpdateFaculty(model);
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Index", "Home");
             }
             return View(model);
         }

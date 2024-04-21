@@ -123,7 +123,7 @@ namespace MVC.Controllers
             var result = await _registrationInterface.RejectRegistrationAsync(id);
             if (result)
             {
-                // Xử lý khi từ chối đăng ký thành công
+                
                 return RedirectToAction(nameof(PendingRegistrations));
             }
             else

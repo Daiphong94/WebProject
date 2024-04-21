@@ -1,20 +1,82 @@
 ﻿@model Data.Models.Competition
 
-<h1>@Model.CompetitionName</h1>
-
-<div>
-    <p><strong>Description:</strong> @Model.Description</p>
-    <p><strong>Start Date:</strong> @Model.StartDate</p>
-    <p><strong>End Date:</strong> @Model.EndDate</p>
-    <!-- Hiển thị ảnh -->
-    @if (!string.IsNullOrEmpty(Model.Photo))
-    {
-        <img src="@Model.Photo" alt="Competition Photo" width="100" height="150" />
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(90deg, #ffa500, #4caf50);
     }
 
-</div>
+    .competition-details {
+        background-color: #fff;
+        padding: 20px;
+        margin: 20px auto;
+        max-width: 600px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+    }
 
-<a asp-controller="Question" asp-action="Create" asp-route-competitionId="@Model.CompetitionID">Create Question</a>
-<div>
-   
-</div>
+        .competition-details h1 {
+            color: #333;
+        }
+
+    .description {
+        margin-bottom: 20px;
+    }
+
+        .description p {
+            margin: 5px 0;
+        }
+
+    .photo img {
+        display: block;
+        margin-top: 10px;
+    }
+
+    .btn {
+        display: block;
+        width: 200px;
+        padding: 10px;
+        text-align: center;
+        margin: 20px auto;
+        background-color: #007bff;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+</style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@Model.CompetitionName</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="competition-details">
+        <h1>@Model.CompetitionName</h1>
+        <div class="description">
+            <p><strong>Description:</strong> @Model.Description</p>
+            <p><strong>Start Date:</strong> @Model.StartDate</p>
+            <p><strong>End Date:</strong> @Model.EndDate</p>
+        </div>
+        
+        @if (!string.IsNullOrEmpty(Model.Photo))
+        {
+            <div class="photo">
+                <img src="@Model.Photo" alt="Competition Photo" width="100" height="150" />
+            </div>
+        }
+    </div>
+
+    <a href="@Url.Action("Create", "Question", new { competitionId = Model.CompetitionID })" class="btn btn-primary btn-block">Create Question</a>
+
+</body>
+</html>

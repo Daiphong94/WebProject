@@ -2,22 +2,24 @@
 @{
     ViewData["Title"] = "Delete";
 }
-
-
-<h2>Delete Exam</h2>
-
-<h3>Are you sure you want to delete this Exam?</h3>
-<div>
-
-    <h4>CompetitionID: @Model.CompetitionID</h4>
-    <h4>StudentID: @Model.StudentID</h4>
-    <h4>Score: @Model.Score</h4>
-    <h4>Rank Count: @Model.Rank</h4>
-    
-</div>
-<form asp-action="Delete" method="post">
-    <input type="hidden" asp-for="ExamID" />
-    <button type="submit" class="btn btn-danger">Delete</button> |
-    <a asp-action="Index">Back to List</a>
-</form>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DELETE</title>
+    <link href="/css/delete.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <h2>DELETE</h2>
+        <p>Do you want to delete?</p>
+        <form asp-action="Delete" method="post">
+            <input type="hidden" asp-for="ExamID" />
+            <button type="submit">Delete</button> |
+            <a asp-action="Index">Back to List</a>
+        </form>
+    </div>
+</body>
+</html>
 

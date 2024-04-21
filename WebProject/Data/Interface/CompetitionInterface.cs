@@ -15,5 +15,6 @@ namespace Data.Interface
         Task Update(Competition entity);
         Task Delete(int id);
         Task<Competition> GetByName(string competitionName);
+        Task<Competition> GetFirst();
     }
 }

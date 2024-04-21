@@ -211,3 +211,9 @@ body{
 .error-message {
     display: none;
 }
+
+a {
+    margin-top: 10px;
+    padding-top : 10px;
+    background-color: red
+}

@@ -24,6 +24,11 @@ namespace MVC.Controllers
             return View(student);
         }
 
+        public async Task<IActionResult> IndexFaculty()
+        {
+            var student = await _studentInterface.GetAllStudent();
+            return View(student);
+        }
         public IActionResult Create()
         {
             ViewBag.UserID = HttpContext.Session.GetString("UserID");
@@ -55,7 +60,7 @@ namespace MVC.Controllers
                 
                 await _studentInterface.AddStudent(model);
 
-                return RedirectToAction("Account ", "Student");
+                return RedirectToAction("Account", "Student");
             }
             else
             {
@@ -83,11 +88,7 @@ namespace MVC.Controllers
             }
             await _studentInterface.UpdateStudent(model);
             return RedirectToAction(nameof(Index));
-            /*if (ModelState.IsValid)
-            {
-               
-            }*/
-            return View(model);
+            
         }
         public async Task<IActionResult> Delete(int id)
         {

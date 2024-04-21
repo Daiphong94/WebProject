@@ -17,6 +17,31 @@ namespace MVC.Controllers
         public async Task<IActionResult> Index()
         {
             var ev = await _eventInterface.GetAll();
+            if (User.IsInRole("Admin"))
+            {
+
+                ViewBag.Layout = "AdminLayout";
+            }
+            else if (User.IsInRole("Faculty"))
+            {
+
+                ViewBag.Layout = "FacultyLayout";
+            }
+            return View(ev);
+        }
+        public async Task<IActionResult> IndexFaculty()
+        {
+            var ev = await _eventInterface.GetAll();
+            if (User.IsInRole("Admin"))
+            {
+
+                ViewBag.Layout = "AdminLayout";
+            }
+            else if (User.IsInRole("Faculty"))
+            {
+
+                ViewBag.Layout = "FacultyLayout";
+            }
             return View(ev);
         }
         public IActionResult Create()
@@ -37,8 +62,8 @@ namespace MVC.Controllers
                 model.Photo = "/img/photo/" + imageFile.FileName;
             }
             await _eventInterface.Add(model);
-            return RedirectToAction(nameof(Index));
-            
+            return RedirectToAction("Index", "Home");
+
         }
         public async Task<IActionResult> Edit(int id)
         {
@@ -70,8 +95,8 @@ namespace MVC.Controllers
             }
 
             await _eventInterface.Update(model);
-            return RedirectToAction(nameof(Index));
-            
+            return RedirectToAction("Index", "Home");
+
         }
         public async Task<IActionResult> Delete(int id)
         {

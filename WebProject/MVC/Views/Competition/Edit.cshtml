@@ -6,35 +6,65 @@
 
 <h2>Edit Competition</h2>
 
-<form asp-action="Edit" method="post">
-    <input type="hidden" asp-for="CompetitionID" />
-    <div class="form-group">
-        <label asp-for="CompetitionName"></label>
-        <input asp-for="CompetitionName" class="form-control" />
-        <span asp-validation-for="CompetitionName" class="text-danger"></span>
-    </div>
-    <div class="form-group">
-        <label asp-for="Photo"></label>
-        <input asp-for="Photo" class="form-control" />
-        <span asp-validation-for="Photo" class="text-danger"></span>
-    </div>
-    <div class="form-group">
-        <label asp-for="Description"></label>
-        <input asp-for="Description" class="form-control" />
-        <span asp-validation-for="Description" class="text-danger"></span>
-    </div>
-    <div class="form-group">
-        <label asp-for="StartDate"></label>
-        <input asp-for="StartDate" class="form-control" />
-        <span asp-validation-for="StartDate" class="text-danger"></span>
-    </div>
 
-    <div class="form-group">
-        <label asp-for="EndDate"></label>
-        <input asp-for="EndDate" class="form-control" />
-        <span asp-validation-for="EndDate" class="text-danger"></span>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Competition</title>
+    <link href="/css/Create.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="Word">
+            <h1>Edit Admin</h1>
+        </div>
+        <div class="head">
+            <p>
+                <a class="btn btn-primary" asp-action="">Create New</a>
+            </p>
+        </div>
+
+        <div class="body">
+            <form asp-action="Edit" method="post" enctype="multipart/form-data">
+                <input type="hidden" asp-for="CompetitionID" />
+                <div class="form-group">
+                    <label asp-for="CompetitionName"></label>
+                    <input asp-for="CompetitionName" class="form-control" />
+                    <span asp-validation-for="CompetitionName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label for="Photo">Photo</label>
+                    <input id="Photo" name="imageFile" type="file" class="form-control-file" />
+                    @if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
+                    {
+                        <span class="text-danger">@ViewBag.ErrorMessage</span>
+                    }
+                </div>
+                <div class="form-group">
+                    <label asp-for="Description"></label>
+                    <input asp-for="Description" class="form-control" />
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="StartDate"></label>
+                    <input asp-for="StartDate" class="form-control" />
+                    <span asp-validation-for="StartDate" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="EndDate"></label>
+                    <input asp-for="EndDate" class="form-control" />
+                    <span asp-validation-for="EndDate" class="text-danger"></span>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Save</button>
+            </form>
+        </div>
+        <div class="footer">
+            <a href="/" style="color: white">Quay lại trang chính</a>
+        </div>
     </div>
-    
-    <button type="submit" class="btn btn-primary">Save</button>
-</form>
+</body>
+</html>
 

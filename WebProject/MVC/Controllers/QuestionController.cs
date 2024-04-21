@@ -22,7 +22,13 @@ namespace MVC.Controllers
             var question = await _questionInterface.GetAll();
             return View(question);
         }
-        public async Task<IActionResult> Create(int competitionId)
+		public async Task<IActionResult> IndexFaculty()
+		{
+
+			var question = await _questionInterface.GetAll();
+			return View(question);
+		}
+		public async Task<IActionResult> Create(int competitionId)
         {
             var competition = await _competitionInterface.GetById(competitionId);
             if (competition == null)
@@ -54,8 +60,8 @@ namespace MVC.Controllers
                 model.File = "/img/photo/" + imageFile.FileName;
             }
             await _questionInterface.Add(model);
-            return RedirectToAction(nameof(Index));
-            
+            return RedirectToAction("Index", "Home");
+
         }
         public async Task<IActionResult> Edit(int id)
         {
@@ -77,8 +83,8 @@ namespace MVC.Controllers
             }
 
             await _questionInterface.Update(model);
-            return RedirectToAction(nameof(Index));
-            
+            return RedirectToAction("Index", "Home");
+
         }
         public async Task<IActionResult> Delete(int id)
         {

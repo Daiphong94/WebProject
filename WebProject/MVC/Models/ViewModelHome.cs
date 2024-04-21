@@ -7,5 +7,6 @@ namespace MVC.Models
         public IEnumerable<Data.Models.Competition> Competition { get; set; }
         public IEnumerable<Data.Models.FAQ> FAQ { get; set; }
         public IEnumerable<Data.Models.Events> Events { get; set; }
+        public Data.Models.Competition FirstCompetition { get; set; }
     }
 }

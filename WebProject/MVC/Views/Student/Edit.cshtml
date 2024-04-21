@@ -2,39 +2,64 @@
 @{
     ViewData["Title"] = "Edit";
 }
-<h2>Edit Student</h2>
 
-<form asp-action="Edit" method="post">
-    <input type="hidden" asp-for="StudentID" />
-    <div class="form-group">
-        <label asp-for="FullName"></label>
-        <input asp-for="FullName" class="form-control" />
-        <span asp-validation-for="FullName" class="text-danger"></span>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Admin</title>
+    <link href="/css/Create.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="Word">
+            <h1>Edit Student</h1>
+        </div>
+        <div class="head">
+            <p>
+                <a class="btn btn-primary" asp-action="">Create New</a>
+            </p>
+        </div>
+
+        <div class="body">
+            <form asp-action="Edit" method="post">
+                <input type="hidden" asp-for="StudentID" />
+                <div class="form-group">
+                    <label asp-for="FullName"></label>
+                    <input asp-for="FullName" class="form-control" />
+                    <span asp-validation-for="FullName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Email"></label>
+                    <input asp-for="Email" class="form-control" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="StudentNumber"></label>
+                    <input asp-for="StudentNumber" class="form-control" />
+                    <span asp-validation-for="StudentNumber" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Class"></label>
+                    <input asp-for="Class" class="form-control" />
+                    <span asp-validation-for="Class" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Department"></label>
+                    <input asp-for="Department" class="form-control" />
+                    <span asp-validation-for="Department" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="AdmissionDate"></label>
+                    <input asp-for="AdmissionDate" class="form-control" />
+                    <span asp-validation-for="AdmissionDate" class="text-danger"></span>
+                </div>
+                <button type="submit" class="btn btn-primary">Save</button>
+            </form>
+        </div>
+        <div class="footer">
+            <a href="/" style="color: white">Quay lại trang chính</a>
+        </div>
     </div>
-    <div class="form-group">
-        <label asp-for="Email"></label>
-        <input asp-for="Email" class="form-control" />
-        <span asp-validation-for="Email" class="text-danger"></span>
-    </div>
-    <div class="form-group">
-        <label asp-for="StudentNumber"></label>
-        <input asp-for="StudentNumber" class="form-control" />
-        <span asp-validation-for="StudentNumber" class="text-danger"></span>
-    </div>
-    <div class="form-group">
-        <label asp-for="Class"></label>
-        <input asp-for="Class" class="form-control" />
-        <span asp-validation-for="Class" class="text-danger"></span>
-    </div>
-    <div class="form-group">
-        <label asp-for="Department"></label>
-        <input asp-for="Department" class="form-control" />
-        <span asp-validation-for="Department" class="text-danger"></span>
-    </div>
-    <div class="form-group">
-        <label asp-for="AdmissionDate"></label>
-        <input asp-for="AdmissionDate" class="form-control" />
-        <span asp-validation-for="AdmissionDate" class="text-danger"></span>
-    </div>
-    <button type="submit" class="btn btn-primary">Save</button>
-</form>
+</body>
+</html>

@@ -23,7 +23,7 @@
                 @foreach (var answer in Model)
                 {
                     <tr>
-                        <td>@(answer.Question != null ? answer.Question.Competition.CompetitionName : "N/A")</td>
+                        <td>@(answer.Question != null ? answer.Question.Writing : "N/A")</td>
                         <td>@(answer.Student != null ? answer.Student.Email : "N/A")</td>
                         <td>
                             <a href="@answer.File" target="_blank" class="image-link">

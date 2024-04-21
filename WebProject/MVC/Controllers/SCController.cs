@@ -152,20 +152,20 @@ namespace MVC.Controllers
         {
             var userIdString = HttpContext.Session.GetString("UserID");
 
-            // Kiểm tra xem UserID có tồn tại và hợp lệ không
+            
             if (string.IsNullOrEmpty(userIdString) || !int.TryParse(userIdString, out int userId))
             {
-                // Nếu không hợp lệ, chuyển hướng người dùng đến trang đăng nhập
+                
                 return RedirectToAction("Login", "User");
             }
 
-            // Lấy thông tin sinh viên từ UserID
+            
             var student = await _studentInterface.GetByUserId(userId);
 
-            // Kiểm tra xem thông tin sinh viên có tồn tại không
+           
             if (student == null)
             {
-                // Nếu không tồn tại, chuyển hướng người dùng đến trang lỗi
+                
                 return RedirectToAction("Error", "SC");
             }
 
@@ -183,7 +183,7 @@ namespace MVC.Controllers
             await _scInterface.Delete(studentId, competitionId);
 
             // Sau khi xóa thành công, chuyển hướng người dùng đến trang Index hoặc trang khác phù hợp
-            return RedirectToAction("");
+            return RedirectToAction("MyCompetitions");
         }
     }
 }

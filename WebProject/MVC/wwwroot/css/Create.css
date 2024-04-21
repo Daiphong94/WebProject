@@ -1,0 +1,48 @@
+﻿.container {
+    background: linear-gradient(135deg, #28a745, #ff7f0e);
+    height: auto;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    color: #fff;
+}
+
+form {
+    max-width: 50%; 
+     
+}
+.head, .body, .footer {
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+.form-group {
+    margin-bottom: 15px; 
+}
+
+    .form-group label {
+        font-size: 16px; 
+    }
+
+.btn {
+    width: auto;
+    font-size: 16px;
+    padding: 6px 12px;
+}
+.btn-primary {
+    font-size: 16px;
+    padding: 10px 20px;
+}
+
+input[type="text"],
+input[type="textarea"],
+input[type="file"] {
+    border: 1px solid #ced4da; 
+    border-radius: 6px; 
+    padding: 8px; 
+    box-shadow: 0 8px 6px rgba(0, 0, 0, 0.1);
+}
+
+input[type="file"] {
+    border: none; 
+}

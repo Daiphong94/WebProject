@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace MVC.Controllers
 {
-    public class ExamController : Controller
+    public class ExamController : Controller 
     {
         private readonly ExamInterface _examInterface;
         private readonly StudentInterface _studentInterface;
@@ -17,13 +17,24 @@ namespace MVC.Controllers
         public async Task<IActionResult> Index(string searchText)
         {
             var exams = await _examInterface.GetAll();
+
             if (!string.IsNullOrEmpty(searchText))
             {
-                
                 exams = exams.Where(e => e.Competition.CompetitionName.Contains(searchText));
             }
-            var sortedExams = exams.OrderByDescending(e => e.Score);
-            return View(sortedExams);
+
+            return View(exams);
+        }
+        public async Task<IActionResult> IndexFaculty(string searchText)
+        {
+            var exams = await _examInterface.GetAll();
+
+            if (!string.IsNullOrEmpty(searchText))
+            {
+                exams = exams.Where(e => e.Competition.CompetitionName.Contains(searchText));
+            }
+
+            return View(exams);
         }
         public IActionResult Create(int competitionId, int studentId)
         {
@@ -47,7 +58,7 @@ namespace MVC.Controllers
 
             await UpdateRanks(model.CompetitionID);
 
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction("Index", "Home");
 
         }
         public async Task<IActionResult> Edit(int id)
@@ -70,12 +81,8 @@ namespace MVC.Controllers
             }
 
             await _examInterface.Update(model);
-            return RedirectToAction(nameof(Index));
-            /* if (ModelState.IsValid)
-             {
-
-             }*/
-            return View(model);
+            return RedirectToAction("Index", "Home");
+            
         }
         public async Task<IActionResult> Delete(int id)
         {

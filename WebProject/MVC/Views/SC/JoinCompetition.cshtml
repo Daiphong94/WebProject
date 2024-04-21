@@ -4,34 +4,54 @@
     var student = ViewData["Student"] as Data.Models.Student;
     var competition = ViewData["Competition"] as Data.Models.Competition;
 }
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create New</title>
+    <link href="/css/Create.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="Word">
+            <h1>Join Competition</h1>
+        </div>
+        <div class="head">
+        </div>
 
-<h1>Join Competition</h1>
-<form method="post" action="/SC/JoinCompetition">
-    <div>
-        <label for="Email">Email:</label>
-        <input type="text" id="Email" name="Email" value="@student?.Email" readonly>
+        <div class="body">
+            <form method="post" action="/SC/JoinCompetition">
+                <div class="form-group">
+                    <label for="Email">Email:</label>
+                    <input type="text" id="Email" name="Email" value="@student?.Email" readonly>
+                </div class="form-group">
+
+                <div class="form-group">
+                    <label for="CompetitionName">Competition Name:</label>
+                    <input type="text" id="CompetitionName" name="CompetitionName" value="@competition?.CompetitionName" readonly>
+                </div>
+
+
+                <input type="hidden" id="StudentID" name="StudentID" value="@student?.StudentID">
+                <input type="hidden" id="CompetitionID" name="CompetitionID" value="@competition?.CompetitionID">
+
+                <div class="form-group"class="form-group">
+                    <label for="JoinedDate">Joined Date:</label>
+                    <input type="text" id="JoinedDate" name="JoinedDate" value="@DateTime.Now" readonly>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Create</button>
+
+            </form>
+        </div>
+        <div class="footer">
+            <a href="/" style="color: white">Return to main page</a>
+        </div>
     </div>
-
-    <div>
-        <label for="CompetitionName">Competition Name:</label>
-        <input type="text" id="CompetitionName" name="CompetitionName" value="@competition?.CompetitionName" readonly>
-    </div>
-
-    <!-- Trường ẩn để lưu trữ StudentID và CompetitionID -->
-    <input type="hidden" id="StudentID" name="StudentID" value="@student?.StudentID">
-    <input type="hidden" id="CompetitionID" name="CompetitionID" value="@competition?.CompetitionID">
-
-    <div>
-        <label for="JoinedDate">Joined Date:</label>
-        <input type="text" id="JoinedDate" name="JoinedDate" value="@DateTime.Now" readonly>
-    </div>
-
-    <button type="submit" class="btn btn-primary">Create</button>
-   
-</form>
-<a href="/">Quay lại trang chính</a>
+</body>
+</html>
 
 <script>
-    // Set joined date to current date
+    
     document.getElementById("JoinedDate").value = new Date().toISOString().slice(0, 10);
 </script>

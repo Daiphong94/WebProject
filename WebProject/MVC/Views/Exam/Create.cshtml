@@ -2,22 +2,41 @@
 @{
     ViewData["Title"] = "Create";
 }
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create New</title>
+    <link href="/css/Create.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="Word">
+            <h1>Mark</h1>
+        </div>
+        <div class="head">
+        </div>
 
+        <div class="body">
+            <form asp-action="Create" method="post">
+                <input type="hidden" asp-for="CompetitionID" />
+                <input type="hidden" asp-for="StudentID" />
+                <div class="form-group">
+                    <label asp-for="Score">Score</label>
+                    <input asp-for="Score" class="form-control" />
+                    <span asp-validation-for="Score" class="text-danger"></span>
+                </div>
+                <input asp-for="Rank" class="form-control" hidden />
 
-
-
-<h2> Exam</h2>
-
-<form asp-action="Create" method="post">
-    <input type="hidden" asp-for="CompetitionID" />
-    <input type="hidden" asp-for="StudentID" />
-    <div class="form-group">
-        <label asp-for="Score"></label>
-        <input asp-for="Score" class="form-control" />
-        <span asp-validation-for="Score" class="text-danger"></span>
+                <button type="submit" class="btn btn-primary">Create</button>
+            </form>
+        </div>
+        <div class="footer">
+            <a href="/" style="color: white">Return to main page</a>
+        </div>
     </div>
-    <input asp-for="Rank" class="form-control" hidden />
-    
-    <button type="submit" class="btn btn-primary">Create</button>
-</form>
+</body>
+</html>
+
+
 

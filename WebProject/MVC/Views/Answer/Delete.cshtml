@@ -4,20 +4,24 @@
 }
 
 
-<h2>Delete Answer</h2>
 
-<h3>Are you sure you want to delete this Answer?</h3>
-<div>
-
-    <h4>Question: @Model.QuestionID</h4>
-    <h4>Student: @Model.StudentID</h4>
-    <h4>File: @Model.File</h4>
-    <h4>Wiriting: @Model.Writing</h4>
-    
-</div>
-<form asp-action="Delete" method="post">
-    <input type="hidden" asp-for="AnswerID" />
-    <button type="submit" class="btn btn-danger">Delete</button> |
-    <a asp-action="Index">Back to List</a>
-</form>
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DELETE</title>
+    <link href="/css/delete.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <h2>DELETE</h2>
+        <p>Do you want to delete?</p>
+        <form asp-action="Delete" method="post">
+            <input type="hidden" asp-for="AnswerID" />
+            <button type="submit">Delete</button> |
+            <a asp-action="Index">Back to List</a>
+        </form>
+    </div>
+</body>
+</html>

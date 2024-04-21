@@ -36,7 +36,8 @@ namespace Data.Repository
         public async Task<IEnumerable<Answer>> GetAll()
         {
             return await _context.Answers
-       .Include(a => a.Student) 
+       .Include(a => a.Student)
+       .Include(c => c.Question)
        .ToListAsync();
         }
 

@@ -1,14 +1,22 @@
 ﻿@model Data.Models.StudentCompetition
-
-<h2>Delete</h2>
-
-<div>
-    <p>Student ID: @Model.StudentID</p>
-    <p>Competition ID: @Model.CompetitionID</p>
-</div>
-
-<form asp-controller="SC" asp-action="Delete" method="post">
-    <input type="hidden" name="studentId" value="@Model.StudentID" />
-    <input type="hidden" name="competitionId" value="@Model.CompetitionID" />
-    <button type="submit" class="btn btn-danger">Delete</button>
-</form>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DELETE</title>
+    <link href="/css/delete.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <h2>DELETE</h2>
+        <p>Do you want to delete?</p>
+        <form asp-action="Delete" method="post">
+            <input type="hidden" name="studentId" value="@Model.StudentID" />
+            <input type="hidden" name="competitionId" value="@Model.CompetitionID" />
+            <button type="submit">Delete</button> |
+            <a asp-action="Index">Back to List</a>
+        </form>
+    </div>
+</body>
+</html>

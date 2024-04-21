@@ -1,136 +1,60 @@
 ﻿@model Data.Models.FAQ
 @{
-    ViewData["Title"] = "Create";
+
+	
+
 }
-
-
-
 <!DOCTYPE html>
-<html lang="en">
-
-
-
+<html>
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Satisfaction Survey form Wizard by Ansonika.">
-    <meta name="author" content="Ansonika">
-    <title>Satisfyc | Satisfaction Survey form Wizard</title> 
-
-    <!-- Favicons-->
-	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" type="image/x-icon" href="img/apple-touch-icon-57x57-precomposed.png">
-    <link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="img/apple-touch-icon-72x72-precomposed.png">
-	<link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="/img/apple-touch-icon-114x114-precomposed.png">
-	<link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="~/img/apple-touch-icon-144x144-precomposed.png">
-
-    <!-- GOOGLE WEB FONT -->
-    <link href="https://fonts.googleapis.com/css?family=Caveat|Poppins:300,400,500,600,700&amp;display=swap" rel="stylesheet">
-
-    <!-- BASE CSS -->
-	<link href="/css/bootstrap2.min.css" rel="stylesheet">
-	<link href="/css/style2.css" rel="stylesheet">
-	<link href="/css/vendors2.css" rel="stylesheet">
-
-    <!-- YOUR CUSTOM CSS -->
-	<link href="/css/custom2.css" rel="stylesheet">
-
+	<title>Create New</title>
+	<link href="/css/Create.css" rel="stylesheet" />
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
+<body>
+	<div class="container">
+		<div class="Word">
+			<h1>Create New FAQ</h1>
+		</div>
+		<div class="head">
+		</div>
 
-<body class="style_2">
-	
-	<div id="preloader">
-		<div data-loader="circle-side"></div>
-	</div><!-- /Preload -->
-	
-	<div id="loader_form">
-		<div data-loader="circle-side-2"></div>
-	</div><!-- /loader_form -->
+		<div class="body">
+			<form asp-action="Create" method="post" enctype="multipart/form-data">
 
-	<header>
-	    <div class="container-fluid">
-	        <div class="row">
-	            
-	            
-	        </div>
-	        <!-- /row -->
-	    </div>
-	    <!-- /container -->
-	</header>
-	<!-- /header -->
+				<div id="middle-wizard">
 
-	<div class="wrapper_centering">
-	    <div class="container_centering">
-	        <div class="container">
-	            <div class="row justify-content-between">
-	                <div class="col-xl-6 col-lg-6 d-flex align-items-center">
-	                    <div class="main_title_1">
-							<h3>student feedback</h3>
-	                       
-	                        
-	                    </div>
-	                </div>
-	                <!-- /col -->
-	                <div class="col-xl-5 col-lg-5">
-	                    <div id="wizard_container">
-	                        <div id="top-wizard">
-	                            <div id="progressbar"></div>
-	                        </div>
-							
-	                        
-							<form asp-action="Create" method="post" enctype="multipart/form-data">
-	                            
-	                            <div id="middle-wizard">
-
-	                                <div class="step">
-										<div class="form-group">
-											<label asp-for="Email"></label>
-											<input asp-for="Email" class="form-control" />
-											<span asp-validation-for="Email" class="text-danger"></span>
-										</div>
-										<div class="form-group">
-											<label asp-for="Photo"></label>
-											<input id="Photo" name="imageFile" type="file" class="form-control-file" />
-											<span asp-validation-for="Photo" class="text-danger"></span>
-										</div>
-										<div class="form-group">
-											<label asp-for="Question"></label>
-											<input asp-for="Question" class="form-control" readonly value="What are your thoughts about the conference?" />
-											<span asp-validation-for="Question" class="text-danger"></span>
-										</div>
-										<div class="form-group">
-											<label asp-for="Answer"></label>
-											<textarea id="Answer" name="Answer" rows="4" class="form-control"></textarea>
-											<span asp-validation-for="Answer" class="text-danger"></span>
-										</div>
-	                                </div>
-	                            </div>
-								<button type="submit" class="btn btn-primary">Create</button>
-	                        </form>
-							
-	                    </div>
-	                </div>
-	            </div>
-	        </div>
-	    </div>
-	    <!-- /footer -->
-	    <footer>
-	        
-	       
-	    </footer>
-	    
+					<div class="step">
+						<div class="form-group">
+							<label asp-for="Email"></label>
+							<input asp-for="Email" class="form-control" />
+							<span asp-validation-for="Email" class="text-danger"></span>
+						</div>
+						<div class="form-group">
+							<label asp-for="Photo"></label>
+							<input id="Photo" name="imageFile" type="file" class="form-control-file" />
+							<span asp-validation-for="Photo" class="text-danger"></span>
+						</div>
+						<div class="form-group">
+							<label asp-for="Question"></label>
+							<input asp-for="Question" class="form-control" readonly value="What are your thoughts about the conference?" />
+							<span asp-validation-for="Question" class="text-danger"></span>
+						</div>
+						<div class="form-group">
+							<label asp-for="Answer"></label>
+							<textarea id="Answer" name="Answer" rows="4" class="form-control"></textarea>
+							<span asp-validation-for="Answer" class="text-danger"></span>
+						</div>
+					</div>
+				</div>
+				<button type="submit" class="btn btn-primary">Create</button>
+			</form>
+		</div>
+		<div class="footer">
+			<a asp-action="Account" asp-controller="Student" style="color: white">Return to main page</a>
+		</div>
 	</div>
-	
-	
-	<!-- COMMON SCRIPTS -->
-	<script src="/js/jquery-3.7.1.min.js"></script>
-	<script src="/js/common_scripts.min.js"></script>
-	<script src="/js/functions.js"></script>
-
-	<!-- Wizard script -->
-	<script src="/js/survey_func.js"></script>
-
 </body>
-
-<!-- Mirrored from www.ansonika.com/satisfyc/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 17 Apr 2024 13:24:55 GMT -->
 </html>
+
+

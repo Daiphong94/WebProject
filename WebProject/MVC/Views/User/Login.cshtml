@@ -1,6 +1,6 @@
 ﻿@model Data.Models.User
 @{
-    ViewData["Title"] = "Đăng nhập";
+    ViewData["Title"] = "Log In";
 }
 
 <!DOCTYPE html>
@@ -33,13 +33,13 @@
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
                 <div class="form-group">
-                    <label class="control-label">Tên đăng nhập:</label>
+                    <label class="control-label">User Name</label>
                     <input class="form-control" type="text" name="username" />
                     <span class="text-danger">@Html.ValidationMessage("username", "", new { @class = "text-danger" })</span>
                 </div>
 
                 <div class="form-group">
-                    <label class="control-label">Mật khẩu:</label>
+                    <label class="control-label">password</label>
                     <input class="form-control" type="password" name="password" />
                     <span class="text-danger">@Html.ValidationMessage("password", "", new { @class = "text-danger" })</span>
                 </div>
@@ -54,7 +54,11 @@
                     <h1>Welcome Back!</h1>
                     <p>Enter your personal details to use all of site features</p>
                     <button onclick="window.location.href='/User/Register'">Register</button>
+                    <div class="footer">
+                        <a href="/" style="color: white">Return to main page</a>
+                    </div>
                 </div>
+                
             </div>
         </div>
     </div>

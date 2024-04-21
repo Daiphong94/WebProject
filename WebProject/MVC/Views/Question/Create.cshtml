@@ -4,29 +4,45 @@
 }
 
 
-<h2>Create New Question</h2>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create New</title>
+    <link href="/css/Create.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="Word">
+            <h1>Create New Question</h1>
+        </div>
+        <div class="head">
+        </div>
 
-<form asp-action="Create" method="post" enctype="multipart/form-data">
-    <div class="form-group">
-        <label>@ViewData["CompetitionName"]</label>
-        <input type="text" class="form-control" value="@ViewData["CompetitionName"]" readonly />
-    </div>
-    <div class="form-group">
-        <label asp-for="CompetitionID"></label>
-        <input asp-for="CompetitionID" class="form-control" />
-        <span asp-validation-for="CompetitionID" class="text-danger"></span>
-    </div>
-    <div class="form-group">
-        <label asp-for="File"></label>
-        <input id="File" name="imageFile" type="file" class="form-control-file" />
-        <span asp-validation-for="File" class="text-danger"></span>
-    </div>
-    <div class="form-group">
-        <label asp-for="Writing"></label>
-        <input asp-for="Writing" class="form-control" />
-        <span asp-validation-for="Writing" class="text-danger"></span>
-    </div>
-    
-    <button type="submit" class="btn btn-primary">Create</button>
-</form>
+        <div class="body">
+            <form asp-action="Create" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label>Competition</label>
+                    <input type="text" class="form-control" value="@ViewData["CompetitionName"]" readonly />
+                </div>
+                <input type="hidden" asp-for="CompetitionID" />
+                <div class="form-group">
+                    <label asp-for="File"></label>
+                    <input id="File" name="imageFile" type="file" class="form-control-file" />
+                    <span asp-validation-for="File" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Writing">Writing</label>
+                    <input asp-for="Writing" class="form-control" />
+                    <span asp-validation-for="Writing" class="text-danger"></span>
+                </div>
 
+                <button type="submit" class="btn btn-primary">Create</button>
+            </form>
+        </div>
+        <div class="footer">
+            <a href="/" style="color: white">Return to main page</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -57,13 +57,13 @@
 
                     <li><a href="/"><i class="fa fa-home fa-fw"></i>Home</a></li>
                     <li><a asp-controller="Faculty" asp-action="Account"><i class="fa fa-map-marker fa-fw"></i>Profile</a></li>
-                    <li><a asp-controller="Student" asp-action="Index"><i class="fa fa-map-marker fa-fw"></i>Manage Students</a></li>
-                    <li><a asp-controller="Competition" asp-action="Index"><i class="fa fa-map-marker fa-fw"></i>Competitions</a></li>
-                    <li><a asp-controller="Question" asp-action="Index"><i class="fa fa-map-marker fa-fw"></i>Questions</a></li>
-                    <li><a asp-controller="Answer" asp-action="Index"><i class="fa fa-map-marker fa-fw"></i>Answers</a></li>
-                    <li><a asp-controller="Exam" asp-action="Index"><i class="fa fa-map-marker fa-fw"></i>Exams</a></li>
-                    <li><a asp-controller="Event" asp-action="Index"><i class="fa fa-map-marker fa-fw"></i>Events</a></li>
-                    <li><a asp-controller="FAQ" asp-action="Index"><i class="fa fa-map-marker fa-fw"></i>FAQs</a></li>
+                    <li><a asp-controller="Student" asp-action="IndexFaculty"><i class="fa fa-map-marker fa-fw"></i>Manage Students</a></li>
+                    <li><a asp-controller="Competition" asp-action="IndexFaculty"><i class="fa fa-map-marker fa-fw"></i>Competitions</a></li>
+                    <li><a asp-controller="Question" asp-action="IndexFaculty"><i class="fa fa-map-marker fa-fw"></i>Questions</a></li>
+                    <li><a asp-controller="Answer" asp-action="IndexFaculty"><i class="fa fa-map-marker fa-fw"></i>Answers</a></li>
+                    <li><a asp-controller="Exam" asp-action="IndexFaculty"><i class="fa fa-map-marker fa-fw"></i>Exams</a></li>
+                    <li><a asp-controller="Event" asp-action="IndexFaculty"><i class="fa fa-map-marker fa-fw"></i>Events</a></li>
+                    <li><a asp-controller="FAQ" asp-action="IndexFaculty"><i class="fa fa-map-marker fa-fw"></i>FAQs</a></li>
                     
                     <li><a asp-controller="User" asp-action="Logout" asp-route-returnUrl="@Url.Content("~/")">Log out</a></li>
                 </ul>
@@ -71,18 +71,7 @@
         </div>
         <!-- Main content -->
         <div class="templatemo-content col-1 light-gray-bg">
-            <div class="templatemo-top-nav-container">
-                <div class="row">
-                    <nav class="templatemo-top-nav col-lg-12 col-md-12">
-                        <ul class="text-uppercase">
-                            <li><a href="" class="active">Admin panel</a></li>
-                            <li><a href="">Dashboard</a></li>
-                            <li><a href="">Overview</a></li>
-
-                        </ul>
-                    </nav>
-                </div>
-            </div>
+            
             <div class="templatemo-content-container">
 
                 @RenderBody()

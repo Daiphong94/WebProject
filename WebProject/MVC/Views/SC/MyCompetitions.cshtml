@@ -1,27 +1,80 @@
 ﻿@model IEnumerable<Data.Models.StudentCompetition>
-
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/StudentLayout.cshtml";
+}
 <h2>My Competitions</h2>
 
-@if (!Model.Any())
-{
-    <p>No competitions found.</p>
-}
-else
-{
-    <ul>
-        @foreach (var competition in Model)
+
+
+
+<div class="templatemo-content-widget no-padding">
+    <div class="panel panel-default table-responsive">
+        <table class="table table-striped table-bordered templatemo-user-table">
+            
+            <tbody>
+                
+                @if (!Model.Any())
+                {
+                    <p>No competitions found.</p>
+                }
+                else
+                {
+                    
+                        @foreach (var competition in Model)
+                        {
+                            
+                        <tr>
+                            <td><h2>@competition.Competition.CompetitionName</h2></td>
+                                <td>
+                                    <form asp-controller="Answer" asp-action="MyAnswer" method="get">
+                                    <input type="hidden" name="competitionId" value="@competition.CompetitionID" />
+
+                                    
+                                    <button type="submit" class="btn btn-primary competition-item">My Answer</button>
+
+                                    
+                                    <a asp-action="Delete" asp-asp-controller="SC" asp-route-studentId="@competition.StudentID" asp-route-competitionId="@competition.CompetitionID" class="btn btn-danger">Delete</a>
+                                </form>
+                            </td>
+                         </tr>
+                            
+                        }
+                    
+                }
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+<div class="pagination-wrap">
+    <ul class="pagination">
+        @{
+
+            int page = !string.IsNullOrEmpty(ViewContext.HttpContext.Request.Query["page"]) ? int.Parse(ViewContext.HttpContext.Request.Query["page"]) : 1;
+            int pageSize = 5;
+            int totalItems = Model.Count();
+            int totalPages = (int)Math.Ceiling((double)totalItems / pageSize);
+
+
+            if (page < 1)
+            {
+                page = 1;
+            }
+            else if (page > totalPages)
+            {
+                page = totalPages;
+            }
+        }
+
+        @for (int i = 1; i <= totalPages; i++)
         {
-            <li>
-                @competition.Competition.CompetitionName
-                <form asp-controller="Answer" asp-action="MyAnswer" method="get">
-                    <input type="hidden" name="competitionId" value="@competition.CompetitionID" />
-                    <button type="submit" class="competition-item">My Answer</button>
-                    <a asp-action="Delete" asp-asp-controller="SC" asp-route-studentId="@competition.StudentID" asp-route-competitionId="@competition.CompetitionID">Delete</a>
-                   
-                </form>
+            <li class="@(i == page ? "active" : "")">
+                <a href="#" data-page="@i">@i <span class="sr-only">(current)</span></a>
             </li>
         }
     </ul>
+</div>
 
-   
-}

@@ -29,7 +29,14 @@ namespace MVC.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var answers = await _answerInterface.GetAllWithCompetition();
+            var answers = await _answerInterface.GetAll();
+            
+            return View(answers);
+        }
+        public async Task<IActionResult> IndexFaculty()
+        {
+            var answers = await _answerInterface.GetAll();
+            
             return View(answers);
         }
         public async Task<IActionResult> Create()
@@ -115,7 +122,7 @@ namespace MVC.Controllers
             if (student == null)
             {
                 
-                return RedirectToAction("Error", "SC");
+                return RedirectToAction("Error", "SC"); 
             }
             var model = new Answer
             {

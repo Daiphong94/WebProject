@@ -18,6 +18,11 @@ namespace MVC.Controllers
             var faq = await _faqinterface.GetAllFAQ();
             return View(faq);
         }
+        public async Task<IActionResult> IndexFaculty()
+        {
+            var faq = await _faqinterface.GetAllFAQ();
+            return View(faq);
+        }
         public IActionResult Create()
         {
             return View();
@@ -33,13 +38,19 @@ namespace MVC.Controllers
                 {
                     imageFile.CopyTo(stream);
                 }
+                
                 model.Photo = "/img/photo/" + imageFile.FileName;
             }
+            if (imageFile == null)
+            {
+                ViewBag.ErrorMessage = "Tên người dùng, mật khẩu và email không được để trống.";
+                return View(model);
+            }
             await _faqinterface.AddFAQ(model);
-            return RedirectToAction(nameof(Index));
-            
+            return RedirectToAction("Index", "Home");
+
         }
-        public async Task<IActionResult> Edit(int id)
+        public async Task<IActionResult> Edit(int id )
         {
             var faq = await _faqinterface.GetByIdFAQ(id);
             if (faq == null)
@@ -51,20 +62,29 @@ namespace MVC.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, FAQ model)
+        public async Task<IActionResult> Edit(int id, FAQ model, IFormFile imageFile)
         {
             if (id != model.FAQID)
             {
                 return BadRequest();
             }
-
+            if (imageFile != null && imageFile.Length > 0)
+            {
+                var imagePath = Path.Combine(_webHostEnvironment.WebRootPath, "img/photo", imageFile.FileName);
+                using (var stream = new FileStream(imagePath, FileMode.Create))
+                {
+                    imageFile.CopyTo(stream);
+                }
+                model.Photo = "/img/photo/" + imageFile.FileName;
+            }
+            if (imageFile == null)
+            {
+                ViewBag.ErrorMessage = "Tên người dùng, mật khẩu và email không được để trống.";
+                return View(model);
+            }
             await _faqinterface.UpdateFAQ(model);
-            return RedirectToAction(nameof(Index));
-            /* if (ModelState.IsValid)
-             {
+            return RedirectToAction("Index", "Home");
 
-             }*/
-            return View(model);
         }
         public async Task<IActionResult> Delete(int id)
         {

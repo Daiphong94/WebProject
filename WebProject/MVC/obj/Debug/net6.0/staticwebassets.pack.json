@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\MVC.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\wwwroot\\css\\Create.css",
+      "PackagePath": "staticwebassets\\css\\Create.css"
+    },
+    {
       "Id": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\wwwroot\\css\\animate.css",
       "PackagePath": "staticwebassets\\css\\animate.css"
     },
@@ -27,6 +31,10 @@
     {
       "Id": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\wwwroot\\css\\custom2.css",
       "PackagePath": "staticwebassets\\css\\custom2.css"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\wwwroot\\css\\delete.css",
+      "PackagePath": "staticwebassets\\css\\delete.css"
     },
     {
       "Id": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\wwwroot\\css\\effect.css",
@@ -685,8 +693,20 @@
       "PackagePath": "staticwebassets\\img\\photo\\01.jpg"
     },
     {
+      "Id": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\wwwroot\\img\\photo\\1.jpg",
+      "PackagePath": "staticwebassets\\img\\photo\\1.jpg"
+    },
+    {
       "Id": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\wwwroot\\img\\photo\\2.jpg",
       "PackagePath": "staticwebassets\\img\\photo\\2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\wwwroot\\img\\photo\\3.jpg",
+      "PackagePath": "staticwebassets\\img\\photo\\3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\wwwroot\\img\\photo\\4.jpg",
+      "PackagePath": "staticwebassets\\img\\photo\\4.jpg"
     },
     {
       "Id": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\wwwroot\\img\\photo\\bicycle.jpg",
@@ -703,6 +723,10 @@
     {
       "Id": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\wwwroot\\img\\photo\\div class.docx",
       "PackagePath": "staticwebassets\\img\\photo\\div class.docx"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\wwwroot\\img\\photo\\download.jpg",
+      "PackagePath": "staticwebassets\\img\\photo\\download.jpg"
     },
     {
       "Id": "C:\\Users\\Admin\\Project\\WebProject\\MVC\\wwwroot\\img\\photo\\person.jpg",

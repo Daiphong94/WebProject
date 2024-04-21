@@ -3,40 +3,62 @@
     ViewData["Title"] = "Create";
 }
 
-<h2>Create New Faculty</h2>
 
-<form asp-action="Create" method="post">
-    <div class="form-group">
-        <label asp-for="UserID"></label>
-        <input asp-for="UserID" class="form-control" readonly value="@ViewBag.UserID" />
-        <span asp-validation-for="UserID" class="text-danger"></span>
-    </div>
-    <div class="form-group">
-        <label asp-for="Email"></label>
-        <input asp-for="Email" class="form-control" readonly value="@ViewBag.Email" />
-        <span asp-validation-for="Email" class="text-danger"></span>
-    </div>
-    <div class="form-group">
-        <label asp-for="FullName"></label>
-        <input asp-for="FullName" class="form-control" />
-        <span asp-validation-for="FullName" class="text-danger"></span>
-    </div>
-   
-    <div class="form-group">
-        <label asp-for="FacultyNumber"></label>
-        <input asp-for="FacultyNumber" class="form-control" />
-        <span asp-validation-for="FacultyNumber" class="text-danger"></span>
-    </div>
-    <div class="form-group">
-        <label asp-for="Department"></label>
-        <input asp-for="Department" class="form-control" />
-        <span asp-validation-for="Department" class="text-danger"></span>
-    </div>
-    <div class="form-group">
-        <label asp-for="JoiningDate"></label>
-        <input asp-for="JoiningDate" class="form-control" readonly value="@DateTime.Now.ToString("yyyy-MM-ddTHH:mm")" />
-        <span asp-validation-for="JoiningDate" class="text-danger"></span>
-    </div>
-    <button type="submit" class="btn btn-primary">Create</button>
-</form>
 
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create New</title>
+    <link href="/css/Create.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="Word">
+            <h1>Create New Faculty</h1>
+        </div>
+        <div class="head">
+        </div>
+
+        <div class="body">
+            <form asp-action="Create" method="post">
+                <div class="form-group">
+                    <label asp-for="UserID"></label>
+                    <input asp-for="UserID" class="form-control" readonly value="@ViewBag.UserID" />
+                    <span asp-validation-for="UserID" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Email"></label>
+                    <input asp-for="Email" class="form-control" readonly value="@ViewBag.Email" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="FullName"></label>
+                    <input asp-for="FullName" class="form-control" />
+                    <span asp-validation-for="FullName" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="FacultyNumber"></label>
+                    <input asp-for="FacultyNumber" class="form-control" />
+                    <span asp-validation-for="FacultyNumber" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Department"></label>
+                    <input asp-for="Department" class="form-control" />
+                    <span asp-validation-for="Department" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="JoiningDate"></label>
+                    <input asp-for="JoiningDate" class="form-control" readonly value="@DateTime.Now.ToString("yyyy-MM-ddTHH:mm")" />
+                    <span asp-validation-for="JoiningDate" class="text-danger"></span>
+                </div>
+                <button type="submit" class="btn btn-primary">Create</button>
+            </form>
+        </div>
+        <div class="footer">
+            <a href="/" style="color: white">Return to main page</a>
+        </div>
+    </div>
+</body>
+</html>

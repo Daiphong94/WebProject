@@ -1,14 +1,27 @@
 ﻿@model MVC.Models.ViewModelHome
 <!DOCTYPE html>
 <html lang="zxx">
+<style>
+    .item-thumb {
+        width: 100%;
+        height: 200px; 
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+    }
 
+        .item-thumb img {
+            max-width: 100%;
+            max-height: 100%; 
+        }
+</style>    
 
 <!-- Mirrored from pixydrops.com/novio/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 14 Apr 2024 12:00:02 GMT -->
 <head>
     <meta charset=utf-8>
     <meta http-equiv=X-UA-Compatible content="IE=edge">
     <meta name=viewport content="width=device-width, initial-scale=1">
-    <title>Novio - Ecology & Environmental Non-Profit Organization</title>
+    <title>Survey - Ecology & Environmental Non-Profit Organization</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="img/favicon.png">
@@ -36,47 +49,14 @@
                             <span></span>  <span></span>  <span></span>
                         </button>
                         <a class="navbar-brand" href="index.html">
-                            <img src="img/logo/01.png" alt="logo">
+                            <img src="img/favicon.png" alt="logo">
                         </a>
                     </div>
                     <div class="collapse navbar-collapse" id="main-menu">
                         <form class="navbar-left">
                             <input type="text" class="form-control" placeholder="Search">
                         </form>
-                        <ul class="nav navbar-nav f1 mainMenu text-capitalize">
-
-                            <li>
-                                <a href="about.html">about</a>
-                            </li>
-                            <li>
-                                <a href="projects.html">Bài Kiểm Tra</a>
-                                <ul class="sub-menu">
-                                    <li>
-                                        <a href="#">Bài 1</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Bài 2</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Bài 3</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#">FAQ</a>
-                            </li>
-                            <li>
-                                <a href="news.html">news</a>
-                                <ul class="sub-menu">
-                                    <li>
-                                        <a href="single-news.html">single news</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="contact.html">contact</a>
-                            </li>
-                        </ul>
+                        
                         @if (User.Identity.IsAuthenticated)
                         {
                             <ul class="nav navbar-nav f1 mainMenu text-capitalize navbar-right">
@@ -123,57 +103,48 @@
         <!-- main-slider start -->
         <div class="main-slider ms1">
             <div class="banner-carousel owl-carousel">
-                <div class="ms1-item">
-                    <img src="img/slider/01.jpg" alt="">
-                    <div class="pos-r g-table">
-                        <div class="d-middle">
-                            <div class="container crop">
-                                <div class="item-inner">
-                                    <span class="slider-icon">
-                                        <i class="nivio-tree-leaf"></i>
-                                    </span>
-                                    <p class="f2 c3 fw-4">Donate and help us change the world</p>
-                                    <div class="head-lines f1 cw mb-55">
-                                        <h1 class="fw-7">Together we</h1>
-                                        <h1 class="fw-7">can make a</h1>
-                                        <h1 class="fw-7">difference</h1>
-                                    </div> <a href="#" class="thm-btn hvr-2 bg3 c4">Start Today!</a>
+                
+                @if(Model.FirstCompetition != null)
+                {
+                    <div class="ms1-item">
+                        
+                        <img src="@Model.FirstCompetition.Photo" alt="Competition Photo">
+                        <div class="pos-r g-table">
+                            <div class="d-middle">
+                                <div class="container crop">
+                                    <div class="item-inner">
+                                        <span class="slider-icon">
+                                            <i class="nivio-tree-leaf"></i>
+                                        </span>
+                                        <p class="f2 c3 fw-7">@Model.FirstCompetition.CompetitionName</p>
+                                        <div class="head-lines f1 cw mb-50">
+                                            <h1 class="fw-5" style="font-size: 30px;">@Model.FirstCompetition.Description</h1>
+                                            <h1 class="fw-5" style="font-size: 30px;">@Model.FirstCompetition.StartDate</h1>
+                                            <h1 class="fw-5" style="font-size: 30px;">@Model.FirstCompetition.EndDate</h1>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="ms1-item">
-                    <img src="img/slider/02.jpg" alt="">
-                    <div class="pos-r g-table">
-                        <div class="d-middle">
-                            <div class="container crop">
-                                <div class="item-inner">
-                                    <span class="slider-icon">
-                                        <i class="nivio-tree-leaf"></i>
-                                    </span>
-                                    <p class="f2 c3 fw-4">Donate and help us change the world</p>
-                                    <div class="head-lines f1 cw mb-50">
-                                        <h1 class="fw-7">Together we</h1>
-                                        <h1 class="fw-7">can bring</h1>
-                                        <h1 class="fw-7">the change</h1>
-                                    </div> <a href="#" class="thm-btn hvr-3 bg1 cw">support us</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                }
+                else
+                {
+                    <p>Not Found</p>
+                }
+
+                
             </div>
         </div>
         <!-- main-slider end -->
         <!-- page-content start -->
         <div class="page-content">
-            <div class="intro1 pb-100">
+            <div class="intro1 pb-100"> 
                 <div class="container">
                     <div class="row">
                         <div class="section-header text-center mb-60">
-                            <h2 class="f2 c1">welcome to novio</h2>
-                            <h1 class="f1 fw-7 c4">Bài kiểm tra</h1>
+                            <h2 class="f2 c1">welcome to survey</h2>
+                            <h1 class="f1 fw-7 c4">Competitions</h1>
                         </div>
                          @foreach (var competition in Model.Competition)
                         {
@@ -207,10 +178,10 @@
                             <div class="col-lg-6">
                                 <div class="item">
                                     <div class="section-header">
-                                        <h2 class="f2 c1">time to change</h2>
-                                        <h1 class="f1 fw-7 c4">Join the race to make the world a better place</h1>
+                                        <h2 class="f2 c1">Survey</h2>
+                                        <h1 class="f1 fw-7 c4">Survey for a better place</h1>
                                     </div>
-                                    <p class="f1 fw-4 mt-45">Lorem ipsum dolor sit amet nsectetur cing elit. Suspe ndisse suscipit sagittis leo sit met entum estibulum dignissim posuere cubilia durae. Leo sit met entum cubilia crae.</p>
+                                    <p class="f1 fw-4 mt-45"></p>
                                 </div>
                             </div>
                         </div>
@@ -219,112 +190,22 @@
 
             </div>
             <div class="brands py-100">
-                <div class="container">
-                    <div class="brand-carousel owl-carousel">
-                        <div class="brandItem text-center">
-                            <a href="#" class="brands-icon-envato"></a>
-                        </div>
-                        <div class="brandItem text-center">
-                            <a href="#" class="brands-icon-codecanyon"></a>
-                        </div>
-                        <div class="brandItem text-center">
-                            <a href="#" class="brands-icon-graphicriver"></a>
-                        </div>
-                        <div class="brandItem text-center">
-                            <a href="#" class="brands-icon-themeforest"></a>
-                        </div>
-                        <div class="brandItem text-center">
-                            <a href="#" class="brands-icon-photodune"></a>
-                        </div>
-                    </div>
-                </div>
+                
             </div>
             <!-- facts start -->
             <div class="facts-area text-center text-capitalize">
                 <div class="container">
-                    <div class="row">
-                        <div class="col-md-3 col-sm-6">
-                            <div class="fact-container mb-sm-50">
-                                <div class="single-fact">
-                                    <span class="nivio-recycle"></span>
-                                    <h3 class="fact-title c3 f2 fw-3 text-capitalize">Recycling</h3>
-                                    <div class="numscroller fact-num cw f1" data-slno='15' data-min="0" data-max="5493" data-delay='30' data-increment="5">0</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6">
-                            <div class="fact-container mb-sm-50">
-                                <div class="single-fact">
-                                    <span class="nivio-handshake"></span>
-                                    <h3 class="fact-title c3 f2 fw-3 text-capitalize">Volunteer</h3>
-                                    <div class="numscroller fact-num cw f1" data-slno='15' data-min="0" data-max="1750" data-delay='30' data-increment="5">0</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6">
-                            <div class="fact-container mb-xs-50">
-                                <div class="single-fact">
-                                    <span class="nivio-growth"></span>
-                                    <h3 class="fact-title c3 f2 fw-3 text-capitalize">Projects</h3>
-                                    <div class="numscroller fact-num cw f1" data-slno='15' data-min="0" data-max="2458" data-delay='30' data-increment="5">0</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6">
-                            <div class="fact-container">
-                                <div class="single-fact">
-                                    <span class="nivio-key"></span>
-                                    <h3 class="fact-title c3 f2 fw-3 text-capitalize">Comunity</h3>
-                                    <div class="numscroller fact-num cw f1" data-slno='35' data-min="0" data-max="1670" data-delay='30' data-increment="5">0</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    
                 </div>
             </div>
             <!-- facts end -->
             <div class="projects">
                 <div class="container">
                     <div class="section-header text-center">
-                        <h2 class="f2 c1">current compaigns</h2>
-                        <h1 class="f1 fw-7 c4">Projects arround the world</h1>
+                        <h2 class="f2 c1">Current Events</h2>
+                        <h1 class="f1 fw-7 c4">Events arround the world</h1>
                     </div>
-                    <div class="project-area clearfix">
-                        <div class="row">
-                            <div class="col-lg-12 col-md-6 col-sm-8 col-xs-8 col-md-offset-3 col-sm-offset-2 col-xs-offset-2 col-lg-offset-0 project-box">
-                                <div class="row">
-                                    <div class="donate f1 fw-7 cw">
-                                        10%
-                                        <br>Donated
-                                    </div>
-                                    <div class="col-lg-6 pl-0 col-lg-push-6">
-                                        <img src="img/companies/01.jpg" alt="">
-                                    </div>
-                                    <div class="col-lg-6 col-lg-pull-6">
-                                        <div class="project-card">
-                                            <div class="donate f1 fw-7 cw">
-                                                10%
-                                                <br>Donated
-                                            </div>
-                                            <div class="section-header">
-                                                <h2 class="f2 c1">featured compaign</h2>
-                                                <h1 class="f1 fw-7 c4">Help the endangered species today</h1>
-                                            </div>
-                                            <p class="fw-4 f1">Lorem ipsum dolor sit amet nsectetur cing elituspe ndisse suscipit sagitis leo sit met entum estibulum dignissim posuere cubilia durae.</p>
-                                            <ul class="f1">
-                                                <li>
-                                                    <span class="c4 fw-7">Goal: <span class="c1">100000.00 USD</span></span>
-                                                </li>
-                                                <li>
-                                                    <span class="c4 fw-7">Raised: <span class="c1">20000.00 USD</span></span>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    
                     <div class="project-blocks">
                         <div class="row">
                             @foreach (var ev in Model.Events)
@@ -348,34 +229,7 @@
                                     </div>
                                 </div>
                             }
-                            <div class="col-lg-4 col-md-6 col-sm-6 mt-30">
-                                <div class="item clearfix">
-                                    <img src="img/companies/03.jpg" alt="">
-                                    <div class="item-content tnz bg2 cw f1">
-                                        <h2 class="fw-7">
-                                            <a href="project-single.html">Energy Preservation</a>
-                                        </h2>
-                                        <p class="fw-4">Quisque egestas justo nec hendrerit feugiat duide turpis ase porttitor sapien egestas sollicitudin.</p>
-                                        <a href="project-single.html" class="rdm">
-                                            <i class="fa fa-angle-right c2"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6 col-sm-6 col-md-offset-3 col-sm-offset-3 col-xs-offset-0 col-lg-offset-0 mt-30">
-                                <div class="item clearfix">
-                                    <img src="img/companies/04.jpg" alt="">
-                                    <div class="item-content tnz bg2 cw f1">
-                                        <h2 class="fw-7">
-                                            <a href="project-single.html">Energy Preservation</a>
-                                        </h2>
-                                        <p class="fw-4">Quisque egestas justo nec hendrerit feugiat duide turpis ase porttitor sapien egestas sollicitudin.</p>
-                                        <a href="project-single.html" class="rdm">
-                                            <i class="fa fa-angle-right c2"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
+                            
                         </div>
                     </div>
                 </div>
@@ -383,8 +237,8 @@
             <div class="testimony mt-md pt-md">
                 <div class="container">
                     <div class="section-header text-center">
-                        <h2 class="f2 c1">testimonials</h2>
-                        <h1 class="f1 fw-7 c4">What Students says</h1>
+                        <h2 class="f2 c1">have any questions?</h2>
+                        <h1 class="f1 fw-7 c4">FAQs</h1>
                     </div>
                     <div class="row">
                        
@@ -411,140 +265,7 @@
        
         <div class="blog">
             <div class="container">
-                <div class="section-header text-center">
-                    <h2 class="f2 c1">news & articles</h2>
-                    <h1 class="f1 fw-7 c4">Recent posts and updates</h1>
-                </div>
-                <div class="blog-post owl-carousel">
-                    <div class="col-md-4">
-                        <div class="blog-card">
-                            <a href="single-news.html">
-                                <img src="img/blog/01.jpg" alt="">
-                            </a>
-                            <div class="blog-text">
-                                <div class="date f1 bg3">
-                                    <p class="fw-6">Aug</p>
-                                    <p class="fw-7">20</p>
-                                </div>
-                                <a href="single-news.html" class="title f1 fw-7 cw">
-                                    <span>Eco System Responsible For Green Energy</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="blog-card">
-                            <a href="single-news.html">
-                                <img src="img/blog/02.jpg" alt="">
-                            </a>
-                            <div class="blog-text">
-                                <div class="date f1 bg3">
-                                    <p class="fw-6">Aug</p>
-                                    <p class="fw-7">09</p>
-                                </div>
-                                <a href="single-news.html" class="title f1 fw-7 cw">
-                                    <span>Don’t Throw Away, Recycle For Your Another Day</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="blog-card">
-                            <a href="single-news.html">
-                                <img src="img/blog/03.jpg" alt="">
-                            </a>
-                            <div class="blog-text">
-                                <div class="date f1 bg3">
-                                    <p class="fw-6">Aug</p>
-                                    <p class="fw-7">02</p>
-                                </div>
-                                <a href="single-news.html" class="title f1 fw-7 cw">
-                                    <span>You Have The Power Today To Change Tomorrow</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="blog-card">
-                            <a href="single-news.html">
-                                <img src="img/blog/04.jpg" alt="">
-                            </a>
-                            <div class="blog-text">
-                                <div class="date f1 bg3">
-                                    <p class="fw-6">Jul</p>
-                                    <p class="fw-7">30</p>
-                                </div>
-                                <a href="single-news.html" class="title f1 fw-7 cw">
-                                    <span>Save World By Planting Trees Your Sournding</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="blog-card">
-                            <a href="single-news.html">
-                                <img src="img/blog/01.jpg" alt="">
-                            </a>
-                            <div class="blog-text">
-                                <div class="date f1 bg3">
-                                    <p class="fw-6">Aug</p>
-                                    <p class="fw-7">20</p>
-                                </div>
-                                <a href="single-news.html" class="title f1 fw-7 cw">
-                                    <span>Eco System Responsible For Green Energy</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="blog-card">
-                            <a href="single-news.html">
-                                <img src="img/blog/02.jpg" alt="">
-                            </a>
-                            <div class="blog-text">
-                                <div class="date f1 bg3">
-                                    <p class="fw-6">Aug</p>
-                                    <p class="fw-7">09</p>
-                                </div>
-                                <a href="single-news.html" class="title f1 fw-7 cw">
-                                    <span>Don’t Throw Away, Recycle For Your Another Day</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="blog-card">
-                            <a href="single-news.html">
-                                <img src="img/blog/03.jpg" alt="">
-                            </a>
-                            <div class="blog-text">
-                                <div class="date f1 bg3">
-                                    <p class="fw-6">Aug</p>
-                                    <p class="fw-7">02</p>
-                                </div>
-                                <a href="single-news.html" class="title f1 fw-7 cw">
-                                    <span>You Have The Power Today To Change Tomorrow</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="blog-card">
-                            <a href="single-news.html">
-                                <img src="img/blog/04.jpg" alt="">
-                            </a>
-                            <div class="blog-text">
-                                <div class="date f1 bg3">
-                                    <p class="fw-6">Jul</p>
-                                    <p class="fw-7">30</p>
-                                </div>
-                                <a href="single-news.html" class="title f1 fw-7 cw">
-                                    <span>Save World By Planting Trees Your Sournding</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                
             </div>
         </div>
     </div>

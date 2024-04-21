@@ -65,9 +65,16 @@
 						<div class="main_title_1">
 							<h3>Question</h3>
 							<td>
-								<a href="@ViewBag.Question.File" target="_blank" class="image-link">
-									<img src="@ViewBag.Question.File" alt="Question Image" width="150" height="150" />
-								</a>
+								@if (ViewBag.Question != null && ViewBag.Question.File != null)
+								{
+									<a href="@ViewBag.Question.File" target="_blank" class="image-link">
+										<!-- Nội dung của thẻ <a> -->
+									</a>
+								}
+								else
+								{
+									<!-- Xử lý khi ViewBag.Question hoặc ViewBag.Question.File là null -->
+								}
 							</td>
 							<p> @ViewBag.Question.Writing</p>
 						</div>
@@ -79,7 +86,7 @@
 								<div id="progressbar"></div>
 							</div>
 
-							<h3>Answer</h3>
+							<h3 style="color: white;">Answer</h3>
 							<form asp-action="MyAnswer" method="post" enctype="multipart/form-data">
 								@Html.AntiForgeryToken()
 								<input type="hidden" asp-for="QuestionID" />

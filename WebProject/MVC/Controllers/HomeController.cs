@@ -1,4 +1,5 @@
 ﻿using Data.Interface;
+using Data.Models;
 using Microsoft.AspNetCore.Mvc;
 using MVC.Models;
 using System.Diagnostics;
@@ -19,8 +20,10 @@ namespace MVC.Controllers
 
         public async Task<IActionResult> Index()
         {
+            var firstCompetition = await _competitionInterface.GetFirst();
             var viewmodel = new ViewModelHome
             {
+                FirstCompetition = firstCompetition,
                 Competition = await _competitionInterface.GetAll(),
                 FAQ = await _FAQInterface.GetAllFAQ(),
                 Events = await _eventInterface.GetAll()
@@ -29,5 +32,6 @@ namespace MVC.Controllers
             
             return  View(viewmodel);
         }
+       
     }
 }

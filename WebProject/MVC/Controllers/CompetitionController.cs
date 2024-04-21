@@ -49,10 +49,15 @@ namespace MVC.Controllers
                 }
                 model.Photo = "/img/photo/" + imageFile.FileName;
             }
+            if (imageFile == null)
+            {
+                ViewBag.ErrorMessage = "Not Photo";
+                return View(model);
+            }
 
 
             await _competitionInterface.Add(model);
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction("Index", "Home");
         }
             
     
@@ -68,20 +73,37 @@ namespace MVC.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, Competition model)
+        public async Task<IActionResult> Edit(int id, Competition model, IFormFile imageFile)
         {
             if (id != model.CompetitionID)
             {
                 return BadRequest();
             }
+            if (string.IsNullOrEmpty(model.CompetitionName) || string.IsNullOrEmpty(model.Description))
+            {
+
+                ModelState.AddModelError("", "CompetitionName và Description không được để trống");
+                return View(model);
+            }
+
+            if (imageFile != null && imageFile.Length > 0)
+            {
+                var imagePath = Path.Combine(_webHostEnvironment.WebRootPath, "img/photo", imageFile.FileName);
+                using (var stream = new FileStream(imagePath, FileMode.Create))
+                {
+                    imageFile.CopyTo(stream);
+                }
+                model.Photo = "/img/photo/" + imageFile.FileName;
+            }
+            if (imageFile == null)
+            {
+                ViewBag.ErrorMessage = "Not Photo";
+                return View(model);
+            }
 
             await _competitionInterface.Update(model);
-            return RedirectToAction(nameof(Index));
-            /* if (ModelState.IsValid)
-             {
+            return RedirectToAction("Index", "Home");
 
-             }*/
-            return View(model);
         }
         public async Task<IActionResult> Delete(int id)
         {
@@ -108,6 +130,12 @@ namespace MVC.Controllers
             {
                 return NotFound();
             }
+            return View(competition);
+        }
+
+        public async Task<IActionResult> IndexFaculty()
+        {
+            var competition = await _competitionInterface.GetAll();
             return View(competition);
         }
     }

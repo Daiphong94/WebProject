@@ -1,40 +1,86 @@
 ﻿@model IEnumerable<Data.Models.Registration>
-
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
 <h2>Danh sách đăng ký chờ duyệt</h2>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<link href="/css/site.css" rel="stylesheet" />
 
-@if (Model.Any())
+<div class="templatemo-content-widget no-padding">
+    <div class="panel panel-default table-responsive">
+        @if (Model.Any())
 {
-    <table class="table">
-        <thead>
-            <tr>
-                <th>UserName</th>
-                <th>Role</th>
-                <th>Status</th>
-                <th>Action</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var registration in Model)
-            {
+        <table class="table table-striped table-bordered templatemo-user-table">
+            <thead>
                 <tr>
-                    <td>@(registration.User != null ? registration.User.UserName : "N/A")</td>
-                    <td>@registration.Role</td>
-                    <td>@registration.Status</td>
-                    <td>
-                        <form action="/Registration/DeleteRegis" method="post">
-                            <input type="hidden" name="id" value="@registration.RegistrationID" />
-                            <button type="submit" class="btn btn-primary">Chấp nhận</button>
-                        </form>
-
-                        <a href="/Registration/Delete?id=@registration.RegistrationID" class="btn btn-danger">Từ chối</a>
-                    </td>
                     
+                    <td><a href="" class="white-text templatemo-sort-by">UserName<span class="caret"></span></a></td>
+                    <td><a href="" class="white-text templatemo-sort-by">Role<span class="caret"></span></a></td>
+                    <td><a href="" class="white-text templatemo-sort-by">Status<span class="caret"></span></a></td>
+
+                    <td>Action</td>
                 </tr>
+            </thead>
+            <tbody>
+                @foreach (var registration in Model)
+                {
+                    <tr>
+                        <td>@(registration.User != null ? registration.User.UserName : "N/A")</td>
+                        <td>@registration.Role</td>
+                        <td>@registration.Status</td>
+                        <td>
+                            <form action="/Registration/DeleteRegis" method="post">
+                                <input type="hidden" name="id" value="@registration.RegistrationID" />
+                                <button type="submit" class="btn btn-primary">Chấp nhận</button>
+                            </form>
+
+                            <a href="/Registration/Delete?id=@registration.RegistrationID" class="btn btn-danger">Từ chối</a>
+                        </td>
+
+                    </tr>
+                }
+            </tbody>
+        </table>
+        }
+        else
+        {
+            <div class="null">
+                <p style="color: orangered">Không có đăng ký nào chờ duyệt.</p>
+            </div>
+        }
+    </div>
+</div>
+
+
+<div class="pagination-wrap">
+    <ul class="pagination">
+        @{
+
+            int page = !string.IsNullOrEmpty(ViewContext.HttpContext.Request.Query["page"]) ? int.Parse(ViewContext.HttpContext.Request.Query["page"]) : 1;
+            int pageSize = 5;
+            int totalItems = Model.Count();
+            int totalPages = (int)Math.Ceiling((double)totalItems / pageSize);
+
+
+            if (page < 1)
+            {
+                page = 1;
             }
-        </tbody>
-    </table>
-}
-else
-{
-    <p>Không có đăng ký nào chờ duyệt.</p>
-}
+            else if (page > totalPages)
+            {
+                page = totalPages;
+            }
+        }
+
+        @for (int i = 1; i <= totalPages; i++)
+        {
+            <li class="@(i == page ? "active" : "")">
+                <a href="#" data-page="@i">@i <span class="sr-only">(current)</span></a>
+            </li>
+        }
+    </ul>
+</div>
